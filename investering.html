@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="nl" data-lang="nl">
+<head>
+<meta charset="utf-8"/>
+<link rel="icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+<link rel="apple-touch-icon" href="favicon-32.png"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Investering &amp; Bouwbegeleiding — Hada Homes Jávea</title>
+<meta name="description" content="Vastgoed kopen, bouwen of verhuren in Jávea? Kevin & Sophie van Hada Homes begeleiden je van A tot Z. Persoonlijk advies, lokale kennis, bewezen aanpak."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#18180f;--ink-mid:#38382a;--ink-soft:#6e6e5e;--ink-faint:#aeae9a;
+  --paper:#faf8f3;--paper-off:#f2efe8;--paper-deep:#e8e4da;
+  --white:#fff;--accent:#0b3b66;--terra:#b5673a;
+  --sand:#c4a882;--sand-lt:#ede5d8;--green:#22c55e;
+  --border:rgba(24,24,15,.09);--border-md:rgba(24,24,15,.15);
+  --sh-sm:0 2px 14px rgba(24,24,15,.07);--sh-md:0 8px 28px rgba(24,24,15,.10);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:400;letter-spacing:-.01em}
+h1{font-size:clamp(44px,6vw,80px);line-height:1.0}
+h2{font-size:clamp(28px,3.5vw,50px);line-height:1.06}
+h3{font-size:clamp(18px,2.2vw,28px);line-height:1.18}
+p{color:var(--ink-soft);font-size:14px;line-height:1.85;font-weight:300}
+.eyebrow{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 48px}
+.section{padding:clamp(64px,8vw,104px) 0}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;cursor:pointer;transition:all .22s;border:none;white-space:nowrap}
+.btn-dark{background:var(--ink);color:var(--paper);padding:13px 28px;border-radius:1px}
+.btn-dark:hover{background:var(--ink-mid);transform:translateY(-1px)}
+.btn-wa{background:var(--green);color:#fff;padding:13px 28px;border-radius:1px}
+.btn-wa:hover{background:#16a34a;transform:translateY(-1px)}
+.btn-text{background:transparent;color:var(--ink);padding:0;border-bottom:1px solid var(--border-md);padding-bottom:2px;font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase}
+.btn-text:hover{border-color:var(--ink)}
+
+/* NAVBAR */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background .35s,border-color .35s}
+.navbar.solid{background:rgba(250,248,243,.97);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);box-shadow:var(--sh-sm)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 48px;height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400;letter-spacing:.05em;color:#fff;transition:color .3s}
+.navbar.solid .nav-logo{color:var(--ink)}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-link{font-size:11px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.6);transition:color .18s}
+.navbar.solid .nav-link{color:var(--ink-soft)}
+.nav-link:hover,.nav-link.active{color:#fff}
+.navbar.solid .nav-link:hover,.navbar.solid .nav-link.active{color:var(--ink)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.lang-sw{display:flex;align-items:center;gap:2px}
+.lang-btn{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 7px;border:none;background:transparent;cursor:pointer;font-family:'Montserrat',sans-serif;color:rgba(255,255,255,.4);transition:color .18s;border-radius:2px}
+.navbar.solid .lang-btn{color:var(--ink-faint)}
+.lang-btn.active,.lang-btn:hover{color:#fff;background:rgba(255,255,255,.12)}
+.navbar.solid .lang-btn.active,.navbar.solid .lang-btn:hover{color:var(--ink);background:var(--paper-deep)}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-hamburger span{width:22px;height:1px;background:currentColor;display:block}
+.nav-hamburger{color:rgba(255,255,255,.8)}
+.navbar.solid .nav-hamburger{color:var(--ink)}
+
+/* HERO */
+.hero{position:relative;height:80vh;min-height:560px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;background:url('https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/d0cd0df1-058f-46bd-94b7-7e9fe10e929e.jpeg') center/cover no-repeat}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(10,8,4,.82) 0%,rgba(10,8,4,.22) 60%,transparent 100%)}
+.hero-content{position:relative;z-index:2;padding:0 48px clamp(48px,6vw,76px);max-width:1200px;margin:0 auto;width:100%}
+.hero-kicker{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:14px;display:flex;align-items:center;gap:12px}
+.hero-kicker::before{content:'';width:24px;height:1px;background:rgba(255,255,255,.22)}
+.hero h1{color:#fff;max-width:680px}
+.hero h1 em{font-style:italic;font-weight:300;color:rgba(255,255,255,.8)}
+.hero-sub{color:rgba(255,255,255,.45);font-size:14px;font-weight:300;max-width:400px;margin-top:12px;line-height:1.8}
+
+/* INTRO */
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(52px,6.5vw,96px);align-items:center}
+.intro-left h2{margin-bottom:16px}
+.intro-left p{margin-bottom:10px}
+.intro-left .quote{margin-top:24px;padding-left:18px;border-left:1px solid var(--sand)}
+.intro-left .quote p{font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;color:var(--ink-mid);line-height:1.5;font-weight:300}
+.intro-left .quote cite{display:block;margin-top:7px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);font-style:normal}
+.intro-right{position:relative}
+.intro-img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.intro-badge{position:absolute;bottom:-18px;left:-18px;background:var(--white);border:1px solid var(--border);padding:16px 20px;box-shadow:var(--sh-md)}
+.intro-badge .num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--ink);line-height:1}
+.intro-badge .lbl{font-size:10px;color:var(--ink-faint);margin-top:3px;letter-spacing:.06em;text-transform:uppercase}
+
+/* SERVICES */
+.services-section{background:var(--paper-off)}
+.services-header{margin-bottom:clamp(36px,4.5vw,52px)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.service-card{background:var(--white);padding:clamp(24px,3vw,40px)}
+.service-num{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:rgba(24,24,15,.06);line-height:1;margin-bottom:12px}
+.service-card h3{font-size:clamp(20px,2.2vw,30px);margin-bottom:10px}
+.service-card p{font-size:13px;line-height:1.8;margin-bottom:16px}
+.service-list{display:flex;flex-direction:column;gap:7px}
+.service-li{font-size:12px;color:var(--ink-soft);display:flex;align-items:flex-start;gap:10px;font-weight:300}
+.service-li::before{content:'—';color:var(--sand);flex-shrink:0;margin-top:1px}
+
+/* PROCESS */
+.process-section{background:var(--paper)}
+.process-header{margin-bottom:clamp(36px,4.5vw,52px)}
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--border);border-left:1px solid var(--border)}
+.process-step{padding:clamp(22px,2.8vw,36px);border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+.process-step-num{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;color:rgba(24,24,15,.07);line-height:1;margin-bottom:10px}
+.process-step h4{font-size:13px;font-weight:600;color:var(--ink);letter-spacing:.05em;text-transform:uppercase;margin-bottom:7px}
+.process-step p{font-size:12px;line-height:1.75}
+
+/* JAVEA FACTS */
+.facts-section{background:var(--ink)}
+.facts-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(52px,6.5vw,96px);align-items:center}
+.facts-left{padding:clamp(52px,6.5vw,84px) 0}
+.facts-eyebrow{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:14px}
+.facts-left h2{color:#fff;margin-bottom:16px}
+.facts-left p{color:rgba(255,255,255,.42);font-size:13px;line-height:1.85;margin-bottom:24px}
+.facts-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid rgba(255,255,255,.08);border-left:1px solid rgba(255,255,255,.08)}
+.fact-item{padding:18px 16px;border-right:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.fact-val{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:#fff;line-height:1;margin-bottom:4px}
+.fact-lbl{font-size:10px;color:rgba(255,255,255,.28);letter-spacing:.08em;text-transform:uppercase}
+.facts-right{overflow:hidden}
+.facts-right img{width:100%;height:100%;object-fit:cover;filter:brightness(.72) saturate(.8)}
+
+/* HOSTS */
+.hosts-section{background:var(--paper-off)}
+.hosts-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(44px,5.5vw,80px);align-items:center}
+.hosts-left h2{margin-bottom:16px}
+.hosts-left p{margin-bottom:10px}
+.hosts-left .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.hosts-right{display:flex;flex-direction:column;gap:2px}
+.host-card{background:var(--white);padding:22px 24px;display:flex;align-items:center;gap:16px}
+.host-av-init{width:52px;height:52px;border-radius:50%;background:var(--sand-lt);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--ink-soft);flex-shrink:0;border:2px solid var(--border-md)}
+.host-info h4{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:3px}
+.host-info p{font-size:12px;line-height:1.6;margin-bottom:5px}
+.host-badge-sm{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--accent)}
+
+/* CONTACT */
+.contact-section{background:var(--ink)}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(52px,6.5vw,96px);align-items:center}
+.contact-eyebrow{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:14px}
+.contact-left h2{color:#fff;margin-bottom:16px}
+.contact-left p{color:rgba(255,255,255,.42);font-size:13px;line-height:1.85;margin-bottom:24px}
+.contact-links{display:flex;flex-direction:column;gap:12px}
+.contact-link-item{display:flex;align-items:center;gap:12px}
+.contact-link-icon{width:32px;height:32px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-link-item a{color:rgba(255,255,255,.5);font-size:13px;font-weight:300;transition:color .15s}
+.contact-link-item a:hover{color:#fff}
+.contact-right{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:32px}
+.contact-right h3{font-family:'Cormorant Garamond',serif;font-size:28px;color:#fff;margin-bottom:20px;font-weight:300}
+.cf-row{display:flex;flex-direction:column;gap:9px}
+.cf-input{width:100%;padding:11px 14px;border:1px solid rgba(255,255,255,.11);background:rgba(255,255,255,.05);color:#fff;font-family:'Montserrat',sans-serif;font-size:13px;outline:none;transition:border-color .18s;font-weight:300}
+.cf-input::placeholder{color:rgba(255,255,255,.22)}
+.cf-input:focus{border-color:rgba(255,255,255,.28)}
+.cf-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,.3)' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px}
+.cf-select option{background:#1a1a12;color:#fff}
+.cf-textarea{resize:vertical;min-height:80px}
+.cf-submit{width:100%;padding:13px;background:#fff;color:var(--ink);font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;cursor:pointer;border:none;transition:all .18s;margin-top:4px}
+.cf-submit:hover{background:var(--paper-off);transform:translateY(-1px)}
+
+/* FOOTER */
+.footer{background:#0e0e09;padding:36px 0 20px}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.footer-brand{font-family:'Cormorant Garamond',serif;font-size:20px;color:#fff;font-weight:300}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:12px;color:rgba(255,255,255,.32);transition:color .15px}
+.footer-links a:hover{color:rgba(255,255,255,.65)}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.16);letter-spacing:.04em;width:100%;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.06)}
+
+.wtsp-btn{position:fixed;right:22px;bottom:22px;z-index:9997;width:50px;height:50px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.18);border:2px solid rgba(255,255,255,.85);transition:transform .2s}
+.wtsp-btn:hover{transform:translateY(-2px) scale(1.04)}
+.wtsp-btn svg{width:24px;height:24px}
+
+@media(max-width:1023px){
+  .intro-grid,.facts-inner,.hosts-inner,.contact-inner{grid-template-columns:1fr}
+  .intro-right{order:-1}.intro-badge{left:0;bottom:-14px}
+  .facts-right{height:280px}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .process-grid{grid-template-columns:1fr 1fr}
+  .wrap{padding:0 28px}.nav-inner{padding:0 28px}.hero-content{padding-left:28px;padding-right:28px}
+}
+@media(max-width:767px){
+  .nav-links{display:none}.nav-hamburger{display:flex}
+  .services-grid,.process-grid{grid-template-columns:1fr}
+  .facts-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Hada Homes</a>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html#appartementen" data-i18n="nav.apts">Appartementen</a>
+      <a class="nav-link" href="index.html#javea" data-i18n="nav.javea">Jávea</a>
+      <a class="nav-link active" href="investering.html" data-i18n="nav.invest">Investering</a>
+      <a class="nav-link" href="blog.html" data-i18n="nav.journal">Journal</a>
+      <a class="nav-link" href="index.html#contact" data-i18n="nav.contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-sw">
+        <button class="lang-btn active" onclick="setLang('nl')">NL</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('es')">ES</button>
+      </div>
+      <div class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-kicker" data-i18n="hero.kicker">Jávea, Costa Blanca</div>
+    <h1 data-i18n="hero.title"><em>Investeren &amp; bouwen</em><br/>in Jávea</h1>
+    <p class="hero-sub" data-i18n="hero.sub">Van vastgoedadvies tot verhuurmanagement — Kevin &amp; Sophie begeleiden je stap voor stap.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="section">
+  <div class="wrap">
+    <div class="intro-grid">
+      <div class="intro-left">
+        <div class="eyebrow" style="margin-bottom:14px" data-i18n="intro.label">Persoonlijke begeleiding</div>
+        <h2 data-i18n="intro.title">Wij kennen Jávea van binnen en buiten</h2>
+        <p data-i18n="intro.p1">Kevin &amp; Sophie wonen en werken in Jávea. Ze kennen de markt, de wijken, de aannemers en de verhuurmogelijkheden.</p>
+        <p data-i18n="intro.p2">Of je nu wilt investeren, bouwen of je woning wilt verhuren — zij begeleiden je met lokale kennis en persoonlijk contact.</p>
+        <div class="quote">
+          <p data-i18n="intro.quote">"Wij doen dit niet als bedrijf, maar als mensen die van Jávea houden en dat graag delen."</p>
+          <cite data-i18n="intro.cite">— Kevin &amp; Sophie, Hada Homes</cite>
+        </div>
+      </div>
+      <div class="intro-right">
+        <img class="intro-img" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/eb722c4b-54e8-4742-bb6d-78e8fc6533fb.jpeg" alt="Jávea vastgoed"/>
+        <div class="intro-badge">
+          <div class="num">8+</div>
+          <div class="lbl" data-i18n="intro.badge">Jaar ervaring in Jávea</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services-section">
+  <div class="wrap">
+    <div class="services-header">
+      <div class="eyebrow" style="margin-bottom:12px" data-i18n="serv.label">Wat we doen</div>
+      <h2 data-i18n="serv.title">Drie diensten, één aanpak</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <h3 data-i18n="s1.title">Vastgoedbegeleiding</h3>
+        <p data-i18n="s1.desc">Zoeken, selecteren en kopen — met lokale kennis en een eerlijk advies.</p>
+        <div class="service-list">
+          <div class="service-li" data-i18n="s1.1">Marktanalyse en locatieadvies</div>
+          <div class="service-li" data-i18n="s1.2">Bezichtigingen en onderhandeling</div>
+          <div class="service-li" data-i18n="s1.3">Juridische en notariële begeleiding</div>
+          <div class="service-li" data-i18n="s1.4">Renovatieadvies na aankoop</div>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <h3 data-i18n="s2.title">Bouwbegeleiding</h3>
+        <p data-i18n="s2.desc">Van vergunning tot oplevering — wij bewaken kwaliteit, planning en budget.</p>
+        <div class="service-list">
+          <div class="service-li" data-i18n="s2.1">Architect- en aannemersselectie</div>
+          <div class="service-li" data-i18n="s2.2">Vergunningstraject begeleiden</div>
+          <div class="service-li" data-i18n="s2.3">Wekelijkse voortgangsrapportage</div>
+          <div class="service-li" data-i18n="s2.4">Oplevering en kwaliteitscontrole</div>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <h3 data-i18n="s3.title">Verhuurmanagement</h3>
+        <p data-i18n="s3.desc">Jouw woning verhuren terwijl wij alles regelen — van marketing tot sleuteloverdracht.</p>
+        <div class="service-list">
+          <div class="service-li" data-i18n="s3.1">Professionele fotografie en listing</div>
+          <div class="service-li" data-i18n="s3.2">Gastenbeheer en communicatie</div>
+          <div class="service-li" data-i18n="s3.3">Schoonmaak en onderhoud</div>
+          <div class="service-li" data-i18n="s3.4">Maandelijkse rapportage</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section process-section">
+  <div class="wrap">
+    <div class="process-header">
+      <div class="eyebrow" style="margin-bottom:12px" data-i18n="proc.label">Hoe het werkt</div>
+      <h2 data-i18n="proc.title">Van kennismaking tot resultaat</h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-step"><div class="process-step-num">01</div><h4 data-i18n="p1.title">Kennismaking</h4><p data-i18n="p1.desc">Een gesprek over jouw wensen, budget en tijdlijn — vrijblijvend en persoonlijk.</p></div>
+      <div class="process-step"><div class="process-step-num">02</div><h4 data-i18n="p2.title">Analyse</h4><p data-i18n="p2.desc">Wij analyseren de markt en presenteren concrete opties die bij jou passen.</p></div>
+      <div class="process-step"><div class="process-step-num">03</div><h4 data-i18n="p3.title">Bezichtiging</h4><p data-i18n="p3.desc">Samen ter plaatse — Kevin of Sophie begeleidt je bij elke bezichtiging.</p></div>
+      <div class="process-step"><div class="process-step-num">04</div><h4 data-i18n="p4.title">Aankoop</h4><p data-i18n="p4.desc">Onderhandeling, juridische check en notariële begeleiding — wij regelen het.</p></div>
+      <div class="process-step"><div class="process-step-num">05</div><h4 data-i18n="p5.title">Inrichting</h4><p data-i18n="p5.desc">Optioneel: interieuradvies en inrichting voor verhuur of eigen gebruik.</p></div>
+      <div class="process-step"><div class="process-step-num">06</div><h4 data-i18n="p6.title">Verhuur</h4><p data-i18n="p6.desc">Wij zorgen voor gasten, inkomsten en zorgeloos eigenaarschap.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- JAVEA FACTS -->
+<section class="facts-section">
+  <div class="facts-inner">
+    <div class="facts-left">
+      <div class="wrap" style="max-width:600px">
+        <div class="facts-eyebrow" data-i18n="facts.label">Waarom Jávea</div>
+        <h2 data-i18n="facts.title">Een van de meest gewilde bestemmingen aan de Costa Blanca</h2>
+        <p data-i18n="facts.desc">Stabiele vastgoedmarkt, groeiende toerismecijfers en een internationale gemeenschap — Jávea biedt uitstekende investeringsmogelijkheden.</p>
+        <div class="facts-grid">
+          <div class="fact-item"><div class="fact-val">300+</div><div class="fact-lbl" data-i18n="f1">Zonnige dagen</div></div>
+          <div class="fact-item"><div class="fact-val">+12%</div><div class="fact-lbl" data-i18n="f2">Vastgoedgroei 2024</div></div>
+          <div class="fact-item"><div class="fact-val">85%</div><div class="fact-lbl" data-i18n="f3">Bezettingsgraad zomer</div></div>
+          <div class="fact-item"><div class="fact-val">€150+</div><div class="fact-lbl" data-i18n="f4">Gem. nachtprijs</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="facts-right">
+      <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/a2d14c27-1792-4767-a34f-5a1cc0d8f44c.jpeg" alt="Jávea vastgoed"/>
+    </div>
+  </div>
+</section>
+
+<!-- HOSTS -->
+<section class="section hosts-section">
+  <div class="wrap">
+    <div class="hosts-inner">
+      <div class="hosts-left">
+        <div class="eyebrow" style="margin-bottom:14px" data-i18n="hosts.label">Jouw begeleiders</div>
+        <h2 data-i18n="hosts.title">Kevin &amp; Sophie</h2>
+        <p data-i18n="hosts.p1">Wij wonen en werken in Jávea en kennen de markt als geen ander. Geen groot kantoor, maar persoonlijk contact en eerlijk advies.</p>
+        <p data-i18n="hosts.p2">Als Airbnb Superhost met 47 beoordelingen weten we wat gasten zoeken — en hoe je een woning optimaal positioneert voor verhuur.</p>
+        <div class="hosts-left actions">
+          <a class="btn btn-wa" href="https://wa.me/31645182246?text=Hoi%20Kevin%20en%20Sophie%2C%20ik%20ben%20ge%C3%AFnteresseerd%20in%20jullie%20investeringsbegeleiding." target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span data-i18n="hosts.wa">WhatsApp ons</span>
+          </a>
+          <a class="btn btn-dark" href="#contact" data-i18n="hosts.contact">Stuur een bericht</a>
+        </div>
+      </div>
+      <div class="hosts-right">
+        <div class="host-card">
+          <div class="host-av-init">K</div>
+          <div class="host-info">
+            <h4>Kevin Peet</h4>
+            <p data-i18n="kevin.role">Vastgoed &amp; bouwbegeleiding &middot; Lokale gids</p>
+            <div class="host-badge-sm"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Airbnb Superhost</div>
+          </div>
+        </div>
+        <div class="host-card">
+          <div class="host-av-init">S</div>
+          <div class="host-info">
+            <h4>Sophie</h4>
+            <p data-i18n="sofie.role">Gastvrouw &amp; verhuurmanagement &middot; Interieur</p>
+            <div class="host-badge-sm"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Superhost</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-section" id="contact">
+  <div class="wrap">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <div class="contact-eyebrow" data-i18n="contact.label">Contact</div>
+        <h2 data-i18n="contact.title">Klaar voor het eerste gesprek?</h2>
+        <p data-i18n="contact.sub">Vrijblijvend en persoonlijk. Kevin &amp; Sophie antwoorden binnen 2 uur.</p>
+        <div class="contact-links">
+          <div class="contact-link-item">
+            <div class="contact-link-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+            <a href="https://wa.me/31645182246" target="_blank" rel="noopener">+31 6 45 18 22 46</a>
+          </div>
+          <div class="contact-link-item">
+            <div class="contact-link-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <a href="mailto:hadahomesspain@gmail.com">hadahomesspain@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-right">
+        <h3 data-i18n="form.title">Stuur een bericht</h3>
+        <form class="cf-row" onsubmit="handleForm(event)">
+          <input class="cf-input" type="text" placeholder="Jouw naam" required/>
+          <input class="cf-input" type="email" placeholder="E-mailadres" required/>
+          <select class="cf-input cf-select">
+            <option value="" data-i18n="form.interest">Interesse in...</option>
+            <option data-i18n="form.opt1">Vastgoedbegeleiding</option>
+            <option data-i18n="form.opt2">Bouwbegeleiding</option>
+            <option data-i18n="form.opt3">Verhuurmanagement</option>
+            <option data-i18n="form.opt4">Combinatie</option>
+          </select>
+          <textarea class="cf-input cf-textarea" placeholder="Jouw bericht..."></textarea>
+          <button class="cf-submit" type="submit" data-i18n="form.send">Verstuur bericht</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <span class="footer-brand">Hada Homes</span>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#appartementen">Appartementen</a>
+        <a href="blog.html">Journal</a>
+        <a href="https://www.instagram.com/hadahomes" target="_blank" rel="noopener">@hadahomes</a>
+      </div>
+    </div>
+
+      <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+        <div>
+          <div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:6px">Augusta Hada</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.28);line-height:1.7">Avinguda Augusta 31<br/>03730 Jávea, Alicante</div>
+        </div>
+        <div>
+          <div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:6px">Pueblo Blanco</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.28);line-height:1.7">Calle Gènova 7<br/>03730 Jávea, Alicante</div>
+        </div>
+        <div>
+          <div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:6px">Casita Arenal</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.28);line-height:1.7">Av. Arenal 3, L'Ancora<br/>Bloque 4, Esc. 2, Pta. 4<br/>03730 Jávea, Alicante</div>
+        </div>
+      </div>
+    <div class="footer-copy">&copy; 2025 Hada Homes &middot; Jávea, Spanje</div>
+  </div>
+</footer>
+
+<a class="wtsp-btn" href="https://wa.me/31645182246" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+var T={nl:{'nav.apts':'Appartementen','nav.javea':'Jávea','nav.invest':'Investering','nav.journal':'Journal','nav.contact':'Contact','hero.kicker':'Jávea, Costa Blanca','hero.title':'<em>Investeren & bouwen</em><br/>in Jávea','hero.sub':'Van vastgoedadvies tot verhuurmanagement — Kevin & Sophie begeleiden je stap voor stap.','intro.label':'Persoonlijke begeleiding','intro.title':'Wij kennen Jávea van binnen en buiten','intro.p1':'Kevin & Sophie wonen en werken in Jávea. Ze kennen de markt, de wijken, de aannemers en de verhuurmogelijkheden.','intro.p2':'Of je nu wilt investeren, bouwen of je woning wilt verhuren — zij begeleiden je met lokale kennis en persoonlijk contact.','intro.quote':'"Wij doen dit niet als bedrijf, maar als mensen die van Jávea houden en dat graag delen."','intro.cite':'— Kevin & Sophie, Hada Homes','intro.badge':'Jaar ervaring in Jávea','serv.label':'Wat we doen','serv.title':'Drie diensten, één aanpak','s1.title':'Vastgoedbegeleiding','s1.desc':'Zoeken, selecteren en kopen — met lokale kennis en een eerlijk advies.','s1.1':'Marktanalyse en locatieadvies','s1.2':'Bezichtigingen en onderhandeling','s1.3':'Juridische en notariële begeleiding','s1.4':'Renovatieadvies na aankoop','s2.title':'Bouwbegeleiding','s2.desc':'Van vergunning tot oplevering — wij bewaken kwaliteit, planning en budget.','s2.1':'Architect- en aannemersselectie','s2.2':'Vergunningstraject begeleiden','s2.3':'Wekelijkse voortgangsrapportage','s2.4':'Oplevering en kwaliteitscontrole','s3.title':'Verhuurmanagement','s3.desc':'Jouw woning verhuren terwijl wij alles regelen — van marketing tot sleuteloverdracht.','s3.1':'Professionele fotografie en listing','s3.2':'Gastenbeheer en communicatie','s3.3':'Schoonmaak en onderhoud','s3.4':'Maandelijkse rapportage','proc.label':'Hoe het werkt','proc.title':'Van kennismaking tot resultaat','p1.title':'Kennismaking','p1.desc':'Een gesprek over jouw wensen, budget en tijdlijn — vrijblijvend en persoonlijk.','p2.title':'Analyse','p2.desc':'Wij analyseren de markt en presenteren concrete opties die bij jou passen.','p3.title':'Bezichtiging','p3.desc':'Samen ter plaatse — Kevin of Sophie begeleidt je bij elke bezichtiging.','p4.title':'Aankoop','p4.desc':'Onderhandeling, juridische check en notariële begeleiding — wij regelen het.','p5.title':'Inrichting','p5.desc':'Optioneel: interieuradvies en inrichting voor verhuur of eigen gebruik.','p6.title':'Verhuur','p6.desc':'Wij zorgen voor gasten, inkomsten en zorgeloos eigenaarschap.','facts.label':'Waarom Jávea','facts.title':'Een van de meest gewilde bestemmingen aan de Costa Blanca','facts.desc':'Stabiele vastgoedmarkt, groeiende toerismecijfers en een internationale gemeenschap.','f1':'Zonnige dagen','f2':'Vastgoedgroei 2024','f3':'Bezettingsgraad zomer','f4':'Gem. nachtprijs','hosts.label':'Jouw begeleiders','hosts.title':'Kevin & Sophie','hosts.p1':'Wij wonen en werken in Jávea en kennen de markt als geen ander. Geen groot kantoor, maar persoonlijk contact en eerlijk advies.','hosts.p2':'Als Airbnb Superhost met 47 beoordelingen weten we wat gasten zoeken — en hoe je een woning optimaal positioneert voor verhuur.','hosts.wa':'WhatsApp ons','hosts.contact':'Stuur een bericht','kevin.role':'Vastgoed & bouwbegeleiding · Lokale gids','sofie.role':'Gastvrouw & verhuurmanagement · Interieur','contact.label':'Contact','contact.title':'Klaar voor het eerste gesprek?','contact.sub':'Vrijblijvend en persoonlijk. Kevin & Sophie antwoorden binnen 2 uur.','form.title':'Stuur een bericht','form.interest':'Interesse in...','form.opt1':'Vastgoedbegeleiding','form.opt2':'Bouwbegeleiding','form.opt3':'Verhuurmanagement','form.opt4':'Combinatie','form.send':'Verstuur bericht'},en:{'nav.apts':'Apartments','nav.javea':'Jávea','nav.invest':'Investment','nav.journal':'Journal','nav.contact':'Contact','hero.kicker':'Jávea, Costa Blanca','hero.title':'<em>Investing & building</em><br/>in Jávea','hero.sub':'From property advice to rental management — Kevin & Sophie guide you step by step.','intro.label':'Personal guidance','intro.title':'We know Jávea inside out','intro.p1':'Kevin & Sophie live and work in Jávea. They know the market, the neighbourhoods, the contractors and the rental opportunities.','intro.p2':'Whether you want to invest, build or rent out your property — they guide you with local knowledge and personal contact.','intro.quote':'"We do this not as a company, but as people who love Jávea and love to share that."','intro.cite':'— Kevin & Sophie, Hada Homes','intro.badge':'Years of experience in Jávea','serv.label':'What we do','serv.title':'Three services, one approach','s1.title':'Property guidance','s1.desc':'Search, select and buy — with local knowledge and honest advice.','s1.1':'Market analysis and location advice','s1.2':'Viewings and negotiation','s1.3':'Legal and notarial guidance','s1.4':'Renovation advice after purchase','s2.title':'Construction management','s2.desc':'From permit to completion — we monitor quality, planning and budget.','s2.1':'Architect and contractor selection','s2.2':'Permit process guidance','s2.3':'Weekly progress reporting','s2.4':'Completion and quality control','s3.title':'Rental management','s3.desc':'Rent out your property while we handle everything — from marketing to key handover.','s3.1':'Professional photography and listing','s3.2':'Guest management and communication','s3.3':'Cleaning and maintenance','s3.4':'Monthly reporting','proc.label':'How it works','proc.title':'From introduction to result','p1.title':'Introduction','p1.desc':'A conversation about your wishes, budget and timeline — no obligation.','p2.title':'Analysis','p2.desc':'We analyse the market and present concrete options that suit you.','p3.title':'Viewing','p3.desc':'On site together — Kevin or Sophie guides you at every viewing.','p4.title':'Purchase','p4.desc':'Negotiation, legal check and notarial guidance — we handle it.','p5.title':'Interior','p5.desc':'Optional: interior advice and furnishing for rental or personal use.','p6.title':'Rental','p6.desc':'We take care of guests, income and worry-free ownership.','facts.label':'Why Jávea','facts.title':'One of the most sought-after destinations on the Costa Blanca','facts.desc':'Stable property market, growing tourism figures and an international community.','f1':'Sunny days','f2':'Property growth 2024','f3':'Summer occupancy rate','f4':'Avg. nightly rate','hosts.label':'Your guides','hosts.title':'Kevin & Sophie','hosts.p1':'We live and work in Jávea and know the market like no other. No big office, just personal contact and honest advice.','hosts.p2':'As Airbnb Superhost with 47 reviews, we know what guests are looking for — and how to optimally position a property for rental.','hosts.wa':'WhatsApp us','hosts.contact':'Send a message','kevin.role':'Property & construction · Local guide','sofie.role':'Hostess & rental management · Interior','contact.label':'Contact','contact.title':'Ready for the first conversation?','contact.sub':'No obligation and personal. Kevin & Sophie reply within 2 hours.','form.title':'Send a message','form.interest':'Interested in...','form.opt1':'Property guidance','form.opt2':'Construction management','form.opt3':'Rental management','form.opt4':'Combination','form.send':'Send message'},es:{'nav.apts':'Apartamentos','nav.javea':'Jávea','nav.invest':'Inversión','nav.journal':'Journal','nav.contact':'Contacto','hero.kicker':'Jávea, Costa Blanca','hero.title':'<em>Invertir y construir</em><br/>en Jávea','hero.sub':'Desde asesoramiento inmobiliario hasta gestión de alquileres — Kevin y Sophie te acompañan paso a paso.','intro.label':'Acompañamiento personal','intro.title':'Conocemos Jávea por dentro y por fuera','intro.p1':'Kevin y Sophie viven y trabajan en Jávea. Conocen el mercado, los barrios, los constructores y las oportunidades de alquiler.','intro.p2':'Tanto si quieres invertir, construir o alquilar tu propiedad — te guían con conocimiento local y contacto personal.','intro.quote':'"Lo hacemos no como empresa, sino como personas que aman Jávea y quieren compartirlo."','intro.cite':'— Kevin y Sophie, Hada Homes','intro.badge':'Años de experiencia en Jávea','serv.label':'Qué hacemos','serv.title':'Tres servicios, un enfoque','s1.title':'Asesoramiento inmobiliario','s1.desc':'Buscar, seleccionar y comprar — con conocimiento local y asesoramiento honesto.','s1.1':'Análisis de mercado y asesoramiento de ubicación','s1.2':'Visitas y negociación','s1.3':'Asesoramiento jurídico y notarial','s1.4':'Asesoramiento de renovación tras la compra','s2.title':'Gestión de construcción','s2.desc':'Desde el permiso hasta la entrega — supervisamos calidad, planificación y presupuesto.','s2.1':'Selección de arquitecto y contratista','s2.2':'Gestión del proceso de permisos','s2.3':'Informe semanal de progreso','s2.4':'Entrega y control de calidad','s3.title':'Gestión de alquileres','s3.desc':'Alquila tu propiedad mientras nosotros gestionamos todo — desde el marketing hasta la entrega de llaves.','s3.1':'Fotografía profesional y anuncio','s3.2':'Gestión de huéspedes y comunicación','s3.3':'Limpieza y mantenimiento','s3.4':'Informe mensual','proc.label':'Cómo funciona','proc.title':'De la presentación al resultado','p1.title':'Presentación','p1.desc':'Una conversación sobre tus deseos, presupuesto y plazos — sin compromiso.','p2.title':'Análisis','p2.desc':'Analizamos el mercado y presentamos opciones concretas que se adaptan a ti.','p3.title':'Visita','p3.desc':'Juntos in situ — Kevin o Sophie te acompaña en cada visita.','p4.title':'Compra','p4.desc':'Negociación, revisión legal y asesoramiento notarial — lo gestionamos nosotros.','p5.title':'Decoración','p5.desc':'Opcional: asesoramiento de interiores y amueblamiento para alquiler o uso personal.','p6.title':'Alquiler','p6.desc':'Nos encargamos de los huéspedes, los ingresos y la propiedad sin preocupaciones.','facts.label':'Por qué Jávea','facts.title':'Uno de los destinos más codiciados de la Costa Blanca','facts.desc':'Mercado inmobiliario estable, cifras de turismo crecientes y una comunidad internacional.','f1':'Días soleados','f2':'Crecimiento inmobiliario 2024','f3':'Tasa de ocupación verano','f4':'Precio medio por noche','hosts.label':'Tus guías','hosts.title':'Kevin y Sophie','hosts.p1':'Vivimos y trabajamos en Jávea y conocemos el mercado como nadie. Sin gran oficina, solo contacto personal y asesoramiento honesto.','hosts.p2':'Como Superhost de Airbnb con 47 reseñas, sabemos lo que buscan los huéspedes — y cómo posicionar una propiedad de forma óptima para el alquiler.','hosts.wa':'WhatsApp','hosts.contact':'Enviar mensaje','kevin.role':'Inmobiliaria y construcción · Guía local','sofie.role':'Anfitriona y gestión de alquileres · Interiorismo','contact.label':'Contacto','contact.title':'¿Listo para la primera conversación?','contact.sub':'Sin compromiso y personal. Kevin y Sophie responden en 2 horas.','form.title':'Envía un mensaje','form.interest':'Interesado en...','form.opt1':'Asesoramiento inmobiliario','form.opt2':'Gestión de construcción','form.opt3':'Gestión de alquileres','form.opt4':'Combinación','form.send':'Enviar mensaje'}};
+function setLang(lang){document.documentElement.lang=lang;document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.textContent.toLowerCase()===lang)});document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');if(T[lang]&&T[lang][k])el.innerHTML=T[lang][k]});}
+window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('solid',window.scrollY>60)});
+function handleForm(e){e.preventDefault();var btn=e.target.querySelector('.cf-submit');btn.textContent='Verstuurd ✓';btn.style.background='#dcfce7';btn.style.color='#15803d';setTimeout(function(){btn.textContent='Verstuur bericht';btn.style.background='';btn.style.color=''},3000)}
+function toggleMenu(){var l=document.querySelector('.nav-links');if(!l)return;var o=l.style.display==='flex';l.style.cssText=o?'':'display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:rgba(250,248,243,.97);padding:20px 28px;border-bottom:1px solid rgba(24,24,15,.09);gap:16px;z-index:999'}
+</script>
+</body>
+</html>
