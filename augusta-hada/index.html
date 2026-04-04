@@ -1,690 +1,748 @@
 <!DOCTYPE html>
-<html lang="nl" data-lang="nl">
+<html lang="nl">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Augusta Hada — Boutique appartement Jávea | Hada Homes</title>
-<meta name="description" content="Sfeervol appartement op loopafstand van het Arenal strand in Jávea. Privépatio, volledig uitgerust, direct boeken bij Kevin & Sophie."/>
-<link rel="icon" type="image/x-icon" href="../favicon.ico"/>
+<title>Augusta Hada — Boutique Appartement Jávea | Hada Homes</title>
+<meta name="description" content="Sfeervol boutique appartement met privépatio en zwembad op loopafstand van het Arenal strand in Jávea. Direct boeken bij Kevin & Sophie."/>
 <link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
-<link rel="apple-touch-icon" href="../favicon-32.png"/>
+<link rel="icon" type="image/x-icon" href="../favicon.ico"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --ink:#18180f;--ink-mid:#38382a;--ink-soft:#5a5a4a;--ink-faint:#9a9a88;
-  --paper:#faf8f3;--paper-off:#f2efe8;--paper-deep:#e8e4da;
-  --white:#fff;--accent:#0b3b66;--terra:#b5673a;
-  --sand:#c4a882;--sand-lt:#ede5d8;--green:#22c55e;
-  --avail:#d1fae5;--avail-txt:#065f46;
-  --booked:#fee2e2;--booked-txt:#991b1b;
-  --border:rgba(24,24,15,.10);--border-md:rgba(24,24,15,.18);
-  --sh-sm:0 2px 14px rgba(24,24,15,.07);--sh-md:0 8px 28px rgba(24,24,15,.12);
+  --ink:#18180f;
+  --ink-80:rgba(24,24,15,.8);
+  --ink-50:rgba(24,24,15,.5);
+  --ink-20:rgba(24,24,15,.2);
+  --ink-08:rgba(24,24,15,.08);
+  --paper:#faf8f3;
+  --sand:#c8a97e;
+  --sand-light:rgba(200,169,126,.12);
+  --white:#fff;
+  --green:#25d366;
 }
 html{scroll-behavior:smooth}
-body{font-family:'Montserrat',sans-serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
-img{display:block;max-width:100%}
-a{text-decoration:none;color:inherit}
-ul{list-style:none}
-h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:400;letter-spacing:-.01em}
-h1{font-size:clamp(32px,4.5vw,60px);line-height:1.04}
-h2{font-size:clamp(24px,3vw,42px);line-height:1.08}
-h3{font-size:clamp(18px,2.2vw,30px);line-height:1.14}
-p{color:var(--ink-soft);font-size:14px;line-height:1.85;font-weight:300}
-strong{font-weight:600;color:var(--ink)}
-.eyebrow{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint)}
-.wrap{max-width:1200px;margin:0 auto;padding:0 48px}
-.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;cursor:pointer;transition:all .22s;border:none;white-space:nowrap;text-decoration:none}
-.btn-dark{background:var(--ink);color:var(--paper);padding:14px 28px;border-radius:1px}
-.btn-dark:hover{background:var(--ink-mid);transform:translateY(-1px)}
-.btn-wa{background:var(--green);color:#fff;padding:14px 28px;border-radius:1px}
-.btn-wa:hover{background:#16a34a;transform:translateY(-1px)}
-.btn-outline{background:transparent;color:var(--ink);padding:13px 26px;border-radius:1px;border:1.5px solid var(--border-md)}
-.btn-outline:hover{border-color:var(--ink);background:var(--paper-off)}
+body{font-family:'Montserrat',sans-serif;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
-/* NAVBAR */
-.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(250,248,243,.97);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);box-shadow:var(--sh-sm)}
-.nav-inner{max-width:1200px;margin:0 auto;padding:0 48px;height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:.05em;color:var(--ink)}
-.nav-links{display:flex;align-items:center;gap:28px}
-.nav-link{font-size:11px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft);transition:color .18s}
-.nav-link:hover,.nav-link.active{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:12px}
-.lang-sw{display:flex;align-items:center;gap:2px}
-.lang-btn{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 8px;border:none;background:transparent;cursor:pointer;font-family:'Montserrat',sans-serif;color:var(--ink-faint);transition:all .18s;border-radius:2px}
-.lang-btn.active,.lang-btn:hover{color:var(--ink);background:var(--paper-deep)}
-.nav-ig{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:500;color:var(--ink-soft);transition:color .18s}
-.nav-ig:hover{color:var(--ink)}
-.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
-.nav-hamburger span{width:22px;height:1.5px;background:var(--ink);display:block}
+/* ─── NAV ─── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(250,248,243,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--ink-08);transition:all .3s}
+.nav.scrolled{height:56px;background:rgba(250,248,243,.98)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;letter-spacing:.06em;color:var(--ink);text-decoration:none}
+.nav-logo span{color:var(--sand)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-50);text-decoration:none;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--ink)}
+.nav-book{background:var(--ink);color:var(--paper)!important;padding:10px 22px;font-size:11px!important;letter-spacing:.12em!important}
+.nav-book:hover{background:#333!important}
 
-/* GALLERY */
-.gallery-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:3px;margin-top:70px;cursor:pointer}
-.gallery-main{grid-row:1/3;overflow:hidden;aspect-ratio:4/3}
-.gallery-main img,.gallery-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
-.gallery-thumb{overflow:hidden;aspect-ratio:16/9}
-.gallery-grid:hover .gallery-main img,.gallery-grid:hover .gallery-thumb img{transform:scale(1.03)}
-.gallery-btn{position:absolute;bottom:16px;right:16px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border:1px solid var(--border-md);padding:9px 16px;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;font-family:'Montserrat',sans-serif;color:var(--ink);transition:all .18s;border-radius:1px}
-.gallery-btn:hover{background:#fff;transform:translateY(-1px)}
-.gallery-wrap{position:relative}
+/* ─── HERO ─── */
+.hero{height:100vh;position:relative;overflow:hidden;display:flex;align-items:flex-end}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(24,24,15,.75) 0%,rgba(24,24,15,.2) 50%,transparent 100%)}
+.hero-content{position:relative;z-index:2;padding:0 48px 64px;width:100%;max-width:900px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:20px}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--sand)}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,7vw,96px);font-weight:300;line-height:1;color:var(--white);letter-spacing:-.02em;margin-bottom:8px}
+.hero-title em{font-style:italic;color:var(--sand)}
+.hero-subtitle{font-size:14px;font-weight:300;color:rgba(255,255,255,.75);letter-spacing:.04em;margin-bottom:36px}
+.hero-meta{display:flex;gap:32px;flex-wrap:wrap}
+.hero-meta-item{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:500;color:rgba(255,255,255,.8);letter-spacing:.04em}
+.hero-meta-item svg{opacity:.7}
+.hero-scroll{position:absolute;right:48px;bottom:64px;z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.hero-scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,rgba(255,255,255,.5),transparent);animation:scrollLine 2s ease-in-out infinite}
+@keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
-/* CONTENT LAYOUT */
-.apt-layout{display:grid;grid-template-columns:1fr 380px;gap:clamp(40px,5vw,72px);padding:clamp(36px,4.5vw,56px) 0 clamp(52px,6.5vw,80px);align-items:start}
-.apt-main{min-width:0}
+/* ─── QUICK INFO BAR ─── */
+.info-bar{background:var(--ink);color:var(--white);padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px;overflow:hidden}
+.info-bar-items{display:flex;gap:40px;flex:1}
+.info-bar-item{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:500;letter-spacing:.06em;white-space:nowrap}
+.info-bar-item strong{color:var(--sand)}
+.info-bar-divider{width:1px;height:20px;background:rgba(255,255,255,.15)}
+.info-bar-cta{display:flex;gap:12px;flex-shrink:0}
+.btn-wa{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--green);color:#fff;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .2s}
+.btn-wa:hover{background:#1fb855}
+.btn-airbnb{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:transparent;border:1px solid rgba(255,255,255,.25);color:#fff;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .2s}
+.btn-airbnb:hover{border-color:rgba(255,255,255,.6)}
 
-/* HEADER */
-.apt-header{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border)}
-.apt-header .eyebrow{margin-bottom:10px}
-.apt-header h1{margin-bottom:12px}
-.apt-meta{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.apt-meta-item{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--ink-soft);font-weight:400}
-.apt-meta-item svg{color:var(--ink-faint)}
-.apt-meta-sep{width:1px;height:14px;background:var(--border-md)}
-.rating-stars{color:#f59e0b;font-size:13px}
+/* ─── SECTION WRAPPER ─── */
+.section{padding:80px 48px}
+.section-sm{padding:48px 48px}
+.container{max-width:1200px;margin:0 auto}
+.section-label{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--sand);margin-bottom:16px}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,52px);font-weight:300;line-height:1.15;letter-spacing:-.01em}
+.section-title em{font-style:italic}
 
-/* SECTION */
-.apt-section{padding:24px 0;border-bottom:1px solid var(--border)}
-.apt-section:last-child{border-bottom:none}
-.apt-section h3{margin-bottom:14px;font-size:clamp(18px,2vw,26px)}
-.apt-section p{font-size:14px;line-height:1.85}
+/* ─── PHOTO GRID — HERO GALLERY ─── */
+.gallery-intro{padding:80px 48px 0}
+.gallery-intro .container{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.gallery-main{grid-column:1;grid-row:1/3;aspect-ratio:3/4;overflow:hidden;cursor:pointer}
+.gallery-main img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.gallery-main:hover img{transform:scale(1.03)}
+.gallery-side{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.gallery-thumb{aspect-ratio:1;overflow:hidden;cursor:pointer;position:relative}
+.gallery-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.gallery-thumb:hover img{transform:scale(1.05)}
+.gallery-more{position:relative;cursor:pointer}
+.gallery-more-overlay{position:absolute;inset:0;background:rgba(24,24,15,.55);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;transition:background .2s}
+.gallery-more:hover .gallery-more-overlay{background:rgba(24,24,15,.4)}
+.gallery-more-num{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:300;color:#fff;line-height:1}
+.gallery-more-label{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.8)}
 
-/* AMENITIES */
-.amenities-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 24px}
-.amenity-item{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink-soft);font-weight:400;padding:6px 0}
-.amenity-item svg{color:var(--ink-faint);flex-shrink:0;width:16px;height:16px}
+/* ─── PHOTO STRIPS ─── */
+.photo-strip{padding:2px 0;overflow:hidden}
+.strip-row{display:flex;gap:2px}
+.strip-row img{flex:1;min-width:0;height:280px;object-fit:cover;transition:transform .5s ease;cursor:pointer}
+.strip-row img:hover{transform:scale(1.02);z-index:1;position:relative}
+.strip-row.tall img{height:400px}
+.strip-row.short img{height:200px}
 
-/* ROOMS */
-.rooms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
-.room-card{overflow:hidden;background:var(--paper-deep)}
-.room-card img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .6s}
+/* ─── MASONRY GRID ─── */
+.masonry{padding:2px 0;columns:3;column-gap:2px}
+.masonry-item{break-inside:avoid;margin-bottom:2px;overflow:hidden;cursor:pointer}
+.masonry-item img{width:100%;display:block;transition:transform .5s ease}
+.masonry-item:hover img{transform:scale(1.03)}
+
+/* ─── EDITORIAL SPLIT ─── */
+.editorial-split{display:grid;grid-template-columns:1fr 1fr;gap:2px;padding:2px 0}
+.editorial-split-left{display:flex;flex-direction:column;gap:2px}
+.editorial-split-right{position:relative;overflow:hidden;cursor:pointer}
+.editorial-split-right img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.editorial-split-right:hover img{transform:scale(1.03)}
+.editorial-split-left .img-wrap{overflow:hidden;cursor:pointer;flex:1}
+.editorial-split-left .img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.editorial-split-left .img-wrap:hover img{transform:scale(1.03)}
+
+/* ─── CONTENT SECTION ─── */
+.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.content-body{font-size:15px;font-weight:300;line-height:1.9;color:var(--ink-80)}
+.content-body p+p{margin-top:16px}
+.amenities-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;margin-top:24px}
+.amenity{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:500;color:var(--ink-80)}
+.amenity::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--sand);flex-shrink:0}
+
+/* ─── ROOMS ─── */
+.rooms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:32px}
+.room-card{position:relative;overflow:hidden;cursor:pointer}
+.room-card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .6s ease}
 .room-card:hover img{transform:scale(1.05)}
-.room-label{padding:10px 12px;font-size:12px;font-weight:500;color:var(--ink-mid)}
+.room-label{position:absolute;bottom:0;left:0;right:0;padding:20px 16px 16px;background:linear-gradient(to top,rgba(24,24,15,.7),transparent);font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:#fff;font-style:italic}
 
-/* CALENDAR */
-.calendar-section{background:var(--paper-off);border:1px solid var(--border);padding:28px}
-.cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
-.cal-header h3{font-size:clamp(18px,2vw,26px)}
-.cal-nav{display:flex;align-items:center;gap:12px}
-.cal-nav-btn{width:32px;height:32px;border:1.5px solid var(--border-md);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .18s;border-radius:1px}
-.cal-nav-btn:hover{border-color:var(--ink);background:var(--paper-deep)}
-.cal-month-label{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--ink);min-width:160px;text-align:center}
-.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
-.cal-day-name{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);text-align:center;padding:6px 0}
-.cal-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:400;cursor:pointer;border-radius:1px;transition:all .15s;position:relative;color:var(--ink-soft)}
-.cal-day:hover:not(.booked):not(.past){background:var(--sand-lt);color:var(--ink)}
-.cal-day.today{font-weight:600;color:var(--ink)}
-.cal-day.today::after{content:'';position:absolute;bottom:3px;left:50%;transform:translateX(-50%);width:4px;height:4px;background:var(--accent);border-radius:50%}
-.cal-day.booked{background:var(--booked);color:var(--booked-txt);cursor:not-allowed;text-decoration:line-through;opacity:.7}
-.cal-day.available{background:var(--avail);color:var(--avail-txt)}
-.cal-day.selected{background:var(--accent);color:#fff;font-weight:600}
-.cal-day.in-range{background:rgba(11,59,102,.12);color:var(--accent)}
-.cal-day.past{color:var(--ink-faint);cursor:default;opacity:.4}
-.cal-day.empty{cursor:default}
-.cal-legend{display:flex;align-items:center;gap:16px;margin-top:14px;flex-wrap:wrap}
-.cal-legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--ink-soft)}
-.cal-legend-dot{width:12px;height:12px;border-radius:1px}
-.cal-sync-note{margin-top:14px;padding:10px 14px;background:rgba(11,59,102,.06);border-left:2px solid var(--accent);font-size:11px;color:var(--ink-soft);line-height:1.6}
-.cal-sync-note strong{color:var(--accent);font-weight:600}
-.cal-actions{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}
+/* ─── PANORAMIC BAND ─── */
+.panoramic{height:420px;overflow:hidden;position:relative}
+.panoramic img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.panoramic-caption{position:absolute;bottom:32px;left:48px;font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.5vw,28px);font-style:italic;font-weight:300;color:rgba(255,255,255,.9)}
 
-/* SIDEBAR */
-.apt-sidebar{position:sticky;top:90px}
-.sidebar-card{background:var(--white);border:1.5px solid var(--border-md);padding:28px;box-shadow:var(--sh-md)}
-.sidebar-price{margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border)}
-.sidebar-price .from{font-size:11px;color:var(--ink-faint);font-weight:500;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
-.sidebar-price .amount{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:300;color:var(--ink);line-height:1}
-.sidebar-price .per{font-size:12px;color:var(--ink-faint);margin-left:4px}
-.sidebar-price .rating{display:flex;align-items:center;gap:6px;margin-top:8px;font-size:12px;color:var(--ink-soft)}
-.sidebar-booking{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
-.sidebar-booking-label{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mid);margin-bottom:4px}
-.sidebar-booking-actions{display:flex;flex-direction:column;gap:8px}
-.sidebar-booking-actions .btn{width:100%;justify-content:center;padding:15px}
-.sidebar-divider{height:1px;background:var(--border);margin:20px 0}
-.sidebar-host{display:flex;align-items:center;gap:12px;padding:14px 0}
-.host-av{width:44px;height:44px;border-radius:50%;background:var(--sand-lt);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--ink-mid);border:1.5px solid var(--border-md);flex-shrink:0}
-.host-info h4{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:2px}
-.host-info p{font-size:11px;color:var(--ink-faint);margin-bottom:4px}
-.superhost-badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
-.sidebar-trust{display:flex;flex-direction:column;gap:8px;padding:14px 0;border-top:1px solid var(--border)}
-.trust-item{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--ink-soft)}
-.trust-item svg{color:var(--ink-faint);flex-shrink:0}
+/* ─── LOCATION ─── */
+.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.location-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.location-tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--ink-80);border:1px solid var(--ink-08);padding:8px 14px}
+.map-embed{width:100%;height:320px;border:none;filter:grayscale(20%)}
 
-/* REVIEWS */
-.reviews-header{display:flex;align-items:center;gap:16px;margin-bottom:24px}
-.reviews-score{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--ink);line-height:1}
-.reviews-meta{display:flex;flex-direction:column;gap:2px}
-.reviews-meta .stars{color:#f59e0b;font-size:16px;letter-spacing:2px}
-.reviews-meta .count{font-size:12px;color:var(--ink-faint)}
-.reviews-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.review-card{padding:20px;background:var(--paper-off);border:1px solid var(--border)}
-.review-card .rv-meta{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.review-card .rv-av{width:36px;height:36px;border-radius:50%;background:var(--sand-lt);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:var(--ink-mid);flex-shrink:0}
-.review-card .rv-name{font-size:13px;font-weight:600;color:var(--ink)}
-.review-card .rv-date{font-size:11px;color:var(--ink-faint)}
-.review-card .rv-stars{color:#f59e0b;font-size:11px;margin-bottom:8px}
-.review-card p{font-size:13px;line-height:1.75;color:var(--ink-soft)}
+/* ─── REVIEWS ─── */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:40px}
+.review-card{padding:32px;border:1px solid var(--ink-08);background:var(--white)}
+.review-stars{color:var(--sand);font-size:14px;letter-spacing:2px;margin-bottom:16px}
+.review-text{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;font-style:italic;line-height:1.7;color:var(--ink-80);margin-bottom:20px}
+.review-author{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-50)}
+.review-date{font-size:11px;color:var(--ink-20);margin-top:2px}
+.rating-bar{display:flex;align-items:center;gap:16px;padding:24px 0;border-top:1px solid var(--ink-08);border-bottom:1px solid var(--ink-08);margin-bottom:40px}
+.rating-big{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:300;line-height:1;color:var(--ink)}
+.rating-info{flex:1}
+.rating-stars{color:var(--sand);font-size:20px;letter-spacing:3px;margin-bottom:4px}
+.rating-count{font-size:13px;color:var(--ink-50)}
 
-/* MAP */
-.map-wrap{width:100%;height:300px;overflow:hidden;background:var(--paper-deep);position:relative}
-.map-wrap iframe{width:100%;height:100%;border:none}
-.map-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.map-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:500;color:var(--ink-mid);background:var(--paper-off);border:1px solid var(--border);padding:6px 12px;border-radius:1px}
+/* ─── HOSTS ─── */
+.hosts-section{background:var(--ink);color:var(--white);padding:80px 48px}
+.hosts-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.hosts-text .section-label{color:var(--sand)}
+.hosts-text .section-title{color:var(--white);margin-bottom:24px}
+.hosts-text p{font-size:15px;font-weight:300;line-height:1.9;color:rgba(255,255,255,.7);margin-bottom:16px}
+.hosts-avatars{display:flex;gap:24px;align-items:center}
+.host-avatar{text-align:center}
+.host-avatar-circle{width:96px;height:96px;border-radius:50%;background:var(--sand-light);border:2px solid rgba(200,169,126,.4);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--sand);margin:0 auto 12px}
+.host-name{font-size:13px;font-weight:600;letter-spacing:.06em;color:var(--white)}
+.host-role{font-size:11px;color:rgba(255,255,255,.5);margin-top:2px}
+.superhost-badge{display:inline-flex;align-items:center;gap:6px;margin-top:24px;padding:8px 16px;border:1px solid rgba(200,169,126,.35);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sand)}
 
-/* LIGHTBOX */
-.lightbox{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.95);align-items:center;justify-content:center}
+/* ─── BOOKING CTA ─── */
+.booking-cta{padding:80px 48px;background:var(--sand-light);border-top:1px solid var(--ink-08);border-bottom:1px solid var(--ink-08)}
+.booking-cta-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.booking-cta-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:300;line-height:1.2;margin-bottom:8px}
+.booking-cta-sub{font-size:14px;color:var(--ink-50);font-weight:300}
+.booking-cta-price{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.5vw,28px);font-weight:300;color:var(--ink-50);margin-bottom:4px}
+.booking-cta-price strong{color:var(--ink);font-size:clamp(32px,4vw,52px);font-weight:300}
+.booking-cta-buttons{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:var(--ink);color:var(--paper);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .25s}
+.btn-primary:hover{background:#333}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:transparent;border:1.5px solid var(--ink-20);color:var(--ink);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .25s}
+.btn-secondary:hover{border-color:var(--ink)}
+.btn-whatsapp{background:var(--green);color:#fff!important}
+.btn-whatsapp:hover{background:#1fb855!important}
+
+/* ─── FOOTER ─── */
+.footer{background:var(--ink);color:rgba(255,255,255,.5);padding:48px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px}
+.footer-brand{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:var(--white);margin-bottom:8px}
+.footer-brand span{color:var(--sand)}
+.footer-tagline{font-size:12px;line-height:1.7}
+.footer-col h4{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;margin-bottom:8px;transition:color .2s}
+.footer-col a:hover{color:rgba(255,255,255,.9)}
+.footer-bottom{background:var(--ink);border-top:1px solid rgba(255,255,255,.08);padding:20px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bottom p{font-size:11px;color:rgba(255,255,255,.3)}
+
+/* ─── LIGHTBOX ─── */
+.lightbox{display:none;position:fixed;inset:0;z-index:1000;background:rgba(18,18,12,.96);flex-direction:column;align-items:center;justify-content:center}
 .lightbox.open{display:flex}
-.lb-img{max-width:90vw;max-height:88vh;object-fit:contain}
-.lb-close{position:absolute;top:20px;right:24px;color:#fff;font-size:28px;cursor:pointer;opacity:.7;transition:opacity .15s;background:none;border:none;font-family:sans-serif}
-.lb-close:hover{opacity:1}
-.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:32px;cursor:pointer;opacity:.6;transition:opacity .15s;background:none;border:none;padding:12px;font-family:sans-serif}
-.lb-prev:hover,.lb-next:hover{opacity:1}
-.lb-prev{left:16px}.lb-next{right:16px}
-.lb-count{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.5);font-size:12px;font-weight:500;letter-spacing:.06em}
+.lb-img-wrap{flex:1;display:flex;align-items:center;justify-content:center;padding:80px 80px 20px;width:100%}
+.lb-img-wrap img{max-width:100%;max-height:100%;object-fit:contain}
+.lb-close{position:absolute;top:24px;right:32px;font-size:28px;color:rgba(255,255,255,.6);cursor:pointer;background:none;border:none;line-height:1;transition:color .2s;font-family:sans-serif}
+.lb-close:hover{color:#fff}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.5);font-size:40px;cursor:pointer;padding:16px;transition:color .2s;font-family:sans-serif;line-height:1}
+.lb-nav:hover{color:#fff}
+.lb-prev{left:16px}
+.lb-next{right:16px}
+.lb-counter{position:absolute;bottom:120px;left:50%;transform:translateX(-50%);font-size:12px;font-weight:600;letter-spacing:.12em;color:rgba(255,255,255,.4)}
+.lb-thumbs{display:flex;gap:4px;padding:12px 24px;overflow-x:auto;max-width:100%;flex-shrink:0}
+.lb-thumbs::-webkit-scrollbar{height:3px}
+.lb-thumbs::-webkit-scrollbar-track{background:rgba(255,255,255,.05)}
+.lb-thumbs::-webkit-scrollbar-thumb{background:rgba(255,255,255,.2)}
+.lb-thumb{width:56px;height:40px;object-fit:cover;cursor:pointer;opacity:.4;transition:opacity .2s;flex-shrink:0;border:1px solid transparent}
+.lb-thumb.active{opacity:1;border-color:var(--sand)}
 
-/* MOBILE BOOKING BAR */
-.mobile-book-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;background:var(--white);border-top:1.5px solid var(--border-md);padding:12px 20px;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 -4px 20px rgba(0,0,0,.08)}
-.mobile-book-price{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--ink)}
-.mobile-book-price span{font-size:12px;font-family:'Montserrat',sans-serif;color:var(--ink-faint)}
-.mobile-book-actions{display:flex;gap:8px}
+/* ─── WHATSAPP FLOAT ─── */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:300;width:56px;height:56px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .2s,box-shadow .2s}
+.wa-float:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,.5)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
 
-/* WHATSAPP */
-.wtsp-btn{position:fixed;right:22px;bottom:22px;z-index:9997;width:52px;height:52px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.18);border:2px solid rgba(255,255,255,.85);transition:transform .2s}
-.wtsp-btn:hover{transform:translateY(-2px) scale(1.04)}
-.wtsp-btn svg{width:26px;height:26px}
+/* ─── DIVIDER ─── */
+.divider{height:1px;background:var(--ink-08);margin:0 48px}
+.text-divider{display:flex;align-items:center;gap:20px;padding:40px 0;color:var(--ink-20)}
+.text-divider::before,.text-divider::after{content:'';flex:1;height:1px;background:var(--ink-08)}
+.text-divider span{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
 
-/* FOOTER */
-.footer{background:#0e0e09;padding:36px 0 20px}
-.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
-.footer-brand{font-family:'Cormorant Garamond',serif;font-size:20px;color:#fff;font-weight:300}
-.footer-links{display:flex;gap:20px}
-.footer-links a{font-size:12px;color:rgba(255,255,255,.35);transition:color .15s}
-.footer-links a:hover{color:rgba(255,255,255,.7)}
-.footer-copy{font-size:11px;color:rgba(255,255,255,.18);letter-spacing:.04em;width:100%;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.07)}
-
-@media(max-width:1023px){
-  .apt-layout{grid-template-columns:1fr}
-  .apt-sidebar{position:static}
-  .sidebar-card{order:-1}
-  .gallery-grid{grid-template-columns:1fr}
-  .gallery-main{grid-row:auto}
-  .gallery-thumb:nth-child(3){display:none}
-  .reviews-grid{grid-template-columns:1fr}
+/* ─── MOBILE ─── */
+@media(max-width:900px){
+  .nav{padding:0 20px}
+  .nav-links{display:none}
+  .hero-content{padding:0 20px 48px}
+  .hero-scroll{display:none}
+  .info-bar{padding:0 20px;height:auto;flex-direction:column;padding:16px 20px;gap:12px}
+  .info-bar-items{flex-wrap:wrap;gap:12px}
+  .info-bar-divider{display:none}
+  .info-bar-cta{width:100%;justify-content:stretch}
+  .btn-wa,.btn-airbnb{flex:1;justify-content:center}
+  .section,.section-sm{padding:48px 20px}
+  .gallery-intro{padding:48px 20px 0}
+  .gallery-intro .container{grid-template-columns:1fr}
+  .gallery-main{aspect-ratio:4/3}
+  .gallery-side{grid-template-columns:1fr 1fr}
+  .strip-row img{height:160px}
+  .strip-row.tall img{height:240px}
+  .masonry{columns:2}
+  .editorial-split{grid-template-columns:1fr}
+  .content-grid{grid-template-columns:1fr;gap:40px}
   .rooms-grid{grid-template-columns:1fr 1fr}
-  .wrap{padding:0 24px}
-  .nav-inner{padding:0 24px}
+  .panoramic{height:260px}
+  .panoramic-caption{left:20px;bottom:20px}
+  .location-grid{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .hosts-section{padding:48px 20px}
+  .hosts-inner{grid-template-columns:1fr;gap:40px}
+  .booking-cta{padding:48px 20px}
+  .booking-cta-inner{grid-template-columns:1fr}
+  .footer{padding:40px 20px;grid-template-columns:1fr}
+  .footer-bottom{padding:16px 20px;flex-direction:column;gap:8px;text-align:center}
+  .divider{margin:0 20px}
 }
-@media(max-width:767px){
-  .nav-links,.nav-ig{display:none}
-  .nav-hamburger{display:flex}
+@media(max-width:600px){
+  .masonry{columns:1}
   .rooms-grid{grid-template-columns:1fr}
-  .amenities-grid{grid-template-columns:1fr}
-  .mobile-book-bar{display:flex}
-  body{padding-bottom:80px}
+  .strip-row img{height:120px}
 }
 </style>
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="nav-inner">
-    <a class="nav-logo" href="../">Hada Homes</a>
-    <div class="nav-links">
-      <a class="nav-link active" href="../#appartementen">Appartementen</a>
-      <a class="nav-link" href="../#javea">Jávea</a>
-      <a class="nav-link" href="../investering.html">Investering</a>
-      <a class="nav-link" href="../blog.html">Journal</a>
-      <a class="nav-link" href="../#contact">Contact</a>
-    </div>
-    <div class="nav-right">
-      <a class="nav-ig" href="https://www.instagram.com/hadahomes" target="_blank" rel="noopener">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        @hadahomes
-      </a>
-      <div class="lang-sw">
-        <button class="lang-btn active" onclick="setLang('nl')">NL</button>
-        <button class="lang-btn" onclick="setLang('en')">EN</button>
-        <button class="lang-btn" onclick="setLang('es')">ES</button>
-      </div>
-      <div class="nav-hamburger"><span></span><span></span><span></span></div>
-    </div>
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="../" class="nav-logo">Hada <span>Homes</span></a>
+  <div class="nav-links">
+    <a href="../">← Terug</a>
+    <a href="#galerij">Galerij</a>
+    <a href="#details">Details</a>
+    <a href="#locatie">Locatie</a>
+    <a href="#reviews">Reviews</a>
+    <a href="https://wa.me/31612345678?text=Hallo%20Kevin%20%26%20Sophie%2C%20ik%20wil%20graag%20Augusta%20Hada%20boeken." target="_blank" class="nav-book">Boek direct</a>
   </div>
 </nav>
 
-<!-- GALLERY -->
-<div class="gallery-wrap">
-  <div class="gallery-grid" onclick="openLightbox(0)">
-    <div class="gallery-main"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/d0cd0df1-058f-46bd-94b7-7e9fe10e929e.jpeg" alt="Augusta Hada — woonkamer"/></div>
-    <div class="gallery-thumb"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/eb722c4b-54e8-4742-bb6d-78e8fc6533fb.jpeg" alt="Augusta Hada — slaapkamer"/></div>
-    <div class="gallery-thumb"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/a2d14c27-1792-4767-a34f-5a1cc0d8f44c.jpeg" alt="Augusta Hada — patio"/></div>
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-img" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/7faa798c-a0c8-4970-b843-0bbd867fa17d.png" alt="Augusta Hada — Jávea" loading="eager"/>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Avinguda Augusta 31, Jávea</div>
+    <h1 class="hero-title">Augusta<br/><em>Hada</em></h1>
+    <p class="hero-subtitle">Boutique appartement · Privépatio · Zwembad · Arenal strand op 5 min</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Tot 6 gasten
+      </div>
+      <div class="hero-meta-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        3 slaapkamers
+      </div>
+      <div class="hero-meta-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        4.9 · Superhost
+      </div>
+      <div class="hero-meta-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Minimaal 3 nachten
+      </div>
+    </div>
   </div>
-  <button class="gallery-btn" onclick="openLightbox(0)">Alle foto's bekijken</button>
-</div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
 
-<!-- MAIN CONTENT -->
-<div class="wrap">
-  <div class="apt-layout">
-
-    <!-- LEFT: MAIN -->
-    <div class="apt-main">
-
-      <!-- HEADER -->
-      <div class="apt-header">
-        <div class="eyebrow" style="margin-bottom:10px">Avinguda Augusta 31 &middot; Jávea, Alicante 03730</div>
-        <h1>Augusta Hada</h1>
-        <div class="apt-meta" style="margin-top:12px">
-          <div class="apt-meta-item">
-            <span class="rating-stars">★</span>
-            <strong>4.9</strong>
-            <span style="color:var(--ink-faint);font-size:13px">(47 beoordelingen)</span>
-          </div>
-          <div class="apt-meta-sep"></div>
-          <div class="apt-meta-item">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-            <span>1–4 gasten</span>
-          </div>
-          <div class="apt-meta-sep"></div>
-          <div class="apt-meta-item">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            <span>2 slaapkamers</span>
-          </div>
-          <div class="apt-meta-sep"></div>
-          <div class="apt-meta-item">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 22V8a2 2 0 012-2h14a2 2 0 012 2v14"/><path d="M2 22h20"/><path d="M7 22v-4a2 2 0 012-2h6a2 2 0 012 2v4"/></svg>
-            <span>Privépatio</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- DESCRIPTION -->
-      <div class="apt-section">
-        <h3>Over dit appartement</h3>
-        <p>Een sfeervol, volledig ingericht appartement op loopafstand van het Arenal strand. Lichte ruimtes, Mediterraans terras en alles wat je nodig hebt voor een zorgeloos verblijf in Jávea.</p>
-        <p style="margin-top:10px">Kevin &amp; Sophie wonen in de buurt en zijn altijd bereikbaar voor tips, aanbevelingen of hulp bij je verblijf.</p>
-      </div>
-
-      <!-- AMENITIES -->
-      <div class="apt-section">
-        <h3>Voorzieningen</h3>
-        <div class="amenities-grid" style="margin-top:4px">
-          <div class="amenity-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg> Gratis wifi</div>
-          <div class="amenity-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> Smart TV</div>
-          <div class="amenity-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg> Koffiezetapparaat</div>
-          <div class="amenity-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg> Privépatio</div>
-          <div class="amenity-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg> Airconditioning</div>
-          <div class="amenity-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg> Volledig uitgeruste keuken</div>
-          <div class="amenity-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg> Wasmachine</div>
-          <div class="amenity-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Gratis parkeren</div>
-          <div class="amenity-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg> Strand op 5 min. lopen</div>
-          <div class="amenity-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Beveiligde toegang</div>
-          <div class="amenity-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Centrale ligging</div>
-          <div class="amenity-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Fietsen beschikbaar</div>
-        </div>
-      </div>
-
-      <!-- ROOMS -->
-      <div class="apt-section">
-        <h3>De ruimtes</h3>
-        <div class="rooms-grid" style="margin-top:14px">
-          <div class="room-card">
-            <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/eb722c4b-54e8-4742-bb6d-78e8fc6533fb.jpeg" alt="Woonkamer"/>
-            <div class="room-label">Woonkamer &amp; keuken</div>
-          </div>
-          <div class="room-card">
-            <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/5457017a-66a7-4b71-ac74-17a51cac99aa.jpeg" alt="Slaapkamers"/>
-            <div class="room-label">Slaapkamers (2)</div>
-          </div>
-          <div class="room-card">
-            <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/a2d14c27-1792-4767-a34f-5a1cc0d8f44c.jpeg" alt="Patio"/>
-            <div class="room-label">Privépatio</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- AVAILABILITY CALENDAR -->
-      <div class="apt-section" id="beschikbaarheid">
-        <h3>Beschikbaarheid</h3>
-        <p style="margin-bottom:18px;font-size:13px">De kalender wordt automatisch gesynchroniseerd met Airbnb en Booking.com. Rood = bezet, groen = beschikbaar.</p>
-        <div class="calendar-section">
-          <div class="cal-header">
-            <h3 id="calMonthLabel" style="font-size:22px"></h3>
-            <div class="cal-nav">
-              <button class="cal-nav-btn" onclick="changeMonth(-1)" aria-label="Vorige maand">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
-              </button>
-              <button class="cal-nav-btn" onclick="changeMonth(1)" aria-label="Volgende maand">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-              </button>
-            </div>
-          </div>
-          <div class="cal-grid" id="calGrid"></div>
-          <div class="cal-legend">
-            <div class="cal-legend-item"><div class="cal-legend-dot" style="background:var(--avail)"></div> Beschikbaar</div>
-            <div class="cal-legend-item"><div class="cal-legend-dot" style="background:var(--booked)"></div> Bezet</div>
-            <div class="cal-legend-item"><div class="cal-legend-dot" style="background:var(--accent)"></div> Geselecteerd</div>
-          </div>
-          <div class="cal-sync-note">
-            <strong>Automatische synchronisatie</strong> — De kalender is gekoppeld aan Airbnb en Booking.com via iCal. Bezette periodes worden automatisch bijgewerkt. Voor de meest actuele beschikbaarheid of directe boeking: stuur Kevin &amp; Sophie een bericht.
-          </div>
-          <div class="cal-actions">
-            <a class="btn btn-wa" href="https://wa.me/31645182246?text=Hoi%20Kevin%20en%20Sophie%2C%20ik%20wil%20graag%20Augusta%20Hada%20boeken.%20Kunnen%20jullie%20de%20beschikbaarheid%20bevestigen%3F" target="_blank" rel="noopener">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              Boek via WhatsApp
-            </a>
-            <a class="btn btn-outline" href="https://www.airbnb.com/rooms/1615493521495170190" target="_blank" rel="noopener">Bekijk op Airbnb</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- MAP -->
-      <div class="apt-section">
-        <h3>Locatie</h3>
-        <div class="map-wrap" style="margin-top:14px">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.8!2d0.1720!3d38.7895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61f9a7b5c3d2e1%3A0x4a3b2c1d0e9f8a7b!2sAvinguda%20Augusta%2031%2C%2003730%20J%C3%A0via%2FJ%C3%A1vea%2C%20Alicante!5e0!3m2!1snl!2ses!4v1700000000001" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-        <div class="map-tags" style="margin-top:12px">
-          <div class="map-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Avinguda Augusta 31, 03730 Jávea</div>
-          <div class="map-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Arenal strand — 5 min. lopen</div>
-          <div class="map-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Restaurants &amp; bars — 3 min. lopen</div>
-          <div class="map-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Supermarkt — 7 min. lopen</div>
-          <div class="map-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Haven — 15 min. lopen</div>
-        </div>
-      </div>
-
-      <!-- REVIEWS -->
-      <div class="apt-section">
-        <div class="reviews-header">
-          <div class="reviews-score">4.9</div>
-          <div class="reviews-meta">
-            <div class="stars">★★★★★</div>
-            <div class="count">47 beoordelingen</div>
-          </div>
-        </div>
-        <div class="reviews-grid">
-          <div class="review-card">
-            <div class="rv-meta"><div class="rv-av">M</div><div><div class="rv-name">Marieke</div><div class="rv-date">September 2024</div></div></div>
-            <div class="rv-stars">★★★★★</div>
-            <p>"Prachtig appartement op een perfecte locatie. Kevin en Sophie zijn fantastische hosts — altijd bereikbaar en vol goede tips."</p>
-          </div>
-          <div class="review-card">
-            <div class="rv-meta"><div class="rv-av">T</div><div><div class="rv-name">Thomas</div><div class="rv-date">Augustus 2024</div></div></div>
-            <div class="rv-stars">★★★★★</div>
-            <p>"De patio is heerlijk. 's Ochtends koffie in de zon, 's avonds een glas wijn — precies wat vakantie moet zijn."</p>
-          </div>
-          <div class="review-card">
-            <div class="rv-meta"><div class="rv-av">L</div><div><div class="rv-name">Laura &amp; Jan</div><div class="rv-date">Juli 2024</div></div></div>
-            <div class="rv-stars">★★★★★</div>
-            <p>"Tweede keer dat we hier verblijven. Het appartement is altijd onberispelijk schoon en de locatie is onverslaanbaar."</p>
-          </div>
-          <div class="review-card">
-            <div class="rv-meta"><div class="rv-av">P</div><div><div class="rv-name">Peter</div><div class="rv-date">Juni 2024</div></div></div>
-            <div class="rv-stars">★★★★★</div>
-            <p>"Geweldige service. Sophie had al een welkomstpakket klaarstaan met lokale producten. Aanrader!"</p>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- end apt-main -->
-
-    <!-- RIGHT: SIDEBAR -->
-    <div class="apt-sidebar">
-      <div class="sidebar-card">
-        <div class="sidebar-price">
-          <div class="from">Vanaf</div>
-          <div><span class="amount">€ 130</span><span class="per">/ nacht</span></div>
-          <div class="rating"><span style="color:#f59e0b">★</span> <strong>4.9</strong> <span style="color:var(--ink-faint)">&middot; 47 beoordelingen</span></div>
-        </div>
-
-        <div class="sidebar-booking">
-          <div class="sidebar-booking-label">Direct boeken</div>
-          <p style="font-size:12px;margin-bottom:10px;color:var(--ink-soft)">Stuur Kevin &amp; Sophie een bericht voor beschikbaarheid, tarieven en persoonlijk advies.</p>
-          <div class="sidebar-booking-actions">
-            <a class="btn btn-wa" href="https://wa.me/31645182246?text=Hoi%20Kevin%20en%20Sophie%2C%20ik%20wil%20graag%20Augusta%20Hada%20boeken.%20Kunnen%20jullie%20de%20beschikbaarheid%20bevestigen%3F" target="_blank" rel="noopener">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              WhatsApp
-            </a>
-            <a class="btn btn-outline" href="mailto:hadahomesspain@gmail.com?subject=Boeking%20Augusta%20Hada&body=Hoi%20Kevin%20en%20Sophie%2C%20ik%20ben%20ge%C3%AFnteresseerd%20in%20een%20verblijf%20bij%20Augusta%20Hada.">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              E-mail
-            </a>
-            <a class="btn btn-dark" href="https://www.airbnb.com/rooms/1615493521495170190" target="_blank" rel="noopener" style="font-size:10px">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Bekijk op Airbnb
-            </a>
-          </div>
-        </div>
-
-        <div class="sidebar-divider"></div>
-
-        <div class="sidebar-host">
-          <div style="display:flex;gap:8px">
-            <div class="host-av">K</div>
-            <div class="host-av">S</div>
-          </div>
-          <div class="host-info">
-            <h4>Kevin &amp; Sophie</h4>
-            <p>Hosts &amp; Jávea-experts</p>
-            <div class="superhost-badge">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Airbnb Superhost
-            </div>
-          </div>
-        </div>
-
-        <div class="sidebar-trust">
-          <div class="trust-item">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Identiteit geverifieerd
-          </div>
-          <div class="trust-item">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            Reactietijd &lt; 2 uur
-          </div>
-          <div class="trust-item">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-            47 positieve beoordelingen
-          </div>
-        </div>
-      </div>
-    </div><!-- end sidebar -->
-
-  </div><!-- end apt-layout -->
-</div><!-- end wrap -->
-
-<!-- MOBILE BOOKING BAR -->
-<div class="mobile-book-bar">
-  <div class="mobile-book-price">€ 130 <span>/ nacht</span></div>
-  <div class="mobile-book-actions">
-    <a class="btn btn-wa" href="https://wa.me/31645182246?text=Hoi%20Kevin%20en%20Sophie%2C%20ik%20wil%20graag%20Augusta%20Hada%20boeken." target="_blank" rel="noopener" style="padding:11px 16px">WhatsApp</a>
-    <a class="btn btn-dark" href="https://www.airbnb.com/rooms/1615493521495170190" target="_blank" rel="noopener" style="padding:11px 16px">Airbnb</a>
+<!-- INFO BAR -->
+<div class="info-bar">
+  <div class="info-bar-items">
+    <div class="info-bar-item"><strong>Vanaf €150</strong> / nacht</div>
+    <div class="info-bar-divider"></div>
+    <div class="info-bar-item">📍 Jávea · Costa Blanca</div>
+    <div class="info-bar-divider"></div>
+    <div class="info-bar-item">🏊 Privézwembad</div>
+    <div class="info-bar-divider"></div>
+    <div class="info-bar-item">🌿 Privépatio</div>
+    <div class="info-bar-divider"></div>
+    <div class="info-bar-item">⭐ 47 beoordelingen</div>
+  </div>
+  <div class="info-bar-cta">
+    <a href="https://wa.me/31612345678?text=Hallo%20Kevin%20%26%20Sophie%2C%20ik%20wil%20graag%20Augusta%20Hada%20boeken." target="_blank" class="btn-wa">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+    <a href="https://www.airbnb.com/rooms/1615493521495170190" target="_blank" class="btn-airbnb">Bekijk op Airbnb</a>
   </div>
 </div>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
-  <button class="lb-close" onclick="closeLightbox()">&#x2715;</button>
-  <button class="lb-prev" onclick="lbNav(-1);event.stopPropagation()">&#x2039;</button>
-  <img class="lb-img" id="lbImg" src="" alt=""/>
-  <button class="lb-next" onclick="lbNav(1);event.stopPropagation()">&#x203a;</button>
-  <div class="lb-count" id="lbCount"></div>
+<!-- GALLERY INTRO — 5-foto grid -->
+<div class="gallery-intro" id="galerij">
+  <div class="container">
+    <div class="gallery-main" onclick="openLightbox(0)">
+      <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/7faa798c-a0c8-4970-b843-0bbd867fa17d.png" alt="Augusta Hada" loading="lazy"/>
+    </div>
+    <div class="gallery-side">
+      <div class="gallery-thumb" onclick="openLightbox(1)"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/5457017a-66a7-4b71-ac74-17a51cac99aa.jpeg" alt="" loading="lazy"/></div>
+      <div class="gallery-thumb" onclick="openLightbox(2)"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/e15feeae-822c-44e4-9638-57f730a536a5.jpeg" alt="" loading="lazy"/></div>
+      <div class="gallery-thumb" onclick="openLightbox(3)"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/af320b6b-c49a-4629-8a76-d5c23ecd5288.jpeg" alt="" loading="lazy"/></div>
+      <div class="gallery-thumb gallery-more" onclick="openLightbox(4)">
+        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/a2d14c27-1792-4767-a34f-5a1cc0d8f44c.jpeg" alt="" loading="lazy"/>
+        <div class="gallery-more-overlay">
+          <div class="gallery-more-num">+39</div>
+          <div class="gallery-more-label">Alle foto's</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STRIP 1 — Buitenruimtes -->
+<div class="photo-strip" style="padding-top:2px">
+  <div class="strip-row tall">
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/a14c50cc-0dcb-4ec2-957e-dd0d84d2d0bf.jpeg" alt="" loading="lazy" onclick="openLightbox(5)"/>
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/eb722c4b-54e8-4742-bb6d-78e8fc6533fb.jpeg" alt="" loading="lazy" onclick="openLightbox(6)"/>
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/8f1dee00-0394-4805-8f10-b9347711cee4.jpeg" alt="" loading="lazy" onclick="openLightbox(7)"/>
+  </div>
+</div>
+
+<!-- CONTENT SECTION -->
+<section class="section" id="details">
+  <div class="container">
+    <div class="content-grid">
+      <div>
+        <div class="section-label">Het appartement</div>
+        <h2 class="section-title">Thuis voelen<br/>in <em>Jávea</em></h2>
+        <div class="content-body" style="margin-top:24px">
+          <p>Augusta Hada is een sfeervol boutique appartement op de begane grond, met een eigen privépatio en toegang tot het zwembad. Gelegen in een rustige wijk op slechts 5 minuten lopen van het Arenal strand.</p>
+          <p>Het appartement biedt ruimte voor maximaal 6 gasten, verdeeld over 3 slaapkamers. De inrichting is met zorg samengesteld door Kevin & Sophie — warm, authentiek en comfortabel.</p>
+          <p>Ideaal voor families, koppels of vrienden die willen genieten van het beste wat Jávea te bieden heeft.</p>
+        </div>
+        <div class="amenities-grid">
+          <div class="amenity">Privépatio</div>
+          <div class="amenity">Gedeeld zwembad</div>
+          <div class="amenity">Volledig uitgeruste keuken</div>
+          <div class="amenity">Airconditioning</div>
+          <div class="amenity">Gratis WiFi</div>
+          <div class="amenity">Smart TV</div>
+          <div class="amenity">Wasmachine</div>
+          <div class="amenity">Parkeerplaats</div>
+          <div class="amenity">Beddengoed & handdoeken</div>
+          <div class="amenity">BBQ op patio</div>
+          <div class="amenity">Self check-in</div>
+          <div class="amenity">Huisdieren op aanvraag</div>
+        </div>
+      </div>
+      <div>
+        <div class="section-label">Indeling</div>
+        <h2 class="section-title">3 slaapkamers<br/><em>voor 6 gasten</em></h2>
+        <div class="rooms-grid" style="margin-top:24px">
+          <div class="room-card" onclick="openLightbox(8)">
+            <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/b122e80b-8d19-4b61-acfb-06663c4b310c.jpeg" alt="Woonkamer" loading="lazy"/>
+            <div class="room-label">Woonkamer</div>
+          </div>
+          <div class="room-card" onclick="openLightbox(9)">
+            <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/0069adf4-d6a3-4cfb-b02f-912f842340e6.jpeg" alt="Slaapkamer" loading="lazy"/>
+            <div class="room-label">Slaapkamer</div>
+          </div>
+          <div class="room-card" onclick="openLightbox(10)">
+            <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/2409a502-4552-45e6-9b40-66ad880fefb7.jpeg" alt="Patio" loading="lazy"/>
+            <div class="room-label">Patio</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PANORAMIC -->
+<div class="panoramic">
+  <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/f7611cfc-c006-457e-b830-b2fa09e0d279.jpeg" alt="Augusta Hada panorama" loading="lazy"/>
+  <div class="panoramic-caption">"Elke ochtend koffie op de patio — dat is Jávea."</div>
+</div>
+
+<!-- MASONRY GALLERY — Interieur -->
+<div class="masonry" style="padding:2px 0" id="masonry1">
+  <div class="masonry-item" onclick="openLightbox(11)"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/707b46d0-0951-46a5-844f-697c916c0f64.jpeg" alt="" loading="lazy"/></div>
+  <div class="masonry-item" onclick="openLightbox(12)"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/c4158d66-1041-4d0b-be9c-2af6cc5d3dc7.jpeg" alt="" loading="lazy"/></div>
+  <div class="masonry-item" onclick="openLightbox(13)"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/5fd466ad-643f-4181-b135-880a42588066.jpeg" alt="" loading="lazy"/></div>
+  <div class="masonry-item" onclick="openLightbox(14)"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/34e60863-6a0b-4030-975f-0fbe4f0aa080.jpeg" alt="" loading="lazy"/></div>
+  <div class="masonry-item" onclick="openLightbox(15)"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/19e1a4e7-23c0-40b8-a352-c4f5af86d3f4.jpeg" alt="" loading="lazy"/></div>
+  <div class="masonry-item" onclick="openLightbox(16)"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/6ff45304-f66f-44c3-b037-e9b7c4adfe48.jpeg" alt="" loading="lazy"/></div>
+  <div class="masonry-item" onclick="openLightbox(17)"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/10077f22-b6c2-420e-991c-38262082f5c2.jpeg" alt="" loading="lazy"/></div>
+  <div class="masonry-item" onclick="openLightbox(18)"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/d0cd0df1-058f-46bd-94b7-7e9fe10e929e.jpeg" alt="" loading="lazy"/></div>
+  <div class="masonry-item" onclick="openLightbox(19)"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/fa0aa6d0-f3e8-4753-b60c-70c9b4140cef.jpeg" alt="" loading="lazy"/></div>
+</div>
+
+<!-- EDITORIAL SPLIT -->
+<div class="editorial-split">
+  <div class="editorial-split-left">
+    <div class="img-wrap" onclick="openLightbox(20)"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/ea45469d-493c-4cf2-800d-7e7c560d11ba.jpeg" alt="" loading="lazy"/></div>
+    <div class="img-wrap" onclick="openLightbox(21)"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/4260549a-e928-4c6f-9d28-21956eb1f6f3.jpeg" alt="" loading="lazy"/></div>
+  </div>
+  <div class="editorial-split-right" onclick="openLightbox(22)">
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/d5126d8c-a14b-4f05-b2c6-cb3eebddce6e.jpeg" alt="" loading="lazy"/>
+  </div>
+</div>
+
+<!-- STRIP 2 -->
+<div class="photo-strip">
+  <div class="strip-row">
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/a936b0df-76f3-4c49-b6f3-c22b71fdc847.jpeg" alt="" loading="lazy" onclick="openLightbox(23)"/>
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/fb291b6d-a512-4c2e-85b3-beb113822b14.jpeg" alt="" loading="lazy" onclick="openLightbox(24)"/>
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/a372ac85-aa8f-4caa-9a8f-f4cf134f55aa.jpeg" alt="" loading="lazy" onclick="openLightbox(25)"/>
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/fca4185e-5c75-4fe7-a3f4-5f3995e222d5.jpeg" alt="" loading="lazy" onclick="openLightbox(26)"/>
+  </div>
+</div>
+
+<!-- MASONRY 2 -->
+<div class="masonry" style="padding:2px 0">
+  <div class="masonry-item" onclick="openLightbox(27)"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/e1a671a1-edd2-4cc5-9ec0-9d558e5bb38a.jpeg" alt="" loading="lazy"/></div>
+  <div class="masonry-item" onclick="openLightbox(28)"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/6b6891d8-08ca-42ef-9c29-341a7a4059bb.jpeg" alt="" loading="lazy"/></div>
+  <div class="masonry-item" onclick="openLightbox(29)"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/331d54b8-e043-4c3c-ab45-2523272b9b33.jpeg" alt="" loading="lazy"/></div>
+  <div class="masonry-item" onclick="openLightbox(30)"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/3e603bfe-838d-4f03-800c-e467febd1f97.jpeg" alt="" loading="lazy"/></div>
+  <div class="masonry-item" onclick="openLightbox(31)"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/90b74381-aff5-491e-9f81-2bdba38324eb.jpeg" alt="" loading="lazy"/></div>
+  <div class="masonry-item" onclick="openLightbox(32)"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/09c7368f-3b68-4752-90dc-30d0069771a5.jpeg" alt="" loading="lazy"/></div>
+</div>
+
+<!-- STRIP 3 — laatste foto's -->
+<div class="photo-strip">
+  <div class="strip-row short">
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/7ebd1525-d0b1-4579-bc73-710aa0bb73c5.jpeg" alt="" loading="lazy" onclick="openLightbox(33)"/>
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/f2ca9718-1ccd-4e5e-9a86-df99fbfe4ee5.jpeg" alt="" loading="lazy" onclick="openLightbox(34)"/>
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/e8c6dff6-0b8e-4882-a3ce-c770d0c84366.jpeg" alt="" loading="lazy" onclick="openLightbox(35)"/>
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/3275a5a5-9e5d-4947-8e3b-cfb24e1a8c07.jpeg" alt="" loading="lazy" onclick="openLightbox(36)"/>
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/e513e36e-046d-4cf2-bb0c-324b19c248e5.jpeg" alt="" loading="lazy" onclick="openLightbox(37)"/>
+  </div>
+</div>
+
+<!-- EDITORIAL SPLIT 2 -->
+<div class="editorial-split">
+  <div class="editorial-split-right" onclick="openLightbox(38)">
+    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/89d0d820-80c6-4419-aac3-b1f2ef791894.jpeg" alt="" loading="lazy"/>
+  </div>
+  <div class="editorial-split-left">
+    <div class="img-wrap" onclick="openLightbox(39)"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/6f7ce60a-2f44-4dd9-ad70-72c5fbf1f8a6.jpeg" alt="" loading="lazy"/></div>
+    <div class="img-wrap" onclick="openLightbox(40)"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/1638f879-d06d-4ff2-81c4-1e52ed092c07.jpeg" alt="" loading="lazy"/></div>
+  </div>
+</div>
+
+<!-- LOCATION -->
+<section class="section" id="locatie">
+  <div class="container">
+    <div class="location-grid">
+      <div>
+        <div class="section-label">Locatie</div>
+        <h2 class="section-title">Alles op<br/><em>loopafstand</em></h2>
+        <div class="content-body" style="margin-top:20px">
+          <p>Augusta Hada ligt in een rustige wijk van Jávea, op loopafstand van het Arenal strand en het levendige havengebied.</p>
+        </div>
+        <div class="location-tags">
+          <div class="location-tag">🏖️ Arenal strand — 5 min</div>
+          <div class="location-tag">🍽️ Restaurants — 3 min</div>
+          <div class="location-tag">🛒 Supermarkt — 7 min</div>
+          <div class="location-tag">⛵ Haven — 12 min</div>
+          <div class="location-tag">🏛️ Historisch centrum — 15 min</div>
+          <div class="location-tag">✈️ Alicante — 90 min</div>
+        </div>
+      </div>
+      <div>
+        <iframe class="map-embed" src="https://maps.google.com/maps?q=Avinguda+Augusta+31,+Javea,+Spain&output=embed&z=15" allowfullscreen loading="lazy" title="Locatie Augusta Hada"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+  <div class="container">
+    <div class="section-label">Beoordelingen</div>
+    <h2 class="section-title">Wat gasten<br/><em>zeggen</em></h2>
+    <div class="rating-bar" style="margin-top:32px">
+      <div class="rating-big">4.9</div>
+      <div class="rating-info">
+        <div class="rating-stars">★★★★★</div>
+        <div class="rating-count">47 beoordelingen op Airbnb</div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Een prachtig appartement. De patio is heerlijk voor de ochtendkoffie. Kevin & Sophie waren super behulpzaam en altijd bereikbaar."</div>
+        <div class="review-author">Marieke & Tom</div>
+        <div class="review-date">Augustus 2024</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Nog mooier dan op de foto's. Rustig, schoon en op loopafstand van alles. Het zwembad was een extra bonus. We komen zeker terug!"</div>
+        <div class="review-author">Familie De Vries</div>
+        <div class="review-date">Juli 2024</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Geweldige locatie, top voorzieningen en hosts die écht meedenken. De persoonlijke touch van Kevin & Sophie maakt het verschil."</div>
+        <div class="review-author">Sophie & Lars</div>
+        <div class="review-date">September 2024</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:32px">
+      <a href="https://www.airbnb.com/rooms/1615493521495170190" target="_blank" class="btn-secondary">Alle reviews op Airbnb →</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOSTS -->
+<div class="hosts-section">
+  <div class="hosts-inner">
+    <div class="hosts-text">
+      <div class="section-label">Uw gastheren</div>
+      <h2 class="section-title">Kevin &<br/><em>Sophie</em></h2>
+      <p style="margin-top:20px">Wij beheren Augusta Hada persoonlijk. Van de eerste vraag tot het moment dat je de sleutel inlevert — wij staan voor je klaar.</p>
+      <p>Jávea is onze thuis. We kennen de beste restaurantjes, verborgen stranden en lokale tips die je nergens anders vindt.</p>
+      <div class="superhost-badge">⭐ Airbnb Superhost · 4.9 gemiddeld</div>
+    </div>
+    <div class="hosts-avatars">
+      <div class="host-avatar">
+        <div class="host-avatar-circle">K</div>
+        <div class="host-name">Kevin</div>
+        <div class="host-role">Host & lokale gids</div>
+      </div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:rgba(255,255,255,.2)">&</div>
+      <div class="host-avatar">
+        <div class="host-avatar-circle">S</div>
+        <div class="host-name">Sophie</div>
+        <div class="host-role">Gastvrouw & styling</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOOKING CTA -->
+<div class="booking-cta">
+  <div class="booking-cta-inner">
+    <div>
+      <div class="section-label">Directe boeking</div>
+      <div class="booking-cta-title">Klaar voor Jávea?<br/>Boek direct bij Kevin & Sophie.</div>
+      <div class="booking-cta-sub">Geen platform, geen tussenpersoon — persoonlijk contact, altijd.</div>
+      <div class="booking-cta-buttons">
+        <a href="https://wa.me/31612345678?text=Hallo%20Kevin%20%26%20Sophie%2C%20ik%20wil%20graag%20Augusta%20Hada%20boeken.%20Kunnen%20jullie%20me%20meer%20informatie%20geven%20over%20beschikbaarheid%20en%20prijs%3F" target="_blank" class="btn-primary btn-whatsapp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Stuur een WhatsApp
+        </a>
+        <a href="mailto:info@hada.homes?subject=Boeking Augusta Hada&body=Hallo Kevin %26 Sophie, ik wil graag Augusta Hada boeken. Kunnen jullie me meer informatie geven?" class="btn-primary">Stuur een e-mail</a>
+        <a href="https://www.airbnb.com/rooms/1615493521495170190" target="_blank" class="btn-secondary">Bekijk op Airbnb</a>
+      </div>
+    </div>
+    <div style="text-align:right">
+      <div class="booking-cta-price">Vanaf <strong>€150</strong> / nacht</div>
+      <div style="font-size:13px;color:var(--ink-50);margin-top:4px">Minimaal 3 nachten · Schoonmaak inbegrepen</div>
+      <div style="font-size:13px;color:var(--ink-50);margin-top:2px">Directe bevestiging via WhatsApp</div>
+    </div>
+  </div>
 </div>
 
 <!-- FOOTER -->
 <footer class="footer">
-  <div class="wrap">
-    <div class="footer-inner">
-      <span class="footer-brand">Hada Homes</span>
-      <div class="footer-links">
-        <a href="../">Home</a>
-        <a href="../#appartementen">Appartementen</a>
-        <a href="../investering.html">Investering</a>
-        <a href="../blog.html">Journal</a>
-        <a href="https://www.instagram.com/hadahomes" target="_blank" rel="noopener">@hadahomes</a>
-      </div>
-    </div>
-    <div class="footer-copy">&copy; 2025 Hada Homes &middot; Jávea, Spanje &middot; Kevin &amp; Sophie</div>
+  <div>
+    <div class="footer-brand">Hada <span>Homes</span></div>
+    <div class="footer-tagline">Boutique appartementen<br/>in Jávea, Costa Blanca</div>
+  </div>
+  <div class="footer-col">
+    <h4>Appartementen</h4>
+    <a href="../augusta-hada/">Augusta Hada</a>
+    <a href="../pueblo-blanco-hada/">Pueblo Blanco</a>
+    <a href="../arenal-appartment/">Casita Arenal</a>
+  </div>
+  <div class="footer-col">
+    <h4>Contact</h4>
+    <a href="https://wa.me/31612345678" target="_blank">WhatsApp</a>
+    <a href="mailto:info@hada.homes">info@hada.homes</a>
+    <a href="https://instagram.com/hadahomes" target="_blank">@hadahomes</a>
+    <a href="../investering.html">Investering & Bouw</a>
   </div>
 </footer>
+<div class="footer-bottom">
+  <p>© 2025 Hada Homes · Jávea, Alicante, Spanje</p>
+  <p>Avinguda Augusta 31, 03730 Jávea</p>
+</div>
 
-<a class="wtsp-btn" href="https://wa.me/31645182246" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<!-- WHATSAPP FLOAT -->
+<a class="wa-float" href="https://wa.me/31612345678?text=Hallo%20Kevin%20%26%20Sophie%2C%20ik%20heb%20een%20vraag%20over%20Augusta%20Hada." target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" onclick="closeLightbox()">×</button>
+  <button class="lb-nav lb-prev" onclick="lbNav(-1)">‹</button>
+  <button class="lb-nav lb-next" onclick="lbNav(1)">›</button>
+  <div class="lb-img-wrap"><img id="lb-img" src="" alt=""/></div>
+  <div class="lb-counter" id="lb-counter"></div>
+  <div class="lb-thumbs" id="lb-thumbs"></div>
+</div>
+
 <script>
-// ---- LANGUAGE SWITCHER ----
-function setLang(lang){
-  document.documentElement.lang=lang;
-  document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.textContent.toLowerCase()===lang)});
-}
+// Nav scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
+});
 
-// ---- LIGHTBOX ----
-var lbImages=[
-  'https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/d0cd0df1-058f-46bd-94b7-7e9fe10e929e.jpeg',
-  'https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/eb722c4b-54e8-4742-bb6d-78e8fc6533fb.jpeg',
-  'https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/a2d14c27-1792-4767-a34f-5a1cc0d8f44c.jpeg',
-  'https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/5457017a-66a7-4b71-ac74-17a51cac99aa.jpeg',
-  'https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/af320b6b-c49a-4629-8a76-d5c23ecd5288.jpeg'
-];
-var lbCurrent=0;
-function openLightbox(i){lbCurrent=i;document.getElementById('lbImg').src=lbImages[i];document.getElementById('lbCount').textContent=(i+1)+' / '+lbImages.length;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden'}
-function closeLightbox(e){if(!e||e.target===document.getElementById('lightbox')||e.target.classList.contains('lb-close')){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow=''}}
-function lbNav(d){lbCurrent=(lbCurrent+d+lbImages.length)%lbImages.length;openLightbox(lbCurrent)}
-document.addEventListener('keydown',function(e){if(document.getElementById('lightbox').classList.contains('open')){if(e.key==='ArrowLeft')lbNav(-1);if(e.key==='ArrowRight')lbNav(1);if(e.key==='Escape')closeLightbox()}});
-
-// ---- AVAILABILITY CALENDAR ----
-// Simulated booked dates (in real use: fetched from iCal feed)
-// Format: 'YYYY-MM-DD'
-var bookedDates = (function(){
-  var dates = [];
-  // Simulate some booked periods for demo
-  var periods = [
-    ['2025-04-05','2025-04-12'],
-    ['2025-04-18','2025-04-22'],
-    ['2025-05-01','2025-05-10'],
-    ['2025-05-20','2025-05-28'],
-    ['2025-06-14','2025-06-28'],
-    ['2025-07-01','2025-07-31'],
-    ['2025-08-01','2025-08-31'],
-    ['2025-09-05','2025-09-18'],
-  ];
-  periods.forEach(function(p){
-    var d = new Date(p[0]);
-    var end = new Date(p[1]);
-    while(d <= end){
-      dates.push(d.toISOString().slice(0,10));
-      d.setDate(d.getDate()+1);
-    }
-  });
-  return dates;
-})();
-
-var calYear, calMonth, selStart=null, selEnd=null;
-var today = new Date();
-calYear = today.getFullYear();
-calMonth = today.getMonth();
-
-var monthNames = ['Januari','Februari','Maart','April','Mei','Juni','Juli','Augustus','September','Oktober','November','December'];
-var dayNames = ['Ma','Di','Wo','Do','Vr','Za','Zo'];
-
-function renderCalendar(){
-  var label = document.getElementById('calMonthLabel');
-  var grid = document.getElementById('calGrid');
-  if(!label||!grid) return;
-  label.textContent = monthNames[calMonth] + ' ' + calYear;
-  grid.innerHTML = '';
-  // Day headers
-  dayNames.forEach(function(d){
-    var el = document.createElement('div');
-    el.className = 'cal-day-name';
-    el.textContent = d;
-    grid.appendChild(el);
-  });
-  // First day of month (Mon=0)
-  var first = new Date(calYear, calMonth, 1);
-  var startDow = (first.getDay()+6)%7; // Mon=0
-  for(var i=0;i<startDow;i++){
-    var el=document.createElement('div');el.className='cal-day empty';grid.appendChild(el);
-  }
-  var daysInMonth = new Date(calYear, calMonth+1, 0).getDate();
-  for(var day=1;day<=daysInMonth;day++){
-    var dateStr = calYear+'-'+String(calMonth+1).padStart(2,'0')+'-'+String(day).padStart(2,'0');
-    var el = document.createElement('div');
-    el.className = 'cal-day';
-    el.textContent = day;
-    var d = new Date(calYear, calMonth, day);
-    var todayStr = today.toISOString().slice(0,10);
-    if(dateStr < todayStr){el.classList.add('past');}
-    else if(bookedDates.indexOf(dateStr)>=0){el.classList.add('booked');}
-    else{el.classList.add('available');}
-    if(dateStr===todayStr) el.classList.add('today');
-    if(selStart&&dateStr===selStart) el.classList.add('selected');
-    if(selEnd&&dateStr===selEnd) el.classList.add('selected');
-    if(selStart&&selEnd&&dateStr>selStart&&dateStr<selEnd) el.classList.add('in-range');
-    if(!el.classList.contains('past')&&!el.classList.contains('booked')){
-      el.style.cursor='pointer';
-      el.addEventListener('click',function(ds){return function(){
-        if(!selStart||selEnd){selStart=ds;selEnd=null;}
-        else if(ds>selStart){selEnd=ds;}
-        else{selStart=ds;selEnd=null;}
-        renderCalendar();
-      }}(dateStr));
-    }
-    grid.appendChild(el);
-  }
-}
-function changeMonth(d){
-  calMonth+=d;
-  if(calMonth>11){calMonth=0;calYear++;}
-  if(calMonth<0){calMonth=11;calYear--;}
-  renderCalendar();
-}
-renderCalendar();
+// All 43 photos
 const photos = [
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/7faa798c-a0c8-4970-b843-0bbd867fa17d.png",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/5457017a-66a7-4b71-ac74-17a51cac99aa.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/e15feeae-822c-44e4-9638-57f730a536a5.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/af320b6b-c49a-4629-8a76-d5c23ecd5288.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/a2d14c27-1792-4767-a34f-5a1cc0d8f44c.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/a14c50cc-0dcb-4ec2-957e-dd0d84d2d0bf.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/eb722c4b-54e8-4742-bb6d-78e8fc6533fb.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/8f1dee00-0394-4805-8f10-b9347711cee4.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/b122e80b-8d19-4b61-acfb-06663c4b310c.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/0069adf4-d6a3-4cfb-b02f-912f842340e6.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/2409a502-4552-45e6-9b40-66ad880fefb7.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/f7611cfc-c006-457e-b830-b2fa09e0d279.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/707b46d0-0951-46a5-844f-697c916c0f64.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/c4158d66-1041-4d0b-be9c-2af6cc5d3dc7.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/5fd466ad-643f-4181-b135-880a42588066.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/34e60863-6a0b-4030-975f-0fbe4f0aa080.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/19e1a4e7-23c0-40b8-a352-c4f5af86d3f4.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/6ff45304-f66f-44c3-b037-e9b7c4adfe48.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/10077f22-b6c2-420e-991c-38262082f5c2.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/d0cd0df1-058f-46bd-94b7-7e9fe10e929e.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/fa0aa6d0-f3e8-4753-b60c-70c9b4140cef.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/ea45469d-493c-4cf2-800d-7e7c560d11ba.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/4260549a-e928-4c6f-9d28-21956eb1f6f3.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/d5126d8c-a14b-4f05-b2c6-cb3eebddce6e.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/a936b0df-76f3-4c49-b6f3-c22b71fdc847.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/fb291b6d-a512-4c2e-85b3-beb113822b14.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/a372ac85-aa8f-4caa-9a8f-f4cf134f55aa.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/fca4185e-5c75-4fe7-a3f4-5f3995e222d5.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/e1a671a1-edd2-4cc5-9ec0-9d558e5bb38a.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/6b6891d8-08ca-42ef-9c29-341a7a4059bb.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/331d54b8-e043-4c3c-ab45-2523272b9b33.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/3e603bfe-838d-4f03-800c-e467febd1f97.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/90b74381-aff5-491e-9f81-2bdba38324eb.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/09c7368f-3b68-4752-90dc-30d0069771a5.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/7ebd1525-d0b1-4579-bc73-710aa0bb73c5.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/f2ca9718-1ccd-4e5e-9a86-df99fbfe4ee5.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/e8c6dff6-0b8e-4882-a3ce-c770d0c84366.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/3275a5a5-9e5d-4947-8e3b-cfb24e1a8c07.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/e513e36e-046d-4cf2-bb0c-324b19c248e5.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/89d0d820-80c6-4419-aac3-b1f2ef791894.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/6f7ce60a-2f44-4dd9-ad70-72c5fbf1f8a6.jpeg",
-    "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/1638f879-d06d-4ff2-81c4-1e52ed092c07.jpeg"
-  ];
-  
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/7faa798c-a0c8-4970-b843-0bbd867fa17d.png",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/5457017a-66a7-4b71-ac74-17a51cac99aa.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/e15feeae-822c-44e4-9638-57f730a536a5.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/af320b6b-c49a-4629-8a76-d5c23ecd5288.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/a2d14c27-1792-4767-a34f-5a1cc0d8f44c.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/a14c50cc-0dcb-4ec2-957e-dd0d84d2d0bf.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/eb722c4b-54e8-4742-bb6d-78e8fc6533fb.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/8f1dee00-0394-4805-8f10-b9347711cee4.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/b122e80b-8d19-4b61-acfb-06663c4b310c.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/0069adf4-d6a3-4cfb-b02f-912f842340e6.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/2409a502-4552-45e6-9b40-66ad880fefb7.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/f7611cfc-c006-457e-b830-b2fa09e0d279.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/707b46d0-0951-46a5-844f-697c916c0f64.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/c4158d66-1041-4d0b-be9c-2af6cc5d3dc7.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/5fd466ad-643f-4181-b135-880a42588066.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/34e60863-6a0b-4030-975f-0fbe4f0aa080.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/19e1a4e7-23c0-40b8-a352-c4f5af86d3f4.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/6ff45304-f66f-44c3-b037-e9b7c4adfe48.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/10077f22-b6c2-420e-991c-38262082f5c2.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/d0cd0df1-058f-46bd-94b7-7e9fe10e929e.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/fa0aa6d0-f3e8-4753-b60c-70c9b4140cef.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/ea45469d-493c-4cf2-800d-7e7c560d11ba.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/4260549a-e928-4c6f-9d28-21956eb1f6f3.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/d5126d8c-a14b-4f05-b2c6-cb3eebddce6e.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/a936b0df-76f3-4c49-b6f3-c22b71fdc847.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/fb291b6d-a512-4c2e-85b3-beb113822b14.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/a372ac85-aa8f-4caa-9a8f-f4cf134f55aa.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/fca4185e-5c75-4fe7-a3f4-5f3995e222d5.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/e1a671a1-edd2-4cc5-9ec0-9d558e5bb38a.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/6b6891d8-08ca-42ef-9c29-341a7a4059bb.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/331d54b8-e043-4c3c-ab45-2523272b9b33.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/3e603bfe-838d-4f03-800c-e467febd1f97.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/90b74381-aff5-491e-9f81-2bdba38324eb.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/09c7368f-3b68-4752-90dc-30d0069771a5.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/7ebd1525-d0b1-4579-bc73-710aa0bb73c5.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/f2ca9718-1ccd-4e5e-9a86-df99fbfe4ee5.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/e8c6dff6-0b8e-4882-a3ce-c770d0c84366.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/3275a5a5-9e5d-4947-8e3b-cfb24e1a8c07.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/e513e36e-046d-4cf2-bb0c-324b19c248e5.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/89d0d820-80c6-4419-aac3-b1f2ef791894.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/6f7ce60a-2f44-4dd9-ad70-72c5fbf1f8a6.jpeg",
+  "https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/1638f879-d06d-4ff2-81c4-1e52ed092c07.jpeg"
+];
+
+let current = 0;
+
+function buildThumbs(){
+  const c = document.getElementById('lb-thumbs');
+  c.innerHTML = '';
+  photos.forEach((p,i) => {
+    const img = document.createElement('img');
+    img.src = p; img.className = 'lb-thumb' + (i===current?' active':'');
+    img.onclick = () => goTo(i);
+    c.appendChild(img);
+  });
+}
+
+function goTo(i){
+  current = (i + photos.length) % photos.length;
+  document.getElementById('lb-img').src = photos[current];
+  document.getElementById('lb-counter').textContent = (current+1) + ' / ' + photos.length;
+  document.querySelectorAll('.lb-thumb').forEach((t,j) => t.classList.toggle('active', j===current));
+  // scroll thumb into view
+  const thumbs = document.getElementById('lb-thumbs');
+  const active = thumbs.children[current];
+  if(active) active.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+}
+
+function openLightbox(i){
+  current = i;
+  buildThumbs();
+  document.getElementById('lb-img').src = photos[current];
+  document.getElementById('lb-counter').textContent = (current+1) + ' / ' + photos.length;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function lbNav(dir){ goTo(current + dir); }
+
+document.addEventListener('keydown', e => {
+  if(!document.getElementById('lightbox').classList.contains('open')) return;
+  if(e.key === 'ArrowRight') lbNav(1);
+  if(e.key === 'ArrowLeft') lbNav(-1);
+  if(e.key === 'Escape') closeLightbox();
+});
+
+document.getElementById('lightbox').addEventListener('click', e => {
+  if(e.target === document.getElementById('lightbox')) closeLightbox();
+});
 </script>
 </body>
 </html>
