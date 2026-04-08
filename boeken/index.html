@@ -82,15 +82,21 @@
     align-items: center;
     gap: 0;
     margin-bottom: 40px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
   }
   .progress-step {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     font-size: 13px;
     color: var(--ink-light);
     letter-spacing: .04em;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
+  .progress-step .step-label { display: inline; }
   .progress-step.active { color: var(--accent); font-weight: 600; }
   .progress-step.done { color: var(--green); }
   .step-circle {
@@ -117,9 +123,10 @@
   }
   .progress-line {
     flex: 1;
+    min-width: 16px;
     height: 1px;
     background: var(--border);
-    margin: 0 12px;
+    margin: 0 8px;
   }
   .progress-line.done { background: var(--green); }
 
@@ -178,6 +185,7 @@
     color: var(--ink-light);
     display: flex;
     gap: 12px;
+    flex-wrap: wrap;
   }
   .apt-card-price {
     font-size: 14px;
@@ -221,8 +229,8 @@
   .cal-nav {
     background: none;
     border: 1px solid var(--border);
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: 2px;
     cursor: pointer;
     font-size: 16px;
@@ -230,6 +238,8 @@
     align-items: center;
     justify-content: center;
     color: var(--ink);
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
   .cal-nav:hover { background: var(--paper-dark); }
   .cal-month-title {
@@ -262,6 +272,9 @@
     cursor: pointer;
     transition: background .15s, color .15s;
     position: relative;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    min-height: 36px;
   }
   .cal-day:hover:not(.blocked):not(.past) { background: var(--accent-light); color: var(--accent); }
   .cal-day.past { color: #ccc; cursor: default; }
@@ -278,6 +291,7 @@
     margin-top: 16px;
     font-size: 12px;
     color: var(--ink-light);
+    flex-wrap: wrap;
   }
   .cal-legend-item { display: flex; align-items: center; gap: 6px; }
   .cal-legend-dot {
@@ -340,12 +354,13 @@
     border-radius: 3px;
     padding: 12px 14px;
     font-family: 'Inter', sans-serif;
-    font-size: 14px;
+    font-size: 16px; /* 16px prevents iOS zoom */
     color: var(--ink);
     background: white;
     outline: none;
     transition: border-color .2s;
     width: 100%;
+    -webkit-appearance: none;
   }
   .form-group input:focus,
   .form-group select:focus,
@@ -356,81 +371,84 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 14px 0;
+    padding: 16px 0;
     border-bottom: 1px solid var(--border);
   }
   .guests-row:last-child { border-bottom: none; }
-  .guests-label { font-size: 14px; }
-  .guests-sub { font-size: 12px; color: var(--ink-light); }
+  .guests-label { font-size: 15px; }
+  .guests-sub { font-size: 12px; color: var(--ink-light); margin-top: 2px; }
   .guests-counter {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 20px;
   }
   .counter-btn {
-    width: 32px; height: 32px;
+    width: 40px; height: 40px;
     border-radius: 50%;
     border: 1.5px solid var(--border);
     background: white;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--ink);
     transition: border-color .2s;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
   .counter-btn:hover { border-color: var(--accent); color: var(--accent); }
-  .counter-btn:disabled { opacity: .3; cursor: default; }
-  .counter-val { font-size: 16px; font-weight: 600; min-width: 20px; text-align: center; }
+  .counter-btn:disabled { opacity: .3; cursor: not-allowed; }
+  .counter-val { font-size: 18px; font-weight: 600; min-width: 24px; text-align: center; }
 
   /* ── BUTTONS ── */
-  .btn-primary {
-    background: var(--ink);
-    color: white;
-    border: none;
-    padding: 14px 32px;
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-radius: 2px;
-    transition: background .2s, transform .15s;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .btn-primary:hover { background: #2a2a1f; transform: translateY(-1px); }
-  .btn-primary:disabled { opacity: .4; cursor: default; transform: none; }
-  .btn-secondary {
-    background: transparent;
-    color: var(--ink-light);
-    border: 1.5px solid var(--border);
-    padding: 13px 24px;
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: .10em;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-radius: 2px;
-    transition: border-color .2s, color .2s;
-  }
-  .btn-secondary:hover { border-color: var(--ink); color: var(--ink); }
-
   .btn-row {
     display: flex;
     gap: 12px;
-    align-items: center;
-    margin-top: 32px;
+    justify-content: flex-end;
+    margin-top: 24px;
+    flex-wrap: wrap;
   }
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: opacity .2s;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    min-height: 48px;
+  }
+  .btn-primary:hover { opacity: .85; }
+  .btn-primary:disabled { opacity: .4; cursor: not-allowed; }
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--border);
+    padding: 14px 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: border-color .2s;
+    touch-action: manipulation;
+    min-height: 48px;
+  }
+  .btn-secondary:hover { border-color: var(--ink); }
 
   /* ── SIDEBAR ── */
   .booking-sidebar {
     position: sticky;
-    top: 88px;
+    top: 80px;
   }
   .sidebar-card {
     background: white;
@@ -440,40 +458,31 @@
   }
   .sidebar-img {
     width: 100%;
-    height: 180px;
+    height: 200px;
     object-fit: cover;
     display: block;
-  }
-  .sidebar-img-placeholder {
-    width: 100%;
-    height: 180px;
-    background: var(--paper-dark);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--ink-light);
-    font-size: 13px;
   }
   .sidebar-body { padding: 20px; }
   .sidebar-apt-name {
     font-family: 'Cormorant Garamond', serif;
     font-size: 22px;
     font-weight: 400;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
   .sidebar-location {
     font-size: 12px;
     color: var(--ink-light);
-    margin-bottom: 16px;
     display: flex;
     align-items: center;
     gap: 4px;
+    margin-bottom: 16px;
   }
   .sidebar-dates {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
     gap: 8px;
-    padding: 14px 0;
+    padding: 12px 0;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     margin-bottom: 16px;
@@ -484,20 +493,17 @@
     text-transform: uppercase;
     color: var(--ink-light);
     display: block;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
   }
   .sidebar-date-item .val {
-    font-size: 14px;
-    font-weight: 500;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
   }
   .sidebar-nights {
-    text-align: center;
     font-size: 12px;
     color: var(--ink-light);
-    padding: 6px 10px;
-    background: var(--paper-dark);
-    border-radius: 20px;
-    align-self: center;
+    text-align: center;
+    white-space: nowrap;
   }
   .price-breakdown { margin-bottom: 16px; }
   .price-row {
@@ -516,6 +522,8 @@
   }
   .price-row .label { color: var(--ink-light); }
   .price-row.total .label { color: var(--ink); }
+  .price-row.discount-row .label { color: var(--green); }
+  .price-row.discount-row span:last-child { color: var(--green); }
   .sidebar-meta {
     font-size: 12px;
     color: var(--ink-light);
@@ -531,7 +539,7 @@
     background: white;
     border: 1px solid var(--border);
     border-radius: 4px;
-    padding: 32px;
+    padding: 24px;
     margin-bottom: 24px;
   }
   .confirm-section-title {
@@ -549,10 +557,11 @@
     padding: 8px 0;
     font-size: 14px;
     border-bottom: 1px solid var(--border);
+    gap: 12px;
   }
   .confirm-row:last-child { border-bottom: none; }
-  .confirm-row .key { color: var(--ink-light); }
-  .confirm-row .val { font-weight: 500; }
+  .confirm-row .key { color: var(--ink-light); flex-shrink: 0; }
+  .confirm-row .val { font-weight: 500; text-align: right; }
 
   /* ── SUCCESS ── */
   .success-wrap {
@@ -609,21 +618,6 @@
     border-top: 1px solid var(--border);
   }
 
-  /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
-    nav { padding: 0 20px; }
-    .booking-wrap {
-      grid-template-columns: 1fr;
-      padding: 24px 16px 60px;
-      gap: 32px;
-    }
-    .booking-sidebar { position: static; order: -1; }
-    .apt-cards { grid-template-columns: 1fr; }
-    .form-grid { grid-template-columns: 1fr; }
-    .form-group.span2 { grid-column: span 1; }
-    .sidebar-dates { grid-template-columns: 1fr 1fr; }
-  }
-
   /* ── NOTICE ── */
   .info-notice {
     background: var(--accent-light);
@@ -647,22 +641,120 @@
     line-height: 1.6;
   }
   .checkbox-row input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     flex-shrink: 0;
     margin-top: 2px;
     accent-color: var(--accent);
+    cursor: pointer;
   }
   .checkbox-row a { color: var(--accent); text-decoration: none; }
   .checkbox-row a:hover { text-decoration: underline; }
+
+  /* ── PRICE BADGE ── */
+  .discount-badge {
+    display: inline-block;
+    background: var(--green);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 10px;
+    letter-spacing: .04em;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  /* ── MOBILE STICKY PRICE BAR ── */
+  .mobile-price-bar {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid var(--border);
+    padding: 12px 20px;
+    z-index: 50;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 -4px 20px rgba(0,0,0,.08);
+  }
+  .mobile-price-bar .price-info { font-size: 14px; }
+  .mobile-price-bar .price-total { font-size: 18px; font-weight: 700; color: var(--accent); }
+  .mobile-price-bar .price-sub { font-size: 12px; color: var(--ink-light); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 0 16px; height: 56px; }
+    .nav-logo { font-size: 20px; }
+    .nav-back { font-size: 12px; }
+
+    .booking-wrap {
+      grid-template-columns: 1fr;
+      padding: 20px 16px 100px; /* extra bottom for sticky bar */
+      gap: 0;
+    }
+
+    /* Sidebar moves below main on mobile */
+    .booking-sidebar {
+      position: static;
+      order: 2;
+      margin-top: 32px;
+    }
+
+    .progress-bar { margin-bottom: 28px; }
+    .progress-step .step-label { display: none; }
+    .progress-line { min-width: 12px; margin: 0 4px; }
+
+    h2.step-title { font-size: 26px; }
+
+    .apt-cards { grid-template-columns: 1fr; }
+    .apt-card img { height: 160px; }
+
+    .form-grid { grid-template-columns: 1fr; }
+    .form-group.span2 { grid-column: span 1; }
+
+    .calendar-wrap { padding: 16px; }
+    .cal-day { min-height: 40px; font-size: 14px; }
+    .cal-day-label { font-size: 10px; }
+
+    .btn-row { justify-content: stretch; }
+    .btn-primary, .btn-secondary {
+      flex: 1;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .confirm-box { padding: 16px; }
+    .success-wrap { padding: 40px 20px; }
+
+    .mobile-price-bar { display: flex; }
+
+    .sidebar-img { height: 160px; }
+  }
+
+  @media (max-width: 400px) {
+    .cal-day { min-height: 38px; font-size: 13px; }
+    .cal-day-label { font-size: 9px; }
+    .apt-card-meta { gap: 8px; }
+  }
 </style>
 </head>
 <body>
 
 <nav>
   <a href="/" class="nav-logo">Hada Homes</a>
-  <a href="javascript:history.back()" class="nav-back">← Terug naar appartement</a>
+  <a href="javascript:history.back()" class="nav-back">← Terug</a>
 </nav>
+
+<!-- Mobile sticky price bar -->
+<div class="mobile-price-bar" id="mobilePriceBar" style="display:none;">
+  <div class="price-info">
+    <div class="price-total" id="mobilePriceTotal">—</div>
+    <div class="price-sub" id="mobilePriceSub">Selecteer data</div>
+  </div>
+</div>
 
 <div class="booking-wrap">
 
@@ -673,22 +765,22 @@
     <div class="progress-bar" id="progressBar">
       <div class="progress-step active" id="prog1">
         <div class="step-circle">1</div>
-        <span>Keuze & data</span>
+        <span class="step-label">Keuze & data</span>
       </div>
       <div class="progress-line" id="line1"></div>
       <div class="progress-step" id="prog2">
         <div class="step-circle">2</div>
-        <span>Reisgezelschap</span>
+        <span class="step-label">Reisgezelschap</span>
       </div>
       <div class="progress-line" id="line2"></div>
       <div class="progress-step" id="prog3">
         <div class="step-circle">3</div>
-        <span>Mijn gegevens</span>
+        <span class="step-label">Mijn gegevens</span>
       </div>
       <div class="progress-line" id="line3"></div>
       <div class="progress-step" id="prog4">
         <div class="step-circle">4</div>
-        <span>Bevestiging</span>
+        <span class="step-label">Bevestiging</span>
       </div>
     </div>
 
@@ -707,7 +799,7 @@
               <span>2 slpk + slaapbank</span>
               <span>Privépatio</span>
             </div>
-            <div class="apt-card-price">Vanaf €150 / nacht</div>
+            <div class="apt-card-price">Vanaf €171 / nacht <span class="discount-badge">5% korting</span></div>
             <div class="apt-card-select"></div>
           </div>
         </div>
@@ -718,7 +810,7 @@
             <div class="apt-card-meta">
               <span>4 gasten</span>
               <span>2 slaapkamers</span>
-              <span>Privébalkon</span>
+              <span>200m strand</span>
             </div>
             <div class="apt-card-price">Vanaf €95 / nacht</div>
             <div class="apt-card-select"></div>
@@ -754,7 +846,7 @@
       </div>
 
       <div class="info-notice">
-        ℹ️ Minimaal verblijf: <strong>3 nachten</strong>. De beschikbaarheid wordt gesynchroniseerd met Airbnb en Micazu.
+        ℹ️ Minimaal verblijf: <strong>3 nachten</strong>. Beschikbaarheid gesynchroniseerd met Airbnb. Boek direct bij Kevin & Sophie voor <strong>5% korting</strong> t.o.v. Airbnb.
       </div>
 
       <div class="btn-row">
@@ -823,50 +915,46 @@
       <div class="form-grid">
         <div class="form-group">
           <label>Voornaam <span class="req">*</span></label>
-          <input type="text" id="firstName" placeholder="Jan" required>
+          <input type="text" id="firstName" placeholder="Jan" autocomplete="given-name" required>
         </div>
         <div class="form-group">
           <label>Achternaam <span class="req">*</span></label>
-          <input type="text" id="lastName" placeholder="de Vries" required>
-        </div>
-        <div class="form-group">
-          <label>E-mailadres <span class="req">*</span></label>
-          <input type="email" id="email" placeholder="jan@email.nl" required>
-        </div>
-        <div class="form-group">
-          <label>Telefoonnummer <span class="req">*</span></label>
-          <input type="tel" id="phone" placeholder="+31 6 12345678" required>
-        </div>
-        <div class="form-group">
-          <label>Nationaliteit <span class="req">*</span></label>
-          <select id="nationality">
-            <option value="">Selecteer land</option>
-            <option value="NL" selected>Nederland</option>
-            <option value="BE">België</option>
-            <option value="DE">Duitsland</option>
-            <option value="GB">Groot-Brittannië</option>
-            <option value="FR">Frankrijk</option>
-            <option value="ES">Spanje</option>
-            <option value="OTHER">Anders</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Aantal nachten</label>
-          <input type="text" id="nightsDisplay" readonly style="background:var(--paper-dark);cursor:default;">
+          <input type="text" id="lastName" placeholder="Jansen" autocomplete="family-name" required>
         </div>
         <div class="form-group span2">
-          <label>Bijzonderheden / vragen</label>
-          <textarea id="remarks" placeholder="Bijv. aankomsttijd, dieetwensen, vragen..."></textarea>
+          <label>E-mailadres <span class="req">*</span></label>
+          <input type="email" id="email" placeholder="jan@email.com" autocomplete="email" required>
         </div>
+        <div class="form-group span2">
+          <label>Telefoonnummer <span class="req">*</span></label>
+          <input type="tel" id="phone" placeholder="+31 6 12345678" autocomplete="tel" required>
+        </div>
+        <div class="form-group span2">
+          <label>Nationaliteit</label>
+          <select id="nationality" autocomplete="country">
+            <option value="NL">🇳🇱 Nederland</option>
+            <option value="BE">🇧🇪 België</option>
+            <option value="DE">🇩🇪 Duitsland</option>
+            <option value="FR">🇫🇷 Frankrijk</option>
+            <option value="GB">🇬🇧 Verenigd Koninkrijk</option>
+            <option value="ES">🇪🇸 Spanje</option>
+            <option value="OTHER">Andere</option>
+          </select>
+        </div>
+        <div class="form-group span2">
+          <label>Opmerkingen / vragen</label>
+          <textarea id="remarks" placeholder="Bijv. aankomsttijd, speciale wensen..."></textarea>
+        </div>
+      </div>
+
+      <div class="form-group" style="margin-bottom:16px;">
+        <label>Aantal nachten</label>
+        <input type="text" id="nightsDisplay" readonly style="background:var(--paper-dark);cursor:default;">
       </div>
 
       <div class="checkbox-row">
         <input type="checkbox" id="agreeTerms">
-        <label for="agreeTerms">Ik ga akkoord met de <a href="#">algemene voorwaarden</a> en het <a href="#">annuleringsbeleid</a>.</label>
-      </div>
-      <div class="checkbox-row">
-        <input type="checkbox" id="agreeNewsletter">
-        <label for="agreeNewsletter">Ontvang inspiratie en aanbiedingen van Hada Homes per e-mail.</label>
+        <label for="agreeTerms">Ik ga akkoord met de <a href="/voorwaarden" target="_blank">algemene voorwaarden</a> en het <a href="/privacy" target="_blank">privacybeleid</a> van Hada Homes.</label>
       </div>
 
       <div class="btn-row">
@@ -877,15 +965,15 @@
 
     <!-- ── STEP 4: Bevestiging ── -->
     <div class="step-panel" id="step4">
-      <h2 class="step-title">Controleer je boeking</h2>
-      <p class="step-subtitle">Controleer alle gegevens voordat je de aanvraag verstuurt.</p>
+      <h2 class="step-title">Bevestig je boeking</h2>
+      <p class="step-subtitle">Controleer je gegevens en verstuur de aanvraag.</p>
 
       <div class="confirm-box">
         <div class="confirm-section-title">Verblijf</div>
         <div class="confirm-row"><span class="key">Appartement</span><span class="val" id="confApt">—</span></div>
         <div class="confirm-row"><span class="key">Aankomst</span><span class="val" id="confCheckin">—</span></div>
         <div class="confirm-row"><span class="key">Vertrek</span><span class="val" id="confCheckout">—</span></div>
-        <div class="confirm-row"><span class="key">Aantal nachten</span><span class="val" id="confNights">—</span></div>
+        <div class="confirm-row"><span class="key">Duur</span><span class="val" id="confNights">—</span></div>
         <div class="confirm-row"><span class="key">Gasten</span><span class="val" id="confGuests">—</span></div>
       </div>
 
@@ -895,12 +983,13 @@
         <div class="confirm-row"><span class="key">E-mail</span><span class="val" id="confEmail">—</span></div>
         <div class="confirm-row"><span class="key">Telefoon</span><span class="val" id="confPhone">—</span></div>
         <div class="confirm-row"><span class="key">Nationaliteit</span><span class="val" id="confNat">—</span></div>
-        <div class="confirm-row" id="confRemarksRow"><span class="key">Opmerkingen</span><span class="val" id="confRemarks">—</span></div>
+        <div class="confirm-row"><span class="key">Opmerkingen</span><span class="val" id="confRemarks">—</span></div>
       </div>
 
       <div class="confirm-box">
         <div class="confirm-section-title">Prijsoverzicht</div>
         <div class="confirm-row"><span class="key" id="confPriceLabel">Huurprijs</span><span class="val" id="confPriceBase">—</span></div>
+        <div class="confirm-row" id="confDiscountRow" style="display:none;"><span class="key" style="color:var(--green);" id="confDiscountLabel">Korting</span><span class="val" style="color:var(--green);" id="confDiscount">—</span></div>
         <div class="confirm-row"><span class="key">Schoonmaakkosten</span><span class="val" id="confCleaning">—</span></div>
         <div class="confirm-row" style="font-weight:700;font-size:16px;padding-top:12px;">
           <span>Totaal</span><span id="confTotal">—</span>
@@ -911,7 +1000,7 @@
       </div>
 
       <div class="info-notice">
-        📋 <strong>Hoe werkt het?</strong> Na het versturen van je aanvraag nemen Kevin & Sophie binnen 24 uur contact met je op om de boeking te bevestigen. Je betaalt pas na bevestiging.
+        📋 <strong>Hoe werkt het?</strong> Na het versturen van je aanvraag nemen Kevin & Sophie binnen 24 uur contact met je op om de boeking te bevestigen. Je ontvangt een betalingslink voor de aanbetaling van 30%.
       </div>
 
       <div class="btn-row">
@@ -930,10 +1019,10 @@
         <p>Bedankt voor je boekingsaanvraag. Kevin & Sophie nemen binnen <strong>24 uur</strong> contact met je op via e-mail of WhatsApp om alles te bevestigen.</p>
         <div class="success-ref">
           Je referentienummer
-          <strong id="bookingRef">HH-2025-001</strong>
+          <strong id="bookingRef">HH-2026-001</strong>
         </div>
         <div>
-          <a href="/" class="btn-primary" style="text-decoration:none;display:inline-flex;">← Terug naar hada.homes</a>
+          <a href="/" class="btn-primary" style="text-decoration:none;display:inline-flex;align-items:center;">← Terug naar hada.homes</a>
         </div>
       </div>
     </div>
@@ -967,6 +1056,10 @@
           <div class="price-row">
             <span class="label" id="priceLabel">Huurprijs</span>
             <span id="priceBase">—</span>
+          </div>
+          <div class="price-row discount-row" id="discountRow" style="display:none;">
+            <span class="label" id="discountLabel">Korting</span>
+            <span id="priceDiscount">—</span>
           </div>
           <div class="price-row">
             <span class="label">Schoonmaakkosten</span>
@@ -1004,7 +1097,9 @@
 </div><!-- end booking-wrap -->
 
 <script>
-// ── DATA ──
+// ── PRICING DATA ──
+// Airbnb prices with 5% direct booking discount applied
+// Season: low=Oct-Apr, mid=May+Jun+Sep, high=Jul+Aug
 const APARTMENTS = {
   augusta: {
     name: 'Augusta Hada',
@@ -1013,13 +1108,48 @@ const APARTMENTS = {
     bedrooms: '2 slpk + slaapbank',
     img: '/assets/img/augusta-card.jpg',
     cleaning: 100,
+    // Airbnb prices × 0.95 (5% direct booking discount), rounded
     pricing: {
-      low: 150,    // Oct–May
-      high: 220,   // Jun–Sep
+      // month index (0=Jan) → nightly rate after 5% discount
+      monthly: {
+        0:  143,  // Jan  (low)
+        1:  143,  // Feb  (low)
+        2:  143,  // Mrt  (low)
+        3:  143,  // Apr  (low)
+        4:  171,  // Mei  (180 × 0.95)
+        5:  214,  // Jun  (225 × 0.95)
+        6:  285,  // Jul  (300 × 0.95)
+        7:  333,  // Aug  (350 × 0.95)
+        8:  214,  // Sep  (225 × 0.95)
+        9:  143,  // Okt  (low)
+        10: 143,  // Nov  (low)
+        11: 143,  // Dec  (low)
+      },
+      // Airbnb base rates for reference (used to show "vs Airbnb" if needed)
+      airbnb: {
+        0:150, 1:150, 2:150, 3:150, 4:180, 5:225, 6:300, 7:350, 8:225, 9:150, 10:150, 11:150
+      },
+      weekDiscount: 0.05,   // 5% for 7+ nights
+      monthDiscount: 0.20,  // 20% for 28+ nights
     },
+    // Blocked dates from Airbnb iCal (auto-fetched, last updated: 2026-04-08)
     blocked: [
-      // Format: 'YYYY-MM-DD'
-      // Add real blocked dates here from Airbnb iCal
+      '2026-04-06','2026-04-07','2026-04-08','2026-04-09','2026-04-10',
+      '2026-04-11','2026-04-12','2026-04-13','2026-04-14',
+      '2026-05-10','2026-05-11','2026-05-12','2026-05-13','2026-05-14','2026-05-15','2026-05-16',
+      '2026-06-29','2026-06-30',
+      '2026-07-01','2026-07-02','2026-07-03','2026-07-04','2026-07-05','2026-07-06','2026-07-07',
+      '2026-07-08','2026-07-09','2026-07-10','2026-07-11','2026-07-12','2026-07-13','2026-07-14',
+      '2026-07-15','2026-07-16','2026-07-17','2026-07-18','2026-07-19','2026-07-20','2026-07-21',
+      '2026-07-22','2026-07-23','2026-07-24','2026-07-25','2026-07-26','2026-07-27','2026-07-28',
+      '2026-07-29','2026-07-30',
+      '2026-08-09','2026-08-10','2026-08-11','2026-08-12','2026-08-13','2026-08-14','2026-08-15',
+      '2026-08-16','2026-08-17','2026-08-18','2026-08-19','2026-08-20','2026-08-21',
+      '2027-01-30','2027-01-31',
+      '2027-02-01','2027-02-02','2027-02-03','2027-02-04','2027-02-05','2027-02-06','2027-02-07',
+      '2027-02-08','2027-02-09','2027-02-10','2027-02-11','2027-02-12','2027-02-13','2027-02-14',
+      '2027-02-15','2027-02-16','2027-02-17','2027-02-18','2027-02-19','2027-02-20','2027-02-21',
+      '2027-02-22','2027-02-23','2027-02-24','2027-02-25','2027-02-26'
     ]
   },
   arenal: {
@@ -1030,8 +1160,14 @@ const APARTMENTS = {
     img: '/assets/img/arenal-card.jpg',
     cleaning: 75,
     pricing: {
-      low: 95,
-      high: 140,
+      monthly: {
+        0:95, 1:95, 2:95, 3:95, 4:95, 5:115, 6:140, 7:140, 8:115, 9:95, 10:95, 11:95
+      },
+      airbnb: {
+        0:95, 1:95, 2:95, 3:95, 4:95, 5:115, 6:140, 7:140, 8:115, 9:95, 10:95, 11:95
+      },
+      weekDiscount: 0.05,
+      monthDiscount: 0.20,
     },
     blocked: []
   }
@@ -1047,7 +1183,7 @@ let state = {
   babies: 0,
   calYear: new Date().getFullYear(),
   calMonth: new Date().getMonth(),
-  selecting: 'checkin', // 'checkin' or 'checkout'
+  selecting: 'checkin',
 };
 
 // ── APARTMENT SELECTION ──
@@ -1075,20 +1211,16 @@ function renderCalendar() {
 
   title.textContent = MONTHS[state.calMonth] + ' ' + state.calYear;
 
-  // Day labels
   let html = DAYS.map(d => `<div class="cal-day-label">${d}</div>`).join('');
 
-  // First day of month (Monday = 0)
   const firstDay = new Date(state.calYear, state.calMonth, 1);
   let startOffset = firstDay.getDay() - 1;
   if (startOffset < 0) startOffset = 6;
 
-  // Empty cells
   for (let i = 0; i < startOffset; i++) {
     html += `<div class="cal-day empty"></div>`;
   }
 
-  // Days in month
   const daysInMonth = new Date(state.calYear, state.calMonth + 1, 0).getDate();
 
   for (let d = 1; d <= daysInMonth; d++) {
@@ -1130,30 +1262,24 @@ function selectDate(dateStr) {
   const apt = APARTMENTS[state.apt];
 
   if (!state.checkin || state.selecting === 'checkin' || (state.checkin && state.checkout)) {
-    // Start new selection
     state.checkin = dateStr;
     state.checkout = null;
     state.selecting = 'checkout';
     document.getElementById('boxCheckin').classList.add('active-input');
-    document.getElementById('boxCheckout').classList.remove('active-input');
     document.getElementById('boxCheckout').classList.add('active-input');
     document.getElementById('boxCheckin').classList.remove('active-input');
   } else {
-    // Set checkout
     const ci = new Date(state.checkin);
     if (date <= ci) {
-      // Clicked before checkin — restart
       state.checkin = dateStr;
       state.checkout = null;
       state.selecting = 'checkout';
     } else {
-      // Check minimum 3 nights
       const nights = Math.round((date - ci) / (1000*60*60*24));
       if (nights < 3) {
         alert('Minimaal verblijf is 3 nachten.');
         return;
       }
-      // Check no blocked dates in range
       let hasBlocked = false;
       for (let d = new Date(ci); d < date; d.setDate(d.getDate()+1)) {
         if (apt.blocked.includes(formatDate(d))) { hasBlocked = true; break; }
@@ -1215,7 +1341,6 @@ function nextMonth() {
 // ── GUESTS ──
 function changeGuests(type, delta) {
   const apt = APARTMENTS[state.apt];
-  const total = state.adults + state.children;
 
   if (type === 'adults') {
     const newVal = state.adults + delta;
@@ -1237,7 +1362,6 @@ function changeGuests(type, delta) {
   document.getElementById('childrenVal').textContent = state.children;
   document.getElementById('babiesVal').textContent = state.babies;
 
-  // Update button states
   const apt2 = APARTMENTS[state.apt];
   document.getElementById('adultsMinus').disabled = state.adults <= 1;
   document.getElementById('adultsPlus').disabled = (state.adults + state.children) >= apt2.maxGuests;
@@ -1245,7 +1369,6 @@ function changeGuests(type, delta) {
   document.getElementById('childrenPlus').disabled = (state.adults + state.children) >= apt2.maxGuests;
   document.getElementById('babiesMinus').disabled = state.babies <= 0;
 
-  // Warning
   const warn = document.getElementById('guestWarning');
   document.getElementById('maxGuestsText').textContent = apt2.maxGuests;
   warn.style.display = (state.adults + state.children > apt2.maxGuests) ? 'block' : 'none';
@@ -1254,6 +1377,7 @@ function changeGuests(type, delta) {
 }
 
 // ── PRICE CALCULATION ──
+// Supports per-month rates + week/month discounts
 function calcPrice() {
   if (!state.checkin || !state.checkout) return null;
   const apt = APARTMENTS[state.apt];
@@ -1261,16 +1385,47 @@ function calcPrice() {
   const co = new Date(state.checkout);
   const nights = Math.round((co - ci) / (1000*60*60*24));
 
-  // Determine season (high = Jun–Sep)
-  const month = ci.getMonth(); // 0-indexed
-  const isHigh = month >= 5 && month <= 8;
-  const ratePerNight = isHigh ? apt.pricing.high : apt.pricing.low;
-  const base = ratePerNight * nights;
+  // Calculate weighted average nightly rate (different months may have different rates)
+  let totalBase = 0;
+  let d = new Date(ci);
+  for (let i = 0; i < nights; i++) {
+    const month = d.getMonth();
+    totalBase += apt.pricing.monthly[month];
+    d.setDate(d.getDate() + 1);
+  }
+
+  // Apply length-of-stay discount
+  let discountPct = 0;
+  let discountLabel = '';
+  if (nights >= 28) {
+    discountPct = apt.pricing.monthDiscount;
+    discountLabel = `Maandkorting (${Math.round(discountPct*100)}%)`;
+  } else if (nights >= 7) {
+    discountPct = apt.pricing.weekDiscount;
+    discountLabel = `Weekkorting (${Math.round(discountPct*100)}%)`;
+  }
+
+  const discountAmt = discountPct > 0 ? Math.round(totalBase * discountPct) : 0;
+  const baseAfterDiscount = totalBase - discountAmt;
   const cleaning = apt.cleaning;
-  const total = base + cleaning;
+  const total = baseAfterDiscount + cleaning;
   const deposit = Math.round(total * 0.3);
 
-  return { nights, ratePerNight, base, cleaning, total, deposit };
+  // Avg nightly rate for display
+  const avgRate = Math.round(totalBase / nights);
+
+  return {
+    nights,
+    avgRate,
+    totalBase,
+    discountPct,
+    discountAmt,
+    discountLabel,
+    baseAfterDiscount,
+    cleaning,
+    total,
+    deposit
+  };
 }
 
 // ── SIDEBAR UPDATE ──
@@ -1293,20 +1448,37 @@ function updateSidebar() {
     document.getElementById('sidebarCheckout').textContent = formatDisplayDate(state.checkout);
     document.getElementById('sidebarNights').textContent = price.nights + ' nachten';
 
-    document.getElementById('priceLabel').textContent = `${price.nights} × €${price.ratePerNight}/nacht`;
-    document.getElementById('priceBase').textContent = `€${price.base}`;
+    document.getElementById('priceLabel').textContent = `${price.nights} × €${price.avgRate}/nacht`;
+    document.getElementById('priceBase').textContent = `€${price.totalBase}`;
+
+    // Show discount row if applicable
+    const discRow = document.getElementById('discountRow');
+    if (price.discountAmt > 0) {
+      discRow.style.display = 'flex';
+      document.getElementById('discountLabel').textContent = price.discountLabel;
+      document.getElementById('priceDiscount').textContent = `−€${price.discountAmt}`;
+    } else {
+      discRow.style.display = 'none';
+    }
+
     document.getElementById('priceCleaning').textContent = `€${price.cleaning}`;
     document.getElementById('priceTotal').textContent = `€${price.total}`;
     document.getElementById('priceDeposit').textContent = `€${price.deposit}`;
+
+    // Update mobile sticky bar
+    const bar = document.getElementById('mobilePriceBar');
+    bar.style.display = 'flex';
+    document.getElementById('mobilePriceTotal').textContent = `€${price.total}`;
+    document.getElementById('mobilePriceSub').textContent = `${price.nights} nachten · incl. schoonmaak`;
   } else {
     document.getElementById('sidebarDatesBlock').style.display = 'none';
     document.getElementById('priceBreakdown').style.display = 'none';
+    document.getElementById('mobilePriceBar').style.display = 'none';
   }
 }
 
 // ── STEP NAVIGATION ──
 function goStep(n) {
-  // Validate step 3
   if (n === 4) {
     const fn = document.getElementById('firstName').value.trim();
     const ln = document.getElementById('lastName').value.trim();
@@ -1318,17 +1490,14 @@ function goStep(n) {
     fillConfirmation();
   }
 
-  // Update nights display in step 3
   if (n === 3 && state.checkin && state.checkout) {
     const price = calcPrice();
     document.getElementById('nightsDisplay').value = price.nights + ' nachten';
   }
 
-  // Hide all panels
   document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
   document.getElementById('step' + n).classList.add('active');
 
-  // Update progress
   for (let i = 1; i <= 4; i++) {
     const prog = document.getElementById('prog' + i);
     const line = document.getElementById('line' + i);
@@ -1355,8 +1524,12 @@ function fillConfirmation() {
   document.getElementById('confCheckin').textContent = formatDisplayDate(state.checkin);
   document.getElementById('confCheckout').textContent = formatDisplayDate(state.checkout);
   document.getElementById('confNights').textContent = price.nights + ' nachten';
-  document.getElementById('confGuests').textContent = state.adults + ' volwassenen' + (state.children > 0 ? ', ' + state.children + ' kinderen' : '') + (state.babies > 0 ? ', ' + state.babies + ' baby\'s' : '');
-  document.getElementById('confName').textContent = document.getElementById('firstName').value + ' ' + document.getElementById('lastName').value;
+  document.getElementById('confGuests').textContent =
+    state.adults + ' volwassenen' +
+    (state.children > 0 ? ', ' + state.children + ' kinderen' : '') +
+    (state.babies > 0 ? ', ' + state.babies + ' baby\'s' : '');
+  document.getElementById('confName').textContent =
+    document.getElementById('firstName').value + ' ' + document.getElementById('lastName').value;
   document.getElementById('confEmail').textContent = document.getElementById('email').value;
   document.getElementById('confPhone').textContent = document.getElementById('phone').value;
   document.getElementById('confNat').textContent = natText;
@@ -1364,8 +1537,18 @@ function fillConfirmation() {
   const remarks = document.getElementById('remarks').value.trim();
   document.getElementById('confRemarks').textContent = remarks || '—';
 
-  document.getElementById('confPriceLabel').textContent = `${price.nights} × €${price.ratePerNight}/nacht`;
-  document.getElementById('confPriceBase').textContent = `€${price.base}`;
+  document.getElementById('confPriceLabel').textContent = `${price.nights} × €${price.avgRate}/nacht`;
+  document.getElementById('confPriceBase').textContent = `€${price.totalBase}`;
+
+  const confDiscRow = document.getElementById('confDiscountRow');
+  if (price.discountAmt > 0) {
+    confDiscRow.style.display = 'flex';
+    document.getElementById('confDiscountLabel').textContent = price.discountLabel;
+    document.getElementById('confDiscount').textContent = `−€${price.discountAmt}`;
+  } else {
+    confDiscRow.style.display = 'none';
+  }
+
   document.getElementById('confCleaning').textContent = `€${price.cleaning}`;
   document.getElementById('confTotal').textContent = `€${price.total}`;
   document.getElementById('confDeposit').textContent = `€${price.deposit}`;
@@ -1381,45 +1564,50 @@ function submitBooking() {
   const price = calcPrice();
   const ref = 'HH-' + new Date().getFullYear() + '-' + Math.floor(Math.random() * 9000 + 1000);
 
-  // Build WhatsApp message as fallback
-  const msg = encodeURIComponent(
-    `Nieuwe boekingsaanvraag Hada Homes\n\n` +
+  const guestName = document.getElementById('firstName').value + ' ' + document.getElementById('lastName').value;
+  const guestEmail = document.getElementById('email').value;
+  const guestPhone = document.getElementById('phone').value;
+  const remarks = document.getElementById('remarks').value;
+
+  // Build WhatsApp message
+  const waMsg = encodeURIComponent(
+    `🏡 Nieuwe boekingsaanvraag Hada Homes\n\n` +
     `Ref: ${ref}\n` +
     `Appartement: ${apt.name}\n` +
     `Aankomst: ${formatDisplayDate(state.checkin)}\n` +
     `Vertrek: ${formatDisplayDate(state.checkout)}\n` +
     `Nachten: ${price.nights}\n` +
     `Gasten: ${state.adults + state.children}\n` +
-    `Naam: ${document.getElementById('firstName').value} ${document.getElementById('lastName').value}\n` +
-    `Email: ${document.getElementById('email').value}\n` +
-    `Tel: ${document.getElementById('phone').value}\n` +
-    `Totaal: €${price.total}`
+    `Naam: ${guestName}\n` +
+    `Email: ${guestEmail}\n` +
+    `Tel: ${guestPhone}\n` +
+    (price.discountAmt > 0 ? `Korting: −€${price.discountAmt} (${price.discountLabel})\n` : '') +
+    `Totaal: €${price.total}\n` +
+    `Aanbetaling: €${price.deposit}` +
+    (remarks ? `\n\nOpmerkingen: ${remarks}` : '')
   );
 
-  // Send via fetch to backend (if available), else fallback to WhatsApp
-  fetch('/api/booking', {
+  // Try Formspree or backend, fallback to WhatsApp
+  fetch('https://formspree.io/f/hadahomes', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
     body: JSON.stringify({
-      ref, apt: state.apt, aptName: apt.name,
+      ref, apartment: apt.name,
       checkin: state.checkin, checkout: state.checkout,
-      nights: price.nights, total: price.total,
+      nights: price.nights, total: price.total, deposit: price.deposit,
       adults: state.adults, children: state.children,
-      firstName: document.getElementById('firstName').value,
-      lastName: document.getElementById('lastName').value,
-      email: document.getElementById('email').value,
-      phone: document.getElementById('phone').value,
-      remarks: document.getElementById('remarks').value
+      name: guestName, email: guestEmail, phone: guestPhone,
+      remarks
     })
   })
   .then(r => r.ok ? r.json() : Promise.reject())
   .then(() => showSuccess(ref))
   .catch(() => {
-    // Fallback: open WhatsApp
+    // Fallback: show success + open WhatsApp
     showSuccess(ref);
     setTimeout(() => {
-      window.open(`https://wa.me/31612345678?text=${msg}`, '_blank');
-    }, 1000);
+      window.open(`https://wa.me/31612345678?text=${waMsg}`, '_blank');
+    }, 800);
   });
 }
 
@@ -1427,8 +1615,8 @@ function showSuccess(ref) {
   document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
   document.getElementById('step5').classList.add('active');
   document.getElementById('bookingRef').textContent = ref;
+  document.getElementById('mobilePriceBar').style.display = 'none';
 
-  // Mark all steps done
   for (let i = 1; i <= 4; i++) {
     const prog = document.getElementById('prog' + i);
     prog.classList.remove('active');
