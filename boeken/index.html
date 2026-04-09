@@ -1588,11 +1588,11 @@ function submitBooking() {
   );
 
   // Try Formspree or backend, fallback to WhatsApp
-  fetch('https://formspree.io/f/hadahomes', {
+  fetch('/api/booking', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      ref, apartment: apt.name,
+      ref, apartment: state.apt, aptName: apt.name,
       checkin: state.checkin, checkout: state.checkout,
       nights: price.nights, total: price.total, deposit: price.deposit,
       adults: state.adults, children: state.children,
@@ -1606,7 +1606,7 @@ function submitBooking() {
     // Fallback: show success + open WhatsApp
     showSuccess(ref);
     setTimeout(() => {
-      window.open(`https://wa.me/31612345678?text=${waMsg}`, '_blank');
+      window.open(`https://wa.me/31645182246?text=${waMsg}`, '_blank');
     }, 800);
   });
 }
