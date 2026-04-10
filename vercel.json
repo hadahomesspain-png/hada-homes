@@ -14,6 +14,30 @@
       "use": "@vercel/static"
     }
   ],
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "hada-homes.com"
+        }
+      ],
+      "destination": "https://hada.homes/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.hada-homes.com"
+        }
+      ],
+      "destination": "https://hada.homes/$1",
+      "permanent": true
+    }
+  ],
   "routes": [
     {
       "src": "/api/(.*)",
