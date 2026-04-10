@@ -23,9 +23,5 @@
       "src": "/(.*)",
       "dest": "/$1"
     }
-  ],
-  "env": {
-    "GMAIL_USER": "@gmail_user",
-    "GMAIL_APP_PASS": "@gmail_app_pass"
-  }
+  ]
 }
