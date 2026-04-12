@@ -74,10 +74,22 @@ p{color:var(--ink-soft);font-size:14px;line-height:1.85;font-weight:300}
 .navbar.solid .nav-cta{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .nav-cta:hover{background:rgba(255,255,255,.2)}
 .navbar.solid .nav-cta:hover{background:var(--ink-mid)}
-.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
-.nav-hamburger span{width:22px;height:1px;background:currentColor;display:block}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;-webkit-tap-highlight-color:transparent;min-width:44px;min-height:44px;align-items:center;justify-content:center}
+.nav-hamburger span{width:22px;height:1.5px;background:currentColor;display:block;transition:all .25s}
 .nav-hamburger{color:rgba(255,255,255,.8)}
 .navbar.solid .nav-hamburger{color:var(--ink)}
+.nav-hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+/* NAV BOOK BTN */
+.nav-book-btn{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:9px 18px;border-radius:1px;background:var(--terra);color:#fff;transition:all .18s;white-space:nowrap}
+.nav-book-btn:hover{background:#9e5630}
+@media(max-width:767px){.nav-book-btn{display:none}}
+/* MOBILE MENU OVERLAY */
+.nav-mobile-overlay{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(250,248,243,.98);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);padding:16px 24px 24px;z-index:999;flex-direction:column}
+.nav-mobile-overlay.open{display:flex}
+.nav-mobile-overlay a{font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;padding:13px 0;border-bottom:1px solid var(--border);transition:color .2s;-webkit-tap-highlight-color:transparent;display:block}
+.nav-mobile-overlay a:last-child{border-bottom:none;margin-top:10px;background:var(--terra);color:#fff!important;padding:13px 20px;text-align:center;font-weight:600;letter-spacing:.1em;border-radius:1px}
 
 /* HERO */
 .hero{position:relative;height:100vh;min-height:640px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
@@ -334,10 +346,19 @@ p{color:var(--ink-soft);font-size:14px;line-height:1.85;font-weight:300}
         <button class="lang-btn" onclick="setLang('es')">ES</button>
       </div>
       <a class="nav-cta" href="#contact" data-i18n="nav.cta">Contact</a>
-      <div class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+      <a class="nav-book-btn" href="/boeken/">Boek direct</a>
+      <button class="nav-hamburger" id="navHamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
-<a href="/boeken/" style="background:#b5673a;color:white;padding:10px 20px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border-radius:2px;font-family:Inter,sans-serif;font-weight:600;margin-left:12px;">Boek direct</a></nav>
+</nav>
+<div class="nav-mobile-overlay" id="navMobileOverlay">
+  <a href="#appartementen" onclick="closeMenu()">Appartementen</a>
+  <a href="#javea" onclick="closeMenu()">Jávea</a>
+  <a href="investering.html" onclick="closeMenu()">Investering</a>
+  <a href="blog.html" onclick="closeMenu()">Journal</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+  <a href="/boeken/">Boek direct</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -900,7 +921,7 @@ window.addEventListener('scroll', function(){
   var nb = document.getElementById('navbar');
   nb.classList.toggle('solid', window.scrollY > 60);
   var mc = document.getElementById('mobileCta');
-  if(mc) mc.style.display = window.scrollY > 500 ? 'flex' : 'none';
+  if(mc) mc.style.display = window.scrollY > 200 ? 'flex' : 'none';
   var bg = document.getElementById('heroBg');
   if(bg) bg.style.transform = 'translateY(' + window.scrollY * 0.2 + 'px)';
 });
@@ -917,10 +938,20 @@ function handleForm(e){
 
 // Mobile menu
 function toggleMenu(){
-  var links = document.querySelector('.nav-links');
-  if(!links) return;
-  var open = links.style.display === 'flex';
-  links.style.cssText = open ? '' : 'display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:rgba(250,248,243,.97);padding:20px 28px;border-bottom:1px solid rgba(24,24,15,.09);gap:16px;z-index:999';
+  var overlay = document.getElementById('navMobileOverlay');
+  var btn = document.getElementById('navHamburger');
+  if(!overlay) return;
+  var open = overlay.classList.contains('open');
+  overlay.classList.toggle('open', !open);
+  btn.classList.toggle('open', !open);
+  document.body.style.overflow = open ? '' : 'hidden';
+}
+function closeMenu(){
+  var overlay = document.getElementById('navMobileOverlay');
+  var btn = document.getElementById('navHamburger');
+  if(overlay) overlay.classList.remove('open');
+  if(btn) btn.classList.remove('open');
+  document.body.style.overflow = '';
 }
 </script>
 <script src="/assets/js/exit-intent.js" defer></script>
