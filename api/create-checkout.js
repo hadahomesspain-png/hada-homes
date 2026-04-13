@@ -2,9 +2,12 @@
 // POST /api/create-checkout
 // Body: { apartment, checkIn, checkOut, nights, guests, totalPrice, depositAmount, name, email, phone }
 
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
+  timeout: 20000,
+  maxNetworkRetries: 1,
+});
 
-module.exports = async function handler(req, res) {
+async function handler(req, res) {
   // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -109,4 +112,7 @@ module.exports = async function handler(req, res) {
       keyPrefix: process.env.STRIPE_SECRET_KEY ? process.env.STRIPE_SECRET_KEY.substring(0,10) : 'missing'
     });
   }
-};
+}
+
+module.exports = handler;
+module.exports.config = { maxDuration: 30 };

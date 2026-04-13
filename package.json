@@ -4,6 +4,6 @@
   "description": "Hada Homes vacation rental website",
   "dependencies": {
     "nodemailer": "^6.9.9",
-    "stripe": "^14.21.0"
+    "stripe": "^14.25.0"
   }
 }
