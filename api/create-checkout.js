@@ -1,11 +1,8 @@
 // Vercel Serverless Function: Create Stripe Checkout Session
 // POST /api/create-checkout
-// Body: { apartment, checkIn, checkOut, nights, guests, totalPrice, depositAmount, name, email, phone }
+// Body: { apartment, aptName, checkIn, checkOut, nights, guests, totalPrice, depositAmount, name, email, phone, remarks, ref }
 
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
-  timeout: 20000,
-  maxNetworkRetries: 1,
-});
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 async function handler(req, res) {
   // CORS headers
@@ -24,6 +21,7 @@ async function handler(req, res) {
   try {
     const {
       apartment,
+      aptName,
       checkIn,
       checkOut,
       nights,
@@ -33,25 +31,28 @@ async function handler(req, res) {
       name,
       email,
       phone,
-      message
+      remarks,
+      ref
     } = req.body;
 
     if (!apartment || !checkIn || !checkOut || !totalPrice || !depositAmount || !email) {
       return res.status(400).json({ error: 'Verplichte velden ontbreken' });
     }
 
-    // Format dates nicely
+    // Format dates nicely in Dutch
     const formatDate = (d) => {
-      const date = new Date(d);
-      return date.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
+      const [y, m, day] = d.split('-');
+      const months = ['jan','feb','mrt','apr','mei','jun','jul','aug','sep','okt','nov','dec'];
+      return `${parseInt(day)} ${months[parseInt(m)-1]} ${y}`;
     };
 
     const depositCents = Math.round(depositAmount * 100);
-    const remainingAmount = totalPrice - depositAmount;
+    const remainingAmount = Math.round(totalPrice - depositAmount);
+    const bookingRef = ref || ('HH' + Date.now().toString(36).toUpperCase());
 
     // Create Stripe Checkout Session
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ['card'],
+      payment_method_types: ['card', 'ideal'],
       mode: 'payment',
       customer_email: email,
       line_items: [
@@ -59,9 +60,8 @@ async function handler(req, res) {
           price_data: {
             currency: 'eur',
             product_data: {
-              name: `Aanbetaling — ${apartment}`,
-              description: `Verblijf: ${formatDate(checkIn)} t/m ${formatDate(checkOut)} (${nights} nachten, ${guests} gast${guests > 1 ? 'en' : ''})`,
-              images: ['https://hada.homes/assets/img/augusta-pool.jpg'],
+              name: `Aanbetaling — ${aptName || apartment}`,
+              description: `Verblijf: ${formatDate(checkIn)} t/m ${formatDate(checkOut)} · ${nights} nachten · ${guests} gast${guests > 1 ? 'en' : ''} · Restbedrag €${remainingAmount} bij aankomst`,
             },
             unit_amount: depositCents,
           },
@@ -69,7 +69,9 @@ async function handler(req, res) {
         },
       ],
       metadata: {
+        ref: bookingRef,
         apartment,
+        aptName: aptName || apartment,
         checkIn,
         checkOut,
         nights: String(nights),
@@ -79,11 +81,13 @@ async function handler(req, res) {
         remainingAmount: String(remainingAmount),
         guestName: name || '',
         guestPhone: phone || '',
-        guestMessage: message || '',
+        guestRemarks: remarks || '',
       },
       payment_intent_data: {
         metadata: {
+          ref: bookingRef,
           apartment,
+          aptName: aptName || apartment,
           checkIn,
           checkOut,
           guestName: name || '',
@@ -94,7 +98,7 @@ async function handler(req, res) {
           remainingAmount: String(remainingAmount),
         },
       },
-      success_url: `https://hada.homes/boeken/success?session_id={CHECKOUT_SESSION_ID}&apt=${encodeURIComponent(apartment)}&in=${checkIn}&out=${checkOut}`,
+      success_url: `https://hada.homes/boeken/success/?session_id={CHECKOUT_SESSION_ID}&ref=${encodeURIComponent(bookingRef)}&apt=${encodeURIComponent(aptName || apartment)}&in=${checkIn}&out=${checkOut}`,
       cancel_url: `https://hada.homes/boeken/?cancelled=1`,
       locale: 'nl',
       expires_at: Math.floor(Date.now() / 1000) + 30 * 60, // 30 min
@@ -103,13 +107,11 @@ async function handler(req, res) {
     return res.status(200).json({ url: session.url, sessionId: session.id });
 
   } catch (err) {
-    console.error('Stripe error:', err);
-    return res.status(500).json({ 
+    console.error('Stripe checkout error:', err);
+    return res.status(500).json({
       error: err.message || 'Betaling kon niet worden aangemaakt',
       type: err.type,
       code: err.code,
-      hasKey: !!process.env.STRIPE_SECRET_KEY,
-      keyPrefix: process.env.STRIPE_SECRET_KEY ? process.env.STRIPE_SECRET_KEY.substring(0,10) : 'missing'
     });
   }
 }

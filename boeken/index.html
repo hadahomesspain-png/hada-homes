@@ -1563,6 +1563,7 @@ function submitBooking() {
   const guestEmail = document.getElementById('email').value.trim();
   const guestPhone = document.getElementById('phone').value.trim();
   const remarks = document.getElementById('remarks').value.trim();
+  const totalGuests = state.adults + state.children;
 
   if (!guestEmail) { alert('Vul je e-mailadres in.'); return; }
   if (!guestName.trim()) { alert('Vul je naam in.'); return; }
@@ -1571,6 +1572,8 @@ function submitBooking() {
   btn.textContent = 'Betaling voorbereiden...';
 
   const ref = 'HH' + Date.now().toString(36).toUpperCase();
+
+  // First send booking notification email (fire-and-forget)
   fetch('/api/booking', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -1583,14 +1586,40 @@ function submitBooking() {
     })
   }).catch(() => {});
 
-  // depositCents removed - now using depositEuros
-  // Nieuwe link: EUR 1.00 per unit, quantity = aanbetaling in euros (bijv. EUR 389 = 389 units)
-  const depositEuros = Math.round(price.deposit);
-  const STRIPE_BASE = 'https://buy.stripe.com/4gMaEZ3Yaf7d52K7bB8IU02';
-  const clientRef = encodeURIComponent(apt.name + ' | ' + state.checkin + ' t/m ' + state.checkout + ' | ' + guestName);
-  const stripeUrl = STRIPE_BASE + '?prefilled_email=' + encodeURIComponent(guestEmail) + '&quantity=' + depositEuros + '&client_reference_id=' + clientRef;
-
-  setTimeout(function() { window.location.href = stripeUrl; }, 300);
+  // Create Stripe Checkout Session via serverless function
+  fetch('/api/create-checkout', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      ref,
+      apartment: state.apt,
+      aptName: apt.name,
+      checkIn: state.checkin,
+      checkOut: state.checkout,
+      nights: price.nights,
+      guests: totalGuests,
+      totalPrice: price.total,
+      depositAmount: price.deposit,
+      name: guestName,
+      email: guestEmail,
+      phone: guestPhone,
+      remarks
+    })
+  })
+  .then(r => r.json())
+  .then(data => {
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      throw new Error(data.error || 'Geen checkout URL ontvangen');
+    }
+  })
+  .catch(err => {
+    console.error('Checkout fout:', err);
+    btn.disabled = false;
+    btn.textContent = '💳 Betaal aanbetaling (30%)';
+    alert('Er ging iets mis bij het aanmaken van de betaling. Probeer het opnieuw of neem contact op via WhatsApp.');
+  });
 }
 
 function showSuccess(ref) {
