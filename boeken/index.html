@@ -1661,6 +1661,26 @@ if (aptParam && APARTMENTS[aptParam]) {
   updateSidebar();
   renderCalendar();
 }
+
+// ── LIVE iCAL SYNC ──
+// Fetch live blocked dates from Airbnb iCal via /api/ical-sync
+// Falls back to hardcoded dates if API is unavailable
+(function fetchLiveBlockedDates() {
+  fetch('/api/ical-sync')
+    .then(r => r.ok ? r.json() : Promise.reject('API error'))
+    .then(data => {
+      if (data.ok && Array.isArray(data.blockedDates) && data.blockedDates.length > 0) {
+        // Update Augusta Hada blocked dates with live data
+        APARTMENTS.augusta.blocked = data.blockedDates;
+        // Re-render calendar to show updated blocked dates
+        renderCalendar();
+        console.log('[iCal] Bezette data bijgewerkt:', data.blockedDates.length, 'dagen geblokkeerd. Bijgewerkt:', data.updated);
+      }
+    })
+    .catch(err => {
+      console.warn('[iCal] Live sync niet beschikbaar, hardcoded data wordt gebruikt.', err);
+    });
+})();
 </script>
 
 </body>
