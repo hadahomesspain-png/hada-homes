@@ -1583,10 +1583,12 @@ function submitBooking() {
     })
   }).catch(() => {});
 
-  const depositCents = Math.round(price.deposit * 100);
-  const STRIPE_BASE = 'https://buy.stripe.com/aFa14pcuG5wD66OdzZ8IU01';
+  // depositCents removed - now using depositEuros
+  // Nieuwe link: EUR 1.00 per unit, quantity = aanbetaling in euros (bijv. EUR 389 = 389 units)
+  const depositEuros = Math.round(price.deposit);
+  const STRIPE_BASE = 'https://buy.stripe.com/4gMaEZ3Yaf7d52K7bB8IU02';
   const clientRef = encodeURIComponent(apt.name + ' | ' + state.checkin + ' t/m ' + state.checkout + ' | ' + guestName);
-  const stripeUrl = STRIPE_BASE + '?prefilled_email=' + encodeURIComponent(guestEmail) + '&quantity=' + depositCents + '&client_reference_id=' + clientRef;
+  const stripeUrl = STRIPE_BASE + '?prefilled_email=' + encodeURIComponent(guestEmail) + '&quantity=' + depositEuros + '&client_reference_id=' + clientRef;
 
   setTimeout(function() { window.location.href = stripeUrl; }, 300);
 }
