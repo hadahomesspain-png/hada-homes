@@ -1557,9 +1557,6 @@ function fillConfirmation() {
 // ── SUBMIT → STRIPE CHECKOUT ──
 function submitBooking() {
   const btn = document.getElementById('submitBtn');
-  btn.disabled = true;
-  btn.textContent = 'Betaling voorbereiden...';
-
   const apt = APARTMENTS[state.apt];
   const price = calcPrice();
   const guestName = (document.getElementById('firstName').value.trim() + ' ' + document.getElementById('lastName').value.trim()).trim();
@@ -1567,52 +1564,31 @@ function submitBooking() {
   const guestPhone = document.getElementById('phone').value.trim();
   const remarks = document.getElementById('remarks').value.trim();
 
-  if (!guestEmail) {
-    alert('Vul je e-mailadres in.');
-    btn.disabled = false;
-    btn.textContent = '💳 Betaal aanbetaling (30%)';
-    return;
-  }
+  if (!guestEmail) { alert('Vul je e-mailadres in.'); return; }
+  if (!guestName.trim()) { alert('Vul je naam in.'); return; }
 
-  // Call Stripe Checkout API
-  fetch('/api/create-checkout', {
+  btn.disabled = true;
+  btn.textContent = 'Betaling voorbereiden...';
+
+  const ref = 'HH' + Date.now().toString(36).toUpperCase();
+  fetch('/api/booking', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      apartment: apt.name,
-      checkIn: state.checkin,
-      checkOut: state.checkout,
-      nights: price.nights,
-      guests: state.adults + state.children,
-      totalPrice: price.total,
-      depositAmount: price.deposit,
-      name: guestName,
-      email: guestEmail,
-      phone: guestPhone,
-      message: remarks
+      ref, apartment: state.apt, aptName: apt.name,
+      checkin: state.checkin, checkout: state.checkout,
+      nights: price.nights, total: price.total, deposit: price.deposit,
+      adults: state.adults, children: state.children,
+      name: guestName, email: guestEmail, phone: guestPhone, remarks
     })
-  })
-  .then(r => r.json())
-  .then(data => {
-    if (data.url) {
-      window.location.href = data.url;
-    } else {
-      throw new Error(data.error || 'Geen betaallink ontvangen');
-    }
-  })
-  .catch(err => {
-    console.error('Stripe error:', err);
-    btn.disabled = false;
-    btn.textContent = '💳 Betaal aanbetaling (30%)';
-    // Fallback: WhatsApp
-    const waMsg = encodeURIComponent(
-      `🏡 Boekingsaanvraag Hada Homes\nAppartement: ${apt.name}\nAankomst: ${formatDisplayDate(state.checkin)}\nVertrek: ${formatDisplayDate(state.checkout)}\nNachten: ${price.nights}\nGasten: ${state.adults + state.children}\nNaam: ${guestName}\nEmail: ${guestEmail}\nTel: ${guestPhone}\nTotaal: €${price.total}\nAanbetaling: €${price.deposit}` +
-      (remarks ? `\nOpmerkingen: ${remarks}` : '')
-    );
-    if (confirm('Betaling tijdelijk niet beschikbaar. Wil je via WhatsApp boeken?')) {
-      window.open('https://wa.me/31645182246?text=' + waMsg, '_blank');
-    }
-  });
+  }).catch(() => {});
+
+  const depositCents = Math.round(price.deposit * 100);
+  const STRIPE_BASE = 'https://buy.stripe.com/aFa14pcuG5wD66OdzZ8IU01';
+  const clientRef = encodeURIComponent(apt.name + ' | ' + state.checkin + ' t/m ' + state.checkout + ' | ' + guestName);
+  const stripeUrl = STRIPE_BASE + '?prefilled_email=' + encodeURIComponent(guestEmail) + '&quantity=' + depositCents + '&client_reference_id=' + clientRef;
+
+  setTimeout(function() { window.location.href = stripeUrl; }, 300);
 }
 
 function showSuccess(ref) {
