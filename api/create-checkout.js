@@ -101,6 +101,12 @@ module.exports = async function handler(req, res) {
 
   } catch (err) {
     console.error('Stripe error:', err);
-    return res.status(500).json({ error: err.message || 'Betaling kon niet worden aangemaakt' });
+    return res.status(500).json({ 
+      error: err.message || 'Betaling kon niet worden aangemaakt',
+      type: err.type,
+      code: err.code,
+      hasKey: !!process.env.STRIPE_SECRET_KEY,
+      keyPrefix: process.env.STRIPE_SECRET_KEY ? process.env.STRIPE_SECRET_KEY.substring(0,10) : 'missing'
+    });
   }
 };
