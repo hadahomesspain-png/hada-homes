@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Algemene Voorwaarden — Hada Homes</title>
+<meta name="description" content="Algemene voorwaarden en annuleringsbeleid van Hada Homes, boutique appartementen in Jávea, Spanje.">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #18180f; --ink-mid: #38382a; --ink-soft: #6e6e5e; --ink-faint: #aeae9a;
+    --paper: #faf8f3; --paper-off: #f2efe8; --paper-deep: #e8e4da;
+    --accent: #b5673a; --border: rgba(24,24,15,.09); --border-md: rgba(24,24,15,.15);
+    --sh-sm: 0 2px 14px rgba(24,24,15,.07);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Montserrat', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  a { text-decoration: none; color: inherit; }
+
+  /* NAVBAR */
+  .navbar { position: sticky; top: 0; z-index: 1000; background: rgba(250,248,243,.97); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); box-shadow: var(--sh-sm); }
+  .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 48px; height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; letter-spacing: .05em; color: var(--ink); }
+  .nav-back { font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); display: flex; align-items: center; gap: 6px; }
+  .nav-back:hover { color: var(--ink); }
+
+  /* CONTENT */
+  .page-wrap { max-width: 760px; margin: 0 auto; padding: 64px 48px 96px; }
+  .page-eyebrow { font-size: 10px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 16px; }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 5vw, 56px); font-weight: 400; line-height: 1.06; margin-bottom: 12px; }
+  .page-intro { font-size: 15px; color: var(--ink-soft); line-height: 1.8; margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+
+  /* SECTIONS */
+  .section { margin-bottom: 48px; }
+  h2 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; margin-bottom: 16px; color: var(--ink); }
+  h3 { font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 10px; margin-top: 20px; }
+  p { font-size: 14px; color: var(--ink-soft); line-height: 1.85; font-weight: 300; margin-bottom: 12px; }
+  p:last-child { margin-bottom: 0; }
+  ul { margin: 10px 0 12px 20px; }
+  ul li { font-size: 14px; color: var(--ink-soft); line-height: 1.85; font-weight: 300; margin-bottom: 6px; }
+
+  /* POLICY TABLE */
+  .policy-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  .policy-table th { text-align: left; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); padding: 10px 16px; border-bottom: 1px solid var(--border-md); }
+  .policy-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--ink-soft); font-weight: 300; vertical-align: top; }
+  .policy-table tr:last-child td { border-bottom: none; }
+  .policy-table td:first-child { font-weight: 500; color: var(--ink); white-space: nowrap; }
+  .tag-red { display: inline-block; background: #fef2f2; color: #c0392b; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 2px; letter-spacing: .04em; }
+  .tag-orange { display: inline-block; background: #fff7ed; color: #b5673a; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 2px; letter-spacing: .04em; }
+  .tag-green { display: inline-block; background: #f0fdf4; color: #2d7a4f; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 2px; letter-spacing: .04em; }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box { background: var(--paper-off); border-left: 3px solid var(--accent); padding: 20px 24px; margin: 20px 0; border-radius: 0 4px 4px 0; }
+  .highlight-box p { margin: 0; font-size: 14px; }
+
+  /* CONTACT */
+  .contact-block { background: var(--paper-off); border: 1px solid var(--border); border-radius: 4px; padding: 28px 32px; margin-top: 48px; }
+  .contact-block h2 { margin-bottom: 8px; }
+  .contact-block p { margin-bottom: 16px; }
+  .contact-links { display: flex; gap: 16px; flex-wrap: wrap; }
+  .contact-link { font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 6px; }
+  .contact-link:hover { color: var(--ink); }
+
+  /* FOOTER */
+  .page-footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); font-size: 12px; color: var(--ink-faint); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+  @media (max-width: 767px) {
+    .nav-inner { padding: 0 20px; }
+    .page-wrap { padding: 40px 20px 64px; }
+    .policy-table { font-size: 13px; }
+    .policy-table th, .policy-table td { padding: 10px 12px; }
+    td:first-child { white-space: normal; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/">Hada Homes</a>
+    <a class="nav-back" href="/">← Terug naar home</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <p class="page-eyebrow">Juridisch</p>
+  <h1>Algemene Voorwaarden</h1>
+  <p class="page-intro">
+    Deze algemene voorwaarden zijn van toepassing op alle boekingen bij Hada Homes, gevestigd in Jávea (Xàbia), Comunitat Valenciana, Spanje. Door een boeking te plaatsen ga je akkoord met deze voorwaarden. Laatste update: april 2026.
+  </p>
+
+  <!-- 1. PARTIJEN -->
+  <div class="section">
+    <h2>1. Partijen</h2>
+    <p><strong>Verhuurder:</strong> Hada Homes, beheerd door Kevin & Sophie, bereikbaar via <a href="mailto:hadahomesspain@gmail.com" style="color:var(--accent)">hadahomesspain@gmail.com</a> of WhatsApp +31 6 45 18 22 46.</p>
+    <p><strong>Huurder:</strong> De persoon die de boeking plaatst en als hoofdgast verantwoordelijk is voor alle medegebruikers van het appartement.</p>
+  </div>
+
+  <!-- 2. BOEKING & BETALING -->
+  <div class="section">
+    <h2>2. Boeking & Betaling</h2>
+    <h3>Aanbetaling</h3>
+    <p>Bij het plaatsen van een directe boeking via hada.homes is een aanbetaling van <strong>30% van de totale verblijfkosten</strong> vereist. De boeking is pas definitief bevestigd na ontvangst van deze aanbetaling.</p>
+    <h3>Restbedrag</h3>
+    <p>Het resterende bedrag (70%) dient uiterlijk <strong>4 weken voor aankomst</strong> te zijn voldaan, tenzij anders schriftelijk overeengekomen. Bij boekingen binnen 4 weken voor aankomst is het volledige bedrag direct verschuldigd.</p>
+    <h3>Betaalmethoden</h3>
+    <p>Betaling geschiedt via Stripe (iDEAL, creditcard) of bankoverschrijving. Alle bedragen zijn inclusief schoonmaakkosten en exclusief eventuele toeristenbelasting.</p>
+    <h3>Schoonmaakkosten</h3>
+    <p>Er wordt een eenmalige schoonmaakvergoeding van <strong>€100</strong> in rekening gebracht, ongeacht de verblijfsduur.</p>
+  </div>
+
+  <!-- 3. ANNULERINGSBELEID -->
+  <div class="section">
+    <h2>3. Annuleringsbeleid</h2>
+    <p>Hada Homes hanteert een <strong>strikt annuleringsbeleid</strong>, gelijk aan het Airbnb Strict-beleid. Dit beleid is van toepassing op alle directe boekingen.</p>
+
+    <div class="highlight-box">
+      <p>Alle boekingen hebben een <strong>gratis annuleringsperiode van 24 uur</strong> na bevestiging, mits de aankomstdatum minimaal 7 dagen in de toekomst ligt.</p>
+    </div>
+
+    <h3>Kortverblijf (minder dan 28 nachten)</h3>
+    <table class="policy-table">
+      <thead>
+        <tr>
+          <th>Annulering</th>
+          <th>Terugbetaling aan gast</th>
+          <th>Ontvangen door Hada Homes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Binnen 24 uur na boeking*</td>
+          <td><span class="tag-green">100% restitutie</span></td>
+          <td>Niets</td>
+        </tr>
+        <tr>
+          <td>7 of meer dagen voor aankomst</td>
+          <td><span class="tag-orange">50% restitutie</span> (incl. belastingen)</td>
+          <td>50% van alle nachten</td>
+        </tr>
+        <tr>
+          <td>Minder dan 7 dagen voor aankomst</td>
+          <td><span class="tag-red">Geen restitutie</span> (alleen belastingen)</td>
+          <td>100% van alle nachten</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:12px;color:var(--ink-faint);margin-top:8px">* Alleen van toepassing als de aankomstdatum minimaal 7 dagen na de boekingsdatum ligt.</p>
+
+    <h3>Langverblijf (28 nachten of meer)</h3>
+    <table class="policy-table">
+      <thead>
+        <tr>
+          <th>Annulering</th>
+          <th>Terugbetaling aan gast</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Binnen 48 uur na boeking én minimaal 28 dagen voor aankomst</td>
+          <td><span class="tag-green">100% restitutie</span></td>
+        </tr>
+        <tr>
+          <td>Na de gratis periode</td>
+          <td>Restitutie van belastingen + 100% voor reeds verbleven nachten. De volgende 30 nachten worden in rekening gebracht.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Uitzonderingen</h3>
+    <p>In geval van een erkende overmachtsituatie (zoals een officieel afgekondigd reisverbod, ernstige ziekte of overlijden van een directe naaste) kan in overleg worden afgeweken van dit beleid. Neem in dat geval zo snel mogelijk contact op.</p>
+  </div>
+
+  <!-- 4. HUISREGELS -->
+  <div class="section">
+    <h2>4. Huisregels</h2>
+    <ul>
+      <li>Inchecken is mogelijk vanaf <strong>16:00 uur</strong>, uitchecken uiterlijk om <strong>10:00 uur</strong>.</li>
+      <li>Het maximale aantal gasten staat vermeld per appartement. Overschrijding is niet toegestaan.</li>
+      <li>Roken is in alle appartementen en op de gemeenschappelijke terrassen <strong>niet toegestaan</strong>.</li>
+      <li>Huisdieren zijn alleen toegestaan na voorafgaande schriftelijke toestemming.</li>
+      <li>Feesten en evenementen zijn niet toegestaan zonder uitdrukkelijke toestemming van de verhuurder.</li>
+      <li>Gasten zijn verantwoordelijk voor het netjes achterlaten van het appartement en dienen schade te melden.</li>
+      <li>Stille uren gelden van <strong>22:00 tot 09:00 uur</strong>.</li>
+    </ul>
+  </div>
+
+  <!-- 5. AANSPRAKELIJKHEID -->
+  <div class="section">
+    <h2>5. Aansprakelijkheid & Schade</h2>
+    <p>De huurder is aansprakelijk voor schade aan het appartement, de inventaris of het gebouw die is veroorzaakt door de huurder of zijn/haar gezelschap. Schade dient onmiddellijk te worden gemeld en zal worden verhaald op de huurder.</p>
+    <p>Hada Homes is niet aansprakelijk voor diefstal, verlies of schade aan persoonlijke eigendommen van gasten, noch voor persoonlijk letsel tenzij dit te wijten is aan aantoonbare nalatigheid van de verhuurder.</p>
+  </div>
+
+  <!-- 6. PRIVACY -->
+  <div class="section">
+    <h2>6. Privacy</h2>
+    <p>Persoonsgegevens die worden verstrekt bij een boeking worden uitsluitend gebruikt voor de uitvoering van de huurovereenkomst en worden niet gedeeld met derden, behoudens wettelijke verplichtingen. Hada Homes verwerkt persoonsgegevens conform de AVG (GDPR).</p>
+  </div>
+
+  <!-- 7. TOEPASSELIJK RECHT -->
+  <div class="section">
+    <h2>7. Toepasselijk Recht</h2>
+    <p>Op deze voorwaarden is Spaans recht van toepassing. Geschillen worden bij voorkeur in onderling overleg opgelost. Indien dit niet mogelijk is, is de bevoegde rechter in de provincie Alicante (Spanje) exclusief bevoegd.</p>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact-block">
+    <h2>Vragen?</h2>
+    <p>Heb je vragen over deze voorwaarden of je boeking? Neem gerust contact op:</p>
+    <div class="contact-links">
+      <a class="contact-link" href="https://wa.me/31645182246" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp +31 6 45 18 22 46
+      </a>
+      <a class="contact-link" href="mailto:hadahomesspain@gmail.com">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        hadahomesspain@gmail.com
+      </a>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>© 2026 Hada Homes — Jávea, Spanje</span>
+    <a href="/" style="color:var(--ink-faint)">Terug naar home</a>
+  </div>
+</div>
+
+</body>
+</html>

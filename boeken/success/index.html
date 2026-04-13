@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Betaling geslaagd — Hada Homes</title>
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #18180f; --ink-light: #5a5a4a;
+    --paper: #faf8f3; --accent: #b5673a;
+    --green: #2d7a4f; --border: rgba(24,24,15,.10);
+  }
+  body { font-family: 'Inter', sans-serif; background: var(--paper); color: var(--ink); min-height: 100vh; display: flex; flex-direction: column; }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--paper); border-bottom: 1px solid var(--border);
+    padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; letter-spacing: .04em; color: var(--ink); text-decoration: none; }
+  .nav-back { font-size: 13px; color: var(--ink-light); text-decoration: none; display: flex; align-items: center; gap: 6px; letter-spacing: .06em; text-transform: uppercase; }
+  .nav-back:hover { color: var(--ink); }
+  main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 48px 24px; }
+  .success-card {
+    max-width: 560px; width: 100%;
+    background: white; border: 1px solid var(--border); border-radius: 4px;
+    padding: 48px 40px; text-align: center;
+  }
+  .success-icon {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: #dcfce7; border: 2px solid #86efac;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px; margin: 0 auto 24px;
+  }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 400; margin-bottom: 12px; }
+  .subtitle { font-size: 15px; color: var(--ink-light); line-height: 1.7; margin-bottom: 32px; }
+  .booking-details {
+    background: var(--paper); border-radius: 4px; padding: 20px 24px;
+    text-align: left; margin-bottom: 32px;
+  }
+  .detail-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+  .detail-row:last-child { border-bottom: none; }
+  .detail-label { color: var(--ink-light); }
+  .detail-value { font-weight: 600; }
+  .detail-value.green { color: var(--green); }
+  .btn-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--ink); color: white; padding: 13px 28px;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600;
+    letter-spacing: .1em; text-transform: uppercase; text-decoration: none;
+    border-radius: 2px; border: none; cursor: pointer;
+  }
+  .btn-primary:hover { background: #2a2a1e; }
+  .btn-wa {
+    background: #22c55e; color: white; padding: 13px 28px;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600;
+    letter-spacing: .1em; text-transform: uppercase; text-decoration: none;
+    border-radius: 2px;
+  }
+  .btn-wa:hover { background: #16a34a; }
+  .terms-note { font-size: 12px; color: var(--ink-light); margin-top: 24px; line-height: 1.6; }
+  .terms-note a { color: var(--accent); }
+  @media (max-width: 480px) {
+    nav { padding: 0 20px; }
+    .success-card { padding: 32px 20px; }
+    h1 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/">Hada Homes</a>
+  <a class="nav-back" href="/">← Terug naar home</a>
+</nav>
+<main>
+  <div class="success-card">
+    <div class="success-icon">✓</div>
+    <h1>Betaling geslaagd!</h1>
+    <p class="subtitle">Bedankt voor je boeking bij Hada Homes. Je aanbetaling is ontvangen. Kevin & Sophie nemen binnen <strong>24 uur</strong> contact met je op via e-mail om alles te bevestigen.</p>
+
+    <div class="booking-details" id="bookingDetails">
+      <div class="detail-row">
+        <span class="detail-label">Appartement</span>
+        <span class="detail-value" id="detApt">—</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Inchecken</span>
+        <span class="detail-value" id="detIn">—</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Uitchecken</span>
+        <span class="detail-value" id="detOut">—</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Aanbetaling ontvangen</span>
+        <span class="detail-value green" id="detDeposit">✓ Betaald</span>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <a class="btn-primary" href="/">Terug naar home</a>
+      <a class="btn-wa" href="https://wa.me/31645182246" target="_blank" rel="noopener">WhatsApp Kevin & Sophie</a>
+    </div>
+
+    <p class="terms-note">
+      Op je boeking zijn onze <a href="/voorwaarden">algemene voorwaarden</a> van toepassing.<br>
+      Vragen? Mail naar <a href="mailto:hadahomesspain@gmail.com">hadahomesspain@gmail.com</a>
+    </p>
+  </div>
+</main>
+
+<script>
+// Parse URL params to show booking details
+const params = new URLSearchParams(window.location.search);
+const apt = params.get('apt');
+const checkIn = params.get('in');
+const checkOut = params.get('out');
+
+function formatDate(d) {
+  if (!d) return '—';
+  const date = new Date(d + 'T00:00:00');
+  return date.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+
+if (apt) document.getElementById('detApt').textContent = decodeURIComponent(apt);
+if (checkIn) document.getElementById('detIn').textContent = formatDate(checkIn);
+if (checkOut) document.getElementById('detOut').textContent = formatDate(checkOut);
+</script>
+</body>
+</html>

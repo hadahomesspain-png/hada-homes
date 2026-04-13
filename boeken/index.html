@@ -1000,13 +1000,13 @@
       </div>
 
       <div class="info-notice">
-        📋 <strong>Hoe werkt het?</strong> Na het versturen van je aanvraag nemen Kevin & Sophie binnen 24 uur contact met je op om de boeking te bevestigen. Je ontvangt een betalingslink voor de aanbetaling van 30%.
+        💳 <strong>Veilig betalen via Stripe.</strong> Je betaalt nu 30% aanbetaling via iDEAL of creditcard. Het restbedrag betaal je bij aankomst of vooraf. Na betaling ontvangen jullie direct een bevestiging per e-mail.
       </div>
 
       <div class="btn-row">
         <button class="btn-secondary" onclick="goStep(3)">← Terug</button>
         <button class="btn-primary" onclick="submitBooking()" id="submitBtn">
-          ✓ Aanvraag versturen
+          💳 Betaal aanbetaling (30%)
         </button>
       </div>
     </div>
@@ -1554,60 +1554,64 @@ function fillConfirmation() {
   document.getElementById('confDeposit').textContent = `€${price.deposit}`;
 }
 
-// ── SUBMIT ──
+// ── SUBMIT → STRIPE CHECKOUT ──
 function submitBooking() {
   const btn = document.getElementById('submitBtn');
   btn.disabled = true;
-  btn.textContent = 'Versturen...';
+  btn.textContent = 'Betaling voorbereiden...';
 
   const apt = APARTMENTS[state.apt];
   const price = calcPrice();
-  const ref = 'HH-' + new Date().getFullYear() + '-' + Math.floor(Math.random() * 9000 + 1000);
+  const guestName = (document.getElementById('firstName').value.trim() + ' ' + document.getElementById('lastName').value.trim()).trim();
+  const guestEmail = document.getElementById('email').value.trim();
+  const guestPhone = document.getElementById('phone').value.trim();
+  const remarks = document.getElementById('remarks').value.trim();
 
-  const guestName = document.getElementById('firstName').value + ' ' + document.getElementById('lastName').value;
-  const guestEmail = document.getElementById('email').value;
-  const guestPhone = document.getElementById('phone').value;
-  const remarks = document.getElementById('remarks').value;
+  if (!guestEmail) {
+    alert('Vul je e-mailadres in.');
+    btn.disabled = false;
+    btn.textContent = '💳 Betaal aanbetaling (30%)';
+    return;
+  }
 
-  // Build WhatsApp message
-  const waMsg = encodeURIComponent(
-    `🏡 Nieuwe boekingsaanvraag Hada Homes\n\n` +
-    `Ref: ${ref}\n` +
-    `Appartement: ${apt.name}\n` +
-    `Aankomst: ${formatDisplayDate(state.checkin)}\n` +
-    `Vertrek: ${formatDisplayDate(state.checkout)}\n` +
-    `Nachten: ${price.nights}\n` +
-    `Gasten: ${state.adults + state.children}\n` +
-    `Naam: ${guestName}\n` +
-    `Email: ${guestEmail}\n` +
-    `Tel: ${guestPhone}\n` +
-    (price.discountAmt > 0 ? `Korting: −€${price.discountAmt} (${price.discountLabel})\n` : '') +
-    `Totaal: €${price.total}\n` +
-    `Aanbetaling: €${price.deposit}` +
-    (remarks ? `\n\nOpmerkingen: ${remarks}` : '')
-  );
-
-  // Try Formspree or backend, fallback to WhatsApp
-  fetch('/api/booking', {
+  // Call Stripe Checkout API
+  fetch('/api/create-checkout', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      ref, apartment: state.apt, aptName: apt.name,
-      checkin: state.checkin, checkout: state.checkout,
-      nights: price.nights, total: price.total, deposit: price.deposit,
-      adults: state.adults, children: state.children,
-      name: guestName, email: guestEmail, phone: guestPhone,
-      remarks
+      apartment: apt.name,
+      checkIn: state.checkin,
+      checkOut: state.checkout,
+      nights: price.nights,
+      guests: state.adults + state.children,
+      totalPrice: price.total,
+      depositAmount: price.deposit,
+      name: guestName,
+      email: guestEmail,
+      phone: guestPhone,
+      message: remarks
     })
   })
-  .then(r => r.ok ? r.json() : Promise.reject())
-  .then(() => showSuccess(ref))
-  .catch(() => {
-    // Fallback: show success + open WhatsApp
-    showSuccess(ref);
-    setTimeout(() => {
-      window.open(`https://wa.me/31645182246?text=${waMsg}`, '_blank');
-    }, 800);
+  .then(r => r.json())
+  .then(data => {
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      throw new Error(data.error || 'Geen betaallink ontvangen');
+    }
+  })
+  .catch(err => {
+    console.error('Stripe error:', err);
+    btn.disabled = false;
+    btn.textContent = '💳 Betaal aanbetaling (30%)';
+    // Fallback: WhatsApp
+    const waMsg = encodeURIComponent(
+      `🏡 Boekingsaanvraag Hada Homes\nAppartement: ${apt.name}\nAankomst: ${formatDisplayDate(state.checkin)}\nVertrek: ${formatDisplayDate(state.checkout)}\nNachten: ${price.nights}\nGasten: ${state.adults + state.children}\nNaam: ${guestName}\nEmail: ${guestEmail}\nTel: ${guestPhone}\nTotaal: €${price.total}\nAanbetaling: €${price.deposit}` +
+      (remarks ? `\nOpmerkingen: ${remarks}` : '')
+    );
+    if (confirm('Betaling tijdelijk niet beschikbaar. Wil je via WhatsApp boeken?')) {
+      window.open('https://wa.me/31645182246?text=' + waMsg, '_blank');
+    }
   });
 }
 
