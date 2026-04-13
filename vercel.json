@@ -46,8 +46,20 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "src": "/api/booking",
+      "dest": "/api/booking.js"
+    },
+    {
+      "src": "/api/create-checkout",
+      "dest": "/api/create-checkout.js"
+    },
+    {
+      "src": "/api/stripe-webhook",
+      "dest": "/api/stripe-webhook.js"
+    },
+    {
+      "src": "/api/ical-sync",
+      "dest": "/api/ical-sync.js"
     },
     {
       "src": "/(.*)",
