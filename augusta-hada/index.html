@@ -43,8 +43,9 @@ body{font-family:'Montserrat',sans-serif;background:var(--paper);color:var(--ink
 /* ─── NAV ─── */
 .nav{position:fixed;top:0;left:0;right:0;z-index:200;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(250,248,243,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--ink-08);transition:all .3s}
 .nav.scrolled{height:56px;background:rgba(250,248,243,.98)}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;letter-spacing:.06em;color:var(--ink);text-decoration:none}
-.nav-logo span{color:var(--sand)}
+.nav-logo{display:flex;align-items:center;text-decoration:none}
+.nav-logo img{height:34px;width:auto;transition:opacity .3s}
+.nav-logo:hover img{opacity:.8}
 .nav-links{display:flex;align-items:center;gap:32px}
 .nav-links a{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-50);text-decoration:none;transition:color .2s}
 .nav-links a:hover,.nav-links a.active{color:var(--ink)}
@@ -293,7 +294,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--paper);color:var(--ink
 
 <!-- NAV -->
 <nav class="nav" id="nav">
-  <a href="../" class="nav-logo">Hada <span>Homes</span></a>
+  <a href="../" class="nav-logo"><img src="../assets/img/hada-logo.png" alt="Hada Homes" height="34"/></a>
   <div class="nav-links">
     <a href="../">← Terug</a>
     <a href="#galerij">Galerij</a>
