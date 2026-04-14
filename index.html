@@ -195,16 +195,50 @@ p{color:var(--ink-soft);font-size:14px;line-height:1.85;font-weight:300}
 .javea-right{overflow:hidden}
 .javea-right img{width:100%;height:100%;object-fit:cover;filter:brightness(.78) saturate(.82)}
 
-/* INSTAGRAM */
-.ig-section{background:var(--paper-off)}
-.ig-header{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:clamp(28px,3.5vw,44px)}
-.ig-handle{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:500;color:var(--ink-soft);transition:color .18s}
-.ig-handle:hover{color:var(--ink)}
-.ig-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:3px}
-.ig-item{aspect-ratio:1;overflow:hidden;cursor:pointer}
-.ig-item img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease,opacity .28s}
-.ig-item:hover img{transform:scale(1.07);opacity:.85}
-.ig-cta{text-align:center;margin-top:22px}
+/* INSTAGRAM — ARTY GRID */
+.ig-section{background:var(--ink);padding:clamp(64px,8vw,100px) 0}
+.ig-section .eyebrow{color:rgba(255,255,255,.35)}
+.ig-section h2{color:#fff}
+.ig-header{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:clamp(32px,4vw,52px)}
+.ig-handle{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:500;color:rgba(255,255,255,.45);transition:color .22s;letter-spacing:.06em;text-transform:uppercase}
+.ig-handle:hover{color:#fff}
+.ig-handle svg{opacity:.5}
+/* Asymmetric 3-column editorial grid */
+.ig-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-template-rows:auto auto;
+  gap:6px;
+}
+.ig-item{overflow:hidden;cursor:pointer;position:relative;background:var(--ink-mid)}
+.ig-item::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,8,4,.55) 0%,transparent 55%);opacity:0;transition:opacity .35s}
+.ig-item:hover::after{opacity:1}
+.ig-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.25,.46,.45,.94)}
+.ig-item:hover img{transform:scale(1.06)}
+/* Item 1: tall left — spans 2 rows */
+.ig-item:nth-child(1){grid-column:1;grid-row:1/3;aspect-ratio:unset;min-height:520px}
+/* Item 2: top middle */
+.ig-item:nth-child(2){grid-column:2;grid-row:1;aspect-ratio:1}
+/* Item 3: top right */
+.ig-item:nth-child(3){grid-column:3;grid-row:1;aspect-ratio:1}
+/* Item 4: bottom middle */
+.ig-item:nth-child(4){grid-column:2;grid-row:2;aspect-ratio:1}
+/* Item 5: bottom right — wider */
+.ig-item:nth-child(5){grid-column:3;grid-row:2;aspect-ratio:1}
+/* Instagram icon overlay on hover */
+.ig-item-inner{position:absolute;bottom:16px;left:16px;opacity:0;transition:opacity .3s;color:#fff;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px}
+.ig-item:hover .ig-item-inner{opacity:1}
+.ig-cta{text-align:center;margin-top:36px}
+.ig-cta a{color:rgba(255,255,255,.5);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:2px;transition:color .2s,border-color .2s}
+.ig-cta a:hover{color:#fff;border-color:rgba(255,255,255,.5)}
+@media(max-width:767px){
+  .ig-grid{grid-template-columns:1fr 1fr;gap:4px}
+  .ig-item:nth-child(1){grid-column:1/3;grid-row:1;min-height:260px;aspect-ratio:unset}
+  .ig-item:nth-child(2){grid-column:1;grid-row:2;aspect-ratio:1}
+  .ig-item:nth-child(3){grid-column:2;grid-row:2;aspect-ratio:1}
+  .ig-item:nth-child(4){grid-column:1;grid-row:3;aspect-ratio:1}
+  .ig-item:nth-child(5){grid-column:2;grid-row:3;aspect-ratio:1}
+}
 
 /* REVIEWS */
 .reviews-section{background:var(--paper)}
@@ -565,12 +599,12 @@ p{color:var(--ink-soft);font-size:14px;line-height:1.85;font-weight:300}
 </section>
 
 <!-- INSTAGRAM -->
-<section class="section ig-section">
+<section class="ig-section" id="instagram">
   <div class="wrap">
     <div class="ig-header">
       <div>
         <div class="eyebrow" style="margin-bottom:10px" data-i18n="ig.label">Volg ons leven in Jávea</div>
-        <h2>@hada_homes</h2>
+        <h2 style="color:#fff">@hada_homes</h2>
       </div>
       <a class="ig-handle" href="https://www.instagram.com/hada_homes" target="_blank" rel="noopener">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
@@ -578,13 +612,48 @@ p{color:var(--ink-soft);font-size:14px;line-height:1.85;font-weight:300}
       </a>
     </div>
     <div class="ig-grid">
-      <div class="ig-item"><a href="https://www.instagram.com/hada_homes" target="_blank" rel="noopener"><img src="/assets/img/javea-arenal-beach.jpg" alt="@hada_homes Arenal strand Javea"/></a></div>
-      <div class="ig-item"><a href="https://www.instagram.com/hada_homes" target="_blank" rel="noopener"><img src="/assets/img/javea-beach-panorama.jpg" alt="@hada_homes Javea strand"/></a></div>
-      <div class="ig-item"><a href="https://www.instagram.com/hada_homes" target="_blank" rel="noopener"><img src="/assets/img/javea-old-town.jpg" alt="@hada_homes Javea oude stad"/></a></div>
-      <div class="ig-item"><a href="https://www.instagram.com/hada_homes" target="_blank" rel="noopener"><img src="/assets/img/augusta-pool.jpg" alt="@hada_homes appartement"/></a></div>
-      <div class="ig-item"><a href="https://www.instagram.com/hada_homes" target="_blank" rel="noopener"><img src="/assets/img/section-photo.jpg" alt="@hada_homes Javea"/></a></div>
+      <!-- 1: Tall left — patio/pool -->
+      <a class="ig-item" href="https://www.instagram.com/hada_homes" target="_blank" rel="noopener">
+        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/a14c50cc-0dcb-4ec2-957e-dd0d84d2d0bf.jpeg" alt="Augusta Hada patio" loading="lazy"/>
+        <div class="ig-item-inner">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          @hada_homes
+        </div>
+      </a>
+      <!-- 2: Top middle — living room -->
+      <a class="ig-item" href="https://www.instagram.com/hada_homes" target="_blank" rel="noopener">
+        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/ea45469d-493c-4cf2-800d-7e7c560d11ba.jpeg" alt="Augusta Hada woonkamer" loading="lazy"/>
+        <div class="ig-item-inner">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          @hada_homes
+        </div>
+      </a>
+      <!-- 3: Top right — bedroom -->
+      <a class="ig-item" href="https://www.instagram.com/hada_homes" target="_blank" rel="noopener">
+        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/e15feeae-822c-44e4-9638-57f730a536a5.jpeg" alt="Augusta Hada slaapkamer" loading="lazy"/>
+        <div class="ig-item-inner">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          @hada_homes
+        </div>
+      </a>
+      <!-- 4: Bottom middle — kitchen/detail -->
+      <a class="ig-item" href="https://www.instagram.com/hada_homes" target="_blank" rel="noopener">
+        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/af320b6b-c49a-4629-8a76-d5c23ecd5288.jpeg" alt="Augusta Hada keuken" loading="lazy"/>
+        <div class="ig-item-inner">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          @hada_homes
+        </div>
+      </a>
+      <!-- 5: Bottom right — outdoor/pool -->
+      <a class="ig-item" href="https://www.instagram.com/hada_homes" target="_blank" rel="noopener">
+        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1615493521495170190/original/a2d14c27-1792-4767-a34f-5a1cc0d8f44c.jpeg" alt="Augusta Hada zwembad" loading="lazy"/>
+        <div class="ig-item-inner">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          @hada_homes
+        </div>
+      </a>
     </div>
-    <div class="ig-cta"><a class="btn-text" href="https://www.instagram.com/hada_homes" target="_blank" rel="noopener" data-i18n="ig.follow">Volg @hada_homes</a></div>
+    <div class="ig-cta"><a href="https://www.instagram.com/hada_homes" target="_blank" rel="noopener" data-i18n="ig.follow">Volg @hada_homes op Instagram</a></div>
   </div>
 </section>
 
