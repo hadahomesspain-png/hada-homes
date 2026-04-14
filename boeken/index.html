@@ -786,8 +786,8 @@
 
     <!-- ── STEP 1: Appartement & Datum ── -->
     <div class="step-panel active" id="step1">
-      <h2 class="step-title">Kies je appartement & data</h2>
-      <p class="step-subtitle">Selecteer een appartement en kies je aankomst- en vertrekdatum.</p>
+      <h2 class="step-title">Kies je appartement & verblijfsperiode</h2>
+      <p class="step-subtitle">Selecteer een appartement en kies je aankomst- en vertrekdatum. Minimaal 30 nachten.</p>
 
       <div class="apt-cards">
         <div class="apt-card selected" data-apt="augusta" onclick="selectApt(this, 'augusta')">
@@ -799,7 +799,7 @@
               <span>2 slpk + slaapbank</span>
               <span>Privépatio</span>
             </div>
-            <div class="apt-card-price">Vanaf €171 / nacht <span class="discount-badge">5% korting</span></div>
+            <div class="apt-card-price">Vanaf €2.800 / maand <span class="discount-badge">Direct bij eigenaar</span></div>
             <div class="apt-card-select"></div>
           </div>
         </div>
@@ -812,7 +812,7 @@
               <span>2 slaapkamers</span>
               <span>200m strand</span>
             </div>
-            <div class="apt-card-price">Vanaf €95 / nacht</div>
+            <div class="apt-card-price">Vanaf €1.800 / maand</div>
             <div class="apt-card-select"></div>
           </div>
         </div>
@@ -846,7 +846,7 @@
       </div>
 
       <div class="info-notice">
-        ℹ️ Minimaal verblijf: <strong>3 nachten</strong>. Beschikbaarheid gesynchroniseerd met Airbnb. Boek direct bij Kevin & Sophie voor <strong>5% korting</strong> t.o.v. Airbnb.
+        ℹ️ Minimaal verblijf: <strong>30 nachten</strong>. Beschikbaarheid gesynchroniseerd met Airbnb. Boek direct bij Kevin & Sophie — geen platform, geen tussenpersoon.
       </div>
 
       <div class="btn-row">
@@ -1276,8 +1276,8 @@ function selectDate(dateStr) {
       state.selecting = 'checkout';
     } else {
       const nights = Math.round((date - ci) / (1000*60*60*24));
-      if (nights < 3) {
-        alert('Minimaal verblijf is 3 nachten.');
+      if (nights < 30) {
+        alert('Minimaal verblijf is 30 nachten. Hada Homes is bedoeld voor verblijven van 1 tot 3 maanden.');
         return;
       }
       let hasBlocked = false;
